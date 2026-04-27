@@ -12,7 +12,7 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Sprint-02-11BCAA?style=for-the-badge&logo=headspace&logoColor=white" />
+    <img src="https://img.shields.io/badge/Etapa-01-11BCAA?style=for-the-badge&logo=headspace&logoColor=white" />
     <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-11BCAA?style=for-the-badge&logo=github&logoColor=white" />
     <img src="https://img.shields.io/badge/Projeto-Acadêmico-11BCAA?style=for-the-badge&logo=bookstack&logoColor=white" />
   </p>
