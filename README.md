@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/6abe8685-c8bd-45dc-84c6-a45022f52597" width="300" alt="Aurora Logo" />
+  <img src="https://github.com/user-attachments/assets/b1d64065-5c87-48d7-a9a4-e271366ac246" width="300" alt="Aurora Logo" />
 
   <h1>Landing Page - Aurora </h1>
   
