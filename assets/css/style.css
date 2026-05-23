@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    /* ========= BRAND COLORS ========= */
+    --color-brand-primary: #6a509d;
+    --color-brand-secondary: #7e61a7;
+
+    --color-highlight-pink: #cf4793;
+    --color-highlight-teal: #31b4a6;
+
+    --color-neutral-white: #ffffff;
+    --color-neutral-black: #111111;
+    --color-neutral-gray: #6b6b6b;
+
+    /* ========= GRADIENTS ========= */
+    --gradient-aurora: linear-gradient(135deg,
+            #6a509d 0%,
+            #cf4793 50%,
+            #31b4a6 100%);
+
+    /* ========= TYPOGRAPHY ========= */
+    --font-primary: "Outfit", sans-serif;
+
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-medium: 1.25rem;
+    --font-size-large: 2rem;
+    --font-size-hero: 4rem;
+
+    /* ========= FONT WEIGHTS ========= */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+
+    /* ========= SPACING ========= */
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+    --spacing-xlarge: 64px;
+
+    /* ========= BORDER RADIUS ========= */
+    --border-radius-small: 10px;
+    --border-radius-medium: 18px;
+    --border-radius-large: 54px;
+
+    /* ========= SHADOW ========= */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    /* ========= TRANSITIONS ========= */
+    --transition-default: 0.3s ease;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-neutral-black);
+    line-height: 1.6;
+    background-color: var(--color-neutral-white);
+}
