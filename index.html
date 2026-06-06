@@ -92,20 +92,357 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">
-                <a href="/" title="Ir para a página inicial da Aurora">
-                    <img src="assets/img/aurora-color-logo-people-analytics-platform.png"
+    <header class="header">
+        <div class="container header__container">
+            <h1 class="header__logo">
+                <a href="/" class="header__logo-link" title="Ir para a página inicial da Aurora">
+                    <img class="header__logo-image" src="assets/img/aurora-color-logo-people-analytics-platform.png"
                         alt="Logo Aurora - Plataforma de People Analytics e Gestão de Performance" width="180">
                 </a>
             </h1>
-            <nav>
+            <nav class="header__nav" aria-label="Menu principal">
                 <!-- Navegação -->
             </nav>
         </div>
     </header>
 
+    <main class="main-content">
+        <section class="services">
+            <div class="container services__container">
+                <header class="services__header">
+                    <h2 class="services__title">Lorem ipsum dolor sit</h2>
+                    <p class="services__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                        eiusmod tempor incididunt ut labore.</p>
+                </header>
+
+                <!-- ============================ Seção Dores do cliente e Solução - 2 ============================ -->
+                <div class="services__content">
+                    <div class="services__grid">
+                        <!-- Card 1 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--primary" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M15 4V2" />
+                                    <path d="M15 16v-2" />
+                                    <path d="M8 9h2" />
+                                    <path d="M20 9h2" />
+                                    <path d="M17.8 11.8 19 13" />
+                                    <path d="M15 9h.01" />
+                                    <path d="M17.8 6.2 19 5" />
+                                    <path d="m3 21 9-9" />
+                                    <path d="M12.2 6.2 11 5" />
+                                    <line x1="2" y1="2" x2="22" y2="22" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Lorem ipsum dolor</h3>
+                            <p class="service-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit. Aliquam erat volutpat.</p>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--pink" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                    <polyline points="16 7 22 7 22 13" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Pellentesque habitant</h3>
+                            <p class="service-card__description">Morbi tristique senectus et netus et malesuada fames ac
+                                turpis egestas.</p>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--teal" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="10" cy="7" r="4" />
+                                    <path d="M10.3 15H7a4 4 0 0 0-4 4v2" />
+                                    <circle cx="17" cy="17" r="3" />
+                                    <path d="m21 21-1.5-1.5" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Vestibulum tortor</h3>
+                            <p class="service-card__description">Nullam quis ante. Etiam sit amet orci eget eros
+                                faucibus tincidunt. Duis leo.</p>
+                        </article>
+
+                        <!-- Card 4 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--primary" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Phasellus viverra</h3>
+                            <p class="service-card__description">Sed fringilla mauris sit amet nibh. Donec sodales
+                                sagittis magna. Sed consequat.</p>
+                        </article>
+
+                        <!-- Card 5 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--pink" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Maecenas tempus</h3>
+                            <p class="service-card__description">Nam quam nunc, blandit vel, luctus pulvinar, hendrerit
+                                id, lorem. Maecenas nec odio.</p>
+                        </article>
+
+                        <!-- Card 6 -->
+                        <article class="service-card">
+                            <div class="service-card__icon service-card__icon--teal" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="7" height="9" x="3" y="3" rx="1" />
+                                    <rect width="7" height="5" x="14" y="3" rx="1" />
+                                    <rect width="7" height="9" x="14" y="12" rx="1" />
+                                    <rect width="7" height="5" x="3" y="16" rx="1" />
+                                </svg>
+                            </div>
+                            <h3 class="service-card__title">Donec vitae</h3>
+                            <p class="service-card__description">Aenean leo ligula, porttitor eu, consequat vitae,
+                                eleifend ac, enim. Aliquam lorem ante.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================  SEÇÃO ROI - 5 ============================ -->
+        <section class="stats">
+            <div class="container stats__container">
+                <header class="stats__header">
+                    <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="120"
+                        class="stats__logo">
+                    <p class="stats__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+                        commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis.</p>
+                </header>
+
+                <div class="stats__grid">
+                    <div class="stats__column stats__column--left">
+                        <article class="stat-card stat-card--primary">
+                            <span class="stat-card__number">+150</span>
+                            <p class="stat-card__description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                            </p>
+                        </article>
+                        <article class="stat-card stat-card--teal">
+                            <span class="stat-card__number">100%</span>
+                            <p class="stat-card__description">Aenean commodo ligula eget dolor. Aenean massa cum sociis.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="stats__column stats__column--right">
+                        <article class="stat-card stat-card--secondary">
+                            <span class="stat-card__number">145 mil</span>
+                            <p class="stat-card__description">Natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus.</p>
+                        </article>
+                        <article class="stat-card stat-card--pink">
+                            <span class="stat-card__number">+40</span>
+                            <p class="stat-card__description">Donec quam felis, ultricies nec, pellentesque eu, pretium
+                                quis, sem.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================  FAQ - 8 ============================ -->
+        <section class="faq">
+            <div class="container faq__container">
+                <h2 class="faq__title">Lorem Ipsum</h2>
+                <div class="faq__list">
+                    <!-- Item 1 -->
+                    <details class="faq__item" open>
+                        <summary class="faq__summary">
+                            <div class="faq__icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                            </div>
+                            <h3 class="faq__question">Lorem ipsum dolor sit amet, consectetuer adipiscing?</h3>
+                            <span class="faq__arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg></span>
+                        </summary>
+                        <div class="faq__content">
+                            <p class="faq__text">Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                                ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                        </div>
+                    </details>
+
+                    <!-- Item 2 -->
+                    <details class="faq__item">
+                        <summary class="faq__summary">
+                            <div class="faq__icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
+                                    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                    <path d="M3 15h6" />
+                                    <path d="M3 18h6" />
+                                </svg>
+                            </div>
+                            <h3 class="faq__question">Nulla consequat massa quis enim?</h3>
+                            <span class="faq__arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg></span>
+                        </summary>
+                        <div class="faq__content">
+                            <p class="faq__text">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                                enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+                                mollis pretium.</p>
+                        </div>
+                    </details>
+
+                    <!-- Item 3 -->
+                    <details class="faq__item">
+                        <summary class="faq__summary">
+                            <div class="faq__icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    <path d="m9 12 2 2 4-4" />
+                                </svg>
+                            </div>
+                            <h3 class="faq__question">Integer tincidunt. Cras dapibus. Vivamus elementum?</h3>
+                            <span class="faq__arrow" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg></span>
+                        </summary>
+                        <div class="faq__content">
+                            <p class="faq__text">Semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+                                porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+                                viverra quis, feugiat a, tellus.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================  FOOTER - 8 ============================ -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="150"
+                        class="footer__logo">
+                    <p class="footer__legal">Lorem ipsum dolor sit amet<br>CNPJ: 00.000.000/0001-00</p>
+                </div>
+
+                <nav class="footer__nav" aria-label="Navegação do rodapé">
+                    <div class="footer__nav-group">
+                        <h4 class="footer__nav-title">Lorem</h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Ipsum</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Dolor</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Sit Amet</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Consectetuer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-group">
+                        <h4 class="footer__nav-title">Adipiscing</h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Elit</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Aenean</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Commodo</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Ligula</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__nav-group">
+                        <h4 class="footer__nav-title">Eget Dolor</h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Massa</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Sociis</a></li>
+                            <li class="footer__nav-item"><a href="#" class="footer__nav-link">Natoque</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__contact">
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-label">WhatsApp</span>
+                        <strong class="footer__contact-value">+55 (11) 00000-0000</strong>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-label">E-mail</span>
+                        <strong class="footer__contact-value">lorem@ipsum.com.br</strong>
+                    </div>
+                </div>
+
+                <div class="footer__social" aria-label="Redes Sociais">
+                    <a href="#" class="footer__social-link" aria-label="Instagram">
+                        <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="Facebook">
+                        <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube">
+                        <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                            <path d="m10 15 5-3-5-3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                        <svg class="footer__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- LGPD Banner de Cookies -->
     <!-- <div id="cookie-banner" class="cookie-banner">
