@@ -755,6 +755,7 @@ details[open] .faq__arrow {
     align-items: center;
     justify-content: center;
     color: var(--color-neutral-white);
+    text-decoration: none;
     transition: background-color var(--transition-default);
 }
 
@@ -762,12 +763,18 @@ details[open] .faq__arrow {
 .footer__social-link:focus-visible {
     background-color: var(--color-highlight-pink);
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer__social-icon {
     font-size: 18px;
     width: 18px;
     height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 768px) {
