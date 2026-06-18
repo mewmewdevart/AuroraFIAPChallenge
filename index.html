@@ -129,14 +129,277 @@
     </header>
 
     <main class="conteudo-principal">
+
+        <!-- ════════════════════════ SEÇÃO 1 — HERO ════════════════════════ -->
+        <section class="hero">
+
+            <!-- Aurora Borealis Background -->
+            <div class="hero__aurora-bg" aria-hidden="true">
+                <div class="hero__stars"></div>
+                <div class="hero__aurora-layer hero__aurora-layer--3"></div>
+                <div class="hero__aurora-layer hero__aurora-layer--2"></div>
+                <div class="hero__aurora-layer hero__aurora-layer--1"></div>
+                <div class="hero__aurora-streaks"></div>
+            </div>
+
+            <!-- Copy -->
+            <div class="hero__content">
+                <span class="hero__eyebrow">Reimagining the Workplace</span>
+                <h2 class="hero__title">
+                    Where remote teams build<br>
+                    <span class="hero__title-accent">strong culture</span>
+                </h2>
+                <p class="hero__subtitle">
+                    The Aurora HR Tech platform combines cutting-edge AI with the essential
+                    human touch to transform your remote workforce into a competitive advantage.
+                </p>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="hero__dashboard-wrap">
+                <div class="hero__dashboard-card">
+
+                    <!-- Window chrome -->
+                    <div class="hero__dash-header">
+                        <div class="hero__dash-dots" aria-hidden="true">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="hero__dash-title">Plano de Ação · Individual</span>
+                        <span class="hero__dash-badge">Tecnologia</span>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="hero__dash-body">
+
+                        <!-- Sidebar -->
+                        <aside class="hero__dash-sidebar" aria-label="Menu de navegação">
+                            <div class="hero__profile-block">
+                                <div class="hero__avatar" aria-hidden="true">FO</div>
+                                <div class="hero__profile-info">
+                                    <div class="hero__profile-name">Felipe Oliveira</div>
+                                    <div class="hero__profile-role">Product Manager</div>
+                                    <span class="hero__dept-badge">PMO · Avançado</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <p class="hero__sidebar-label">Menu</p>
+                                <ul class="hero__sidebar-nav">
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◈</span>
+                                            Dashboard</a></li>
+                                    <li><a href="#" class="hero__sidebar-link hero__sidebar-link--active"><span
+                                                aria-hidden="true">◎</span> Visão de Resultados</a></li>
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">⊕</span>
+                                            Mapeamento</a></li>
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">✦</span>
+                                            Highlights</a></li>
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◫</span> Plano
+                                            de Ação</a></li>
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◉</span>
+                                            Recrutamento</a></li>
+                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">⊞</span>
+                                            Mentoria CRHM</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+
+                        <!-- Main Panel -->
+                        <div class="hero__dash-main">
+
+                            <!-- Row: Lowlights + Highlights com gráfico -->
+                            <div class="hero__dash-row">
+                                <div class="hero__panel">
+                                    <p class="hero__panel-title">Lowlights</p>
+                                    <ul class="hero__highlight-list">
+                                        <li>Entregou bem mas não comunicou individualmente</li>
+                                        <li>Talvez delegue com conflito no ambiente</li>
+                                        <li>Decisões lentas e comunicação imprecisa</li>
+                                        <li>Muita falta reativa nas metas</li>
+                                    </ul>
+                                </div>
+
+                                <div class="hero__panel">
+                                    <p class="hero__panel-title">Highlights</p>
+                                    <ul class="hero__highlight-list hero__highlight-list--mb">
+                                        <li>Alta performance quando comparado com Emily</li>
+                                        <li>Tem estado de alta influência nas áreas</li>
+                                    </ul>
+                                    <div class="hero__bar-chart" role="img"
+                                        aria-label="Gráfico de performance trimestral">
+                                        <div class="hero__bar-group">
+                                            <div class="hero__bar-pair">
+                                                <div class="hero__bar hero__bar--a" style="height:45px"></div>
+                                                <div class="hero__bar hero__bar--b" style="height:38px"></div>
+                                            </div>
+                                            <span class="hero__bar-label">Q1</span>
+                                        </div>
+                                        <div class="hero__bar-group">
+                                            <div class="hero__bar-pair">
+                                                <div class="hero__bar hero__bar--a" style="height:52px"></div>
+                                                <div class="hero__bar hero__bar--b" style="height:58px"></div>
+                                            </div>
+                                            <span class="hero__bar-label">Q2</span>
+                                        </div>
+                                        <div class="hero__bar-group">
+                                            <div class="hero__bar-pair">
+                                                <div class="hero__bar hero__bar--a" style="height:35px"></div>
+                                                <div class="hero__bar hero__bar--b" style="height:48px"></div>
+                                            </div>
+                                            <span class="hero__bar-label">Q3</span>
+                                        </div>
+                                        <div class="hero__bar-group">
+                                            <div class="hero__bar-pair">
+                                                <div class="hero__bar hero__bar--a" style="height:60px"></div>
+                                                <div class="hero__bar hero__bar--b" style="height:55px"></div>
+                                            </div>
+                                            <span class="hero__bar-label">Q4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- KPIs -->
+                            <div class="hero__kpi-row">
+                                <div class="hero__kpi">
+                                    <span class="hero__kpi-val hero__kpi-val--up">+24%</span>
+                                    <span class="hero__kpi-lbl">Performance</span>
+                                </div>
+                                <div class="hero__kpi">
+                                    <span class="hero__kpi-val">132</span>
+                                    <span class="hero__kpi-lbl">Pontos NPS</span>
+                                </div>
+                                <div class="hero__kpi">
+                                    <span class="hero__kpi-val hero__kpi-val--up">8.9</span>
+                                    <span class="hero__kpi-lbl">Engagement</span>
+                                </div>
+                            </div>
+
+                            <!-- Progress Bars -->
+                            <div class="hero__panel">
+                                <p class="hero__panel-title">Foco Contratação</p>
+                                <div class="hero__progress-list">
+                                    <div class="hero__progress-item">
+                                        <div class="hero__progress-meta"><span>Liderança</span><span>88%</span></div>
+                                        <div class="hero__progress-track">
+                                            <div class="hero__progress-fill" style="width:88%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="hero__progress-item">
+                                        <div class="hero__progress-meta"><span>Comunicação</span><span>69%</span></div>
+                                        <div class="hero__progress-track">
+                                            <div class="hero__progress-fill" style="width:69%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="hero__progress-item">
+                                        <div class="hero__progress-meta"><span>Inovação</span><span>43%</span></div>
+                                        <div class="hero__progress-track">
+                                            <div class="hero__progress-fill" style="width:43%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="hero__progress-item">
+                                        <div class="hero__progress-meta"><span>Estratégia</span><span>22%</span></div>
+                                        <div class="hero__progress-track">
+                                            <div class="hero__progress-fill" style="width:22%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /.hero__dash-main -->
+                    </div><!-- /.hero__dash-body -->
+                </div><!-- /.hero__dashboard-card -->
+            </div><!-- /.hero__dashboard-wrap -->
+
+            <!-- Cloud Transition -->
+            <div class="hero__cloud-transition" aria-hidden="true">
+                <div class="hero__cloud-puff hero__cloud-puff--1"></div>
+                <div class="hero__cloud-puff hero__cloud-puff--2"></div>
+                <div class="hero__cloud-puff hero__cloud-puff--3"></div>
+                <div class="hero__cloud-puff hero__cloud-puff--4"></div>
+                <div class="hero__cloud-puff hero__cloud-puff--5"></div>
+                <svg viewBox="0 0 1440 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <defs>
+                        <filter id="cloud-blur">
+                            <feGaussianBlur stdDeviation="6" />
+                        </filter>
+                    </defs>
+                    <ellipse cx="720" cy="140" rx="900" ry="90" fill="#f1f5f9" filter="url(#cloud-blur)" opacity=".6" />
+                    <ellipse cx="100" cy="110" rx="130" ry="55" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="260" cy="95" rx="170" ry="70" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="440" cy="108" rx="150" ry="60" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="620" cy="88" rx="190" ry="78" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="820" cy="100" rx="160" ry="65" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="1000" cy="90" rx="175" ry="72" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="1180" cy="105" rx="155" ry="62" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <ellipse cx="1360" cy="95" rx="140" ry="58" fill="#ffffff" filter="url(#cloud-blur)" />
+                    <rect x="0" y="110" width="1440" height="30" fill="#ffffff" />
+                </svg>
+            </div>
+
+        </section>
+        <!-- ════════════════════════ /HERO ════════════════════════════════ -->
+
+
+        <!-- ════════════════════════ TRUSTED STRIP ═══════════════════════ -->
+        <section class="trusted" aria-label="Empresas parceiras">
+            <p class="trusted__label">Trusted by leading companies worldwide</p>
+            <div class="trusted__carousel-wrapper">
+                <div class="trusted__carousel-track">
+                    <!-- Set 1 -->
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--adobe">Adobe</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--evernote">Evernote</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--atlassian">ATLASSIAN</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--gusto">gusto</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--spacex">SPACEX</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--spotify">Spotify</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--calendly">Calendly</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--notion">Notion</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--slack">Slack</span></div>
+                    <div class="trusted__logo-item"><span
+                            class="trusted__logo-text trusted__logo-text--figma">Figma</span></div>
+                    <!-- Set 2 – duplicate for infinite loop -->
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--adobe">Adobe</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--evernote">Evernote</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--atlassian">ATLASSIAN</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--gusto">gusto</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--spacex">SPACEX</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--spotify">Spotify</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--calendly">Calendly</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--notion">Notion</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--slack">Slack</span></div>
+                    <div class="trusted__logo-item" aria-hidden="true"><span
+                            class="trusted__logo-text trusted__logo-text--figma">Figma</span></div>
+                </div>
+            </div>
+        </section>
+        <!-- ════════════════════════ /TRUSTED STRIP ══════════════════════ -->
+
+        <!-- ============================ Seção Dores do cliente e Solução - 2 ============================ -->
         <section class="servicos">
             <div class="container servicos__recipiente">
                 <header class="servicos__cabecalho">
                     <h2 class="servicos__titulo">Entenda os Desafios do RH Atual</h2>
-                    <p class="servicos__descricao">A falta de dados integrados prejudica a tomada de decisão. Veja como ajudamos a superar essas dores.</p>
+                    <p class="servicos__descricao">A falta de dados integrados prejudica a tomada de decisão. Veja como
+                        ajudamos a superar essas dores.</p>
                 </header>
-
-                <!-- ============================ Seção Dores do cliente e Solução - 2 ============================ -->
                 <div class="servicos__conteudo">
                     <div class="servicos__grade">
                         <!-- Card 1 -->
@@ -145,7 +408,9 @@
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Morosidade no levantamento de dados</h3>
-                            <p class="cartao-servico__descricao">Horas perdidas em planilhas desconectadas? A Aurora consolida dados de performance, cultura e engajamento em uma única solução, em tempo real.</p>
+                            <p class="cartao-servico__descricao">Horas perdidas em planilhas desconectadas? A Aurora
+                                consolida dados de performance, cultura e engajamento em uma única solução, em tempo
+                                real.</p>
                         </article>
 
                         <!-- Card 2 -->
@@ -154,7 +419,9 @@
                                 <i class="fa-solid fa-arrow-trend-up"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Dificuldade com planos de ação</h3>
-                            <p class="cartao-servico__descricao">Transformar feedbacks em ações práticas é um desafio? Guiamos o desenvolvimento de cada colaborador com recomendações personalizadas e acompanhamento contínuo.</p>
+                            <p class="cartao-servico__descricao">Transformar feedbacks em ações práticas é um desafio?
+                                Guiamos o desenvolvimento de cada colaborador com recomendações personalizadas e
+                                acompanhamento contínuo.</p>
                         </article>
 
                         <!-- Card 3 -->
@@ -163,7 +430,9 @@
                                 <i class="fa-solid fa-magnifying-glass-chart"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Avaliação de desempenho subjetiva</h3>
-                            <p class="cartao-servico__descricao">Decisões pautadas apenas em intuição? Substitua o achismo por métricas claras de performance que justificam promoções, aumentos e sucessão.</p>
+                            <p class="cartao-servico__descricao">Decisões pautadas apenas em intuição? Substitua o
+                                achismo por métricas claras de performance que justificam promoções, aumentos e
+                                sucessão.</p>
                         </article>
 
                         <!-- Card 4 -->
@@ -172,7 +441,9 @@
                                 <i class="fa-regular fa-eye"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Perda de talentos estratégicos</h3>
-                            <p class="cartao-servico__descricao">Sua empresa perde talentos essenciais sem aviso? Identifique e antecipe os riscos de saída com análises comportamentais preventivas baseadas em IA.</p>
+                            <p class="cartao-servico__descricao">Sua empresa perde talentos essenciais sem aviso?
+                                Identifique e antecipe os riscos de saída com análises comportamentais preventivas
+                                baseadas em IA.</p>
                         </article>
 
                         <!-- Card 5 -->
@@ -181,7 +452,9 @@
                                 <i class="fa-solid fa-users"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Falta de direcionamento para líderes</h3>
-                            <p class="cartao-servico__descricao">Seus gestores sabem exatamente quem precisa de suporte e quem está pronto para crescer? A Aurora mostra o caminho com insights e ações que podem ser aplicadas rapidamente.</p>
+                            <p class="cartao-servico__descricao">Seus gestores sabem exatamente quem precisa de suporte
+                                e quem está pronto para crescer? A Aurora mostra o caminho com insights e ações que
+                                podem ser aplicadas rapidamente.</p>
                         </article>
 
                         <!-- Card 6 -->
@@ -190,7 +463,9 @@
                                 <i class="fa-solid fa-table-cells-large"></i>
                             </div>
                             <h3 class="cartao-servico__titulo">Impacto financeiro invisível do turnover</h3>
-                            <p class="cartao-servico__descricao">Cada desligamento custa de 50% a 200% da remuneração anual. A Aurora torna esse impacto visível antes que ele aconteça para que você possa decidir e agir.</p>
+                            <p class="cartao-servico__descricao">Cada desligamento custa de 50% a 200% da remuneração
+                                anual. A Aurora torna esse impacto visível antes que ele aconteça para que você possa
+                                decidir e agir.</p>
                         </article>
                     </div>
                 </div>
@@ -198,190 +473,203 @@
         </section>
 
         <!-- ============================  SEÇÃO FUNCIONAMENTO - 3 ============================ -->
-<section class="funcionalidades" id="funcionalidades">
-        <div class="container">
+        <section class="funcionalidades" id="funcionalidades">
+            <div class="container">
 
-            <!-- Linha Superior: Vantagens e Depoimento -->
-            <div class="funcionalidades__linha-superior">
-                <!-- Coluna Esquerda: Texto e Benefícios -->
-                <div class="funcionalidades__beneficios">
-                    <h2 class="funcionalidades__titulo-beneficios">O método de gestão de pessoas que funciona até nos momentos mais
-                        difíceis</h2>
-                    <p class="funcionalidades__subtitulo-beneficios"> Ao aplicar esse método, sua empresa vai conquistar:</p>
+                <!-- Linha Superior: Vantagens e Depoimento -->
+                <div class="funcionalidades__linha-superior">
+                    <!-- Coluna Esquerda: Texto e Benefícios -->
+                    <div class="funcionalidades__beneficios">
+                        <h2 class="funcionalidades__titulo-beneficios">O método de gestão de pessoas que funciona até
+                            nos momentos mais
+                            difíceis</h2>
+                        <p class="funcionalidades__subtitulo-beneficios"> Ao aplicar esse método, sua empresa vai
+                            conquistar:</p>
 
-                    <ul class="funcionalidades__lista-beneficios">
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            Um ritmo autêntico, alinhado com a cultura da sua empresa
-                        </li>
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            A habilidade de transformar dados de RH em decisões de negócio
-                        </li>
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            Tranquilidade para gerenciar desligamentos sem perder o clima organizacional
-                        </li>
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            Fim das decisões por intuição e mais precisão estratégica no dia a dia
-                        </li>
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            Clareza do desenvolvimento das lideranças e maior produtividade
-                        </li>
-                        <li>
-                            <span class="funcionalidades__seta-marcador">➔</span>
-                            A satisfação de ver o turnover cair com times mais engajados
-                        </li>
-                    </ul>
-
-                    <p class="funcionalidades__descricao-beneficios">
-                        Sabemos que pequenas mudanças, consolidadas com tecnologia e dados de qualidade, transformam os
-                        resultados da sua corporação!
-                    </p>
-                    <p class="funcionalidades__descricao-beneficios">
-                        E quem pode comprovar isso não somos nós, mas sim a experiência prática dos nossos parceiros de
-                        RH.
-                    </p>
-                </div>
-
-                <!-- Coluna Direita: Card de Depoimento -->
-                <div class="funcionalidades__coluna-depoimento">
-                    <p class="funcionalidades__texto-depoimento">Essas lideranças já deram o primeiro passo. Agora é a sua vez!
-                    </p>
-
-                    <div class="cartao-depoimento">
-                        <div class="cartao-depoimento__cabecalho">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                                alt="Kelly Santos" class="cartao-depoimento__foto">
-                            <div class="cartao-depoimento__informacoes">
-                                <h4 class="cartao-depoimento__nome">Kelly Santos</h4>
-                                <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
-                            </div>
-                            <span class="cartao-depoimento__icone-coracao">♥</span>
-                        </div>
-
-                        <div class="cartao-depoimento__corpo">
-                            <p>
-                                "Um mês depois de começar a utilizar a plataforma da Aurora Pro, sinto que a gestão do
-                                nosso time está nos trilhos. Nas primeiras semanas conseguimos consolidar o mapeamento
-                                de performance e direcionar as lideranças com planos de ação claros. Foi uma grande
-                                vitória para nós conseguir embasar as decisões críticas. Também conseguimos desenhar
-                                planos de desenvolvimento que de fato funcionam no dia a dia."
-                            </p>
-                        </div>
-
-                        <!-- Controles do depoimento -->
-                        <div class="cartao-depoimento__controles">
-                            <span class="cartao-depoimento__seta-navegacao cartao-depoimento__seta-navegacao--anterior">‹</span>
-                            <div class="cartao-depoimento__pontos">
-                                <span class="cartao-depoimento__ponto is-ativo"></span>
-                                <span class="cartao-depoimento__ponto"></span>
-                                <span class="cartao-depoimento__ponto"></span>
-                                <span class="cartao-depoimento__ponto"></span>
-                                <span class="cartao-depoimento__ponto"></span>
-                            </div>
-                            <span class="cartao-depoimento__seta-navegacao cartao-depoimento__seta-navegacao--proximo">›</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Linha Inferior: Checklist de problemas -->
-            <div class="funcionalidades__linha-inferior">
-                <h2 class="funcionalidades__titulo-checklist">Mas será que a Aurora é para a sua empresa?</h2>
-
-                <p class="funcionalidades__subtitulo-checklist">
-                    Pense nos últimos meses da sua gestão de pessoas. Você sente que os dias passam, as metas de
-                    turnover estouram e a gestão de talentos continua fora de controle?
-                </p>
-                <p class="funcionalidades__descricao-negrito-checklist">
-                    Sua empresa se identifica com alguma dessas situações? ⬇
-                </p>
-
-                <div class="funcionalidades__grade-checklist">
-                    <!-- Ilustrações/Mockups no lado esquerdo -->
-                    <div class="funcionalidades__coluna-mockup">
-                        <div class="funcionalidades__recipiente-mockup">
-                            <!-- Grid/Calendário representativo da imagem -->
-                            <div class="mini-painel">
-                                <div class="mini-painel__cabecalho"></div>
-                                <div class="mini-painel__grade">
-                                    <div class="mini-painel__celula mini-painel__celula--azul"></div>
-                                    <div class="mini-painel__celula mini-painel__celula--amarelo"></div>
-                                    <div class="mini-painel__celula mini-painel__celula--verde"></div>
-                                    <div class="mini-painel__celula mini-painel__celula--vermelho"></div>
-                                </div>
-                            </div>
-
-                            <!-- Laptop representativo -->
-                            <div class="notebook">
-                                <div class="notebook__tela">
-                                    <div class="notebook__conteudo">
-                                        <div class="notebook__avatar"></div>
-                                        <div class="notebook__linha notebook__linha--longa"></div>
-                                        <div class="notebook__linha notebook__linha--curta"></div>
-                                    </div>
-                                </div>
-                                <div class="notebook__teclado"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Caixa de seleção no lado direito -->
-                    <div class="funcionalidades__coluna-caixa-checklist">
-                        <ul class="funcionalidades__lista-caixas-selecao">
+                        <ul class="funcionalidades__lista-beneficios">
                             <li>
-                                <span class="funcionalidades__caixa-selecao"></span>
-                                <p>O turnover aumenta e você sente o impacto financeiro de desligamentos mal planejados;
-                                </p>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                Um ritmo autêntico, alinhado com a cultura da sua empresa
                             </li>
                             <li>
-                                <span class="funcionalidades__caixa-selecao"></span>
-                                <p>A sensação de não conseguir consolidar dados de performance frustra a diretoria;</p>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                A habilidade de transformar dados de RH em decisões de negócio
                             </li>
                             <li>
-                                <span class="funcionalidades__caixa-selecao"></span>
-                                <p>As lideranças vivem apagando incêndios operacionais e nunca têm tempo para o
-                                    desenvolvimento do time;</p>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                Tranquilidade para gerenciar desligamentos sem perder o clima organizacional
                             </li>
                             <li>
-                                <span class="funcionalidades__caixa-selecao"></span>
-                                <p>O RH se sente soterrado por uma avalanche de demandas burocráticas, sem conseguir
-                                    atuar estrategicamente;</p>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                Fim das decisões por intuição e mais precisão estratégica no dia a dia
                             </li>
                             <li>
-                                <span class="funcionalidades__caixa-selecao"></span>
-                                <p>Chega o fim do trimestre e a falta de visibilidade do ROI de pessoas consome as
-                                    discussões.</p>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                Clareza do desenvolvimento das lideranças e maior produtividade
+                            </li>
+                            <li>
+                                <span class="funcionalidades__seta-marcador">➔</span>
+                                A satisfação de ver o turnover cair com times mais engajados
                             </li>
                         </ul>
+
+                        <p class="funcionalidades__descricao-beneficios">
+                            Sabemos que pequenas mudanças, consolidadas com tecnologia e dados de qualidade, transformam
+                            os
+                            resultados da sua corporação!
+                        </p>
+                        <p class="funcionalidades__descricao-beneficios">
+                            E quem pode comprovar isso não somos nós, mas sim a experiência prática dos nossos parceiros
+                            de
+                            RH.
+                        </p>
+                    </div>
+
+                    <!-- Coluna Direita: Card de Depoimento -->
+                    <div class="funcionalidades__coluna-depoimento">
+                        <p class="funcionalidades__texto-depoimento">Essas lideranças já deram o primeiro passo. Agora é
+                            a sua vez!
+                        </p>
+
+                        <div class="cartao-depoimento">
+                            <div class="cartao-depoimento__cabecalho">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                                    alt="Kelly Santos" class="cartao-depoimento__foto">
+                                <div class="cartao-depoimento__informacoes">
+                                    <h4 class="cartao-depoimento__nome">Kelly Santos</h4>
+                                    <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
+                                </div>
+                                <span class="cartao-depoimento__icone-coracao">♥</span>
+                            </div>
+
+                            <div class="cartao-depoimento__corpo">
+                                <p>
+                                    "Um mês depois de começar a utilizar a plataforma da Aurora Pro, sinto que a gestão
+                                    do
+                                    nosso time está nos trilhos. Nas primeiras semanas conseguimos consolidar o
+                                    mapeamento
+                                    de performance e direcionar as lideranças com planos de ação claros. Foi uma grande
+                                    vitória para nós conseguir embasar as decisões críticas. Também conseguimos desenhar
+                                    planos de desenvolvimento que de fato funcionam no dia a dia."
+                                </p>
+                            </div>
+
+                            <!-- Controles do depoimento -->
+                            <div class="cartao-depoimento__controles">
+                                <span
+                                    class="cartao-depoimento__seta-navegacao cartao-depoimento__seta-navegacao--anterior">‹</span>
+                                <div class="cartao-depoimento__pontos">
+                                    <span class="cartao-depoimento__ponto is-ativo"></span>
+                                    <span class="cartao-depoimento__ponto"></span>
+                                    <span class="cartao-depoimento__ponto"></span>
+                                    <span class="cartao-depoimento__ponto"></span>
+                                    <span class="cartao-depoimento__ponto"></span>
+                                </div>
+                                <span
+                                    class="cartao-depoimento__seta-navegacao cartao-depoimento__seta-navegacao--proximo">›</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Rodapé da seção de funcionalidades com botão -->
-                <div class="funcionalidades__rodape-checklist">
-                    <p class="funcionalidades__mensagem-destaque-rodape">
-                        Nós entendemos perfeitamente. Sabemos como é lidar com o orçamento pressionado e a frustração de
-                        não consolidar a gestão de pessoas.
+                <!-- Linha Inferior: Checklist de problemas -->
+                <div class="funcionalidades__linha-inferior">
+                    <h2 class="funcionalidades__titulo-checklist">Mas será que a Aurora é para a sua empresa?</h2>
+
+                    <p class="funcionalidades__subtitulo-checklist">
+                        Pense nos últimos meses da sua gestão de pessoas. Você sente que os dias passam, as metas de
+                        turnover estouram e a gestão de talentos continua fora de controle?
                     </p>
-                    <p class="funcionalidades__mensagem-rodape">
-                        Mas não precisa ser assim. A Aurora Pro foi desenvolvida para ajudar a sua empresa a conquistar
-                        mais controle, clareza e previsibilidade sobre o capital humano.
-                    </p>
-                    <p class="funcionalidades__sub-mensagem-rodape">
-                        Se você se identificou com pelo menos uma das opções acima, não se preocupe – somos
-                        especialistas em estruturar esses cenários corporativos.
+                    <p class="funcionalidades__descricao-negrito-checklist">
+                        Sua empresa se identifica com alguma dessas situações? ⬇
                     </p>
 
-                    <a href="#contato" class="botao-cta">A Aurora é para a minha empresa!</a>
+                    <div class="funcionalidades__grade-checklist">
+                        <!-- Ilustrações/Mockups no lado esquerdo -->
+                        <div class="funcionalidades__coluna-mockup">
+                            <div class="funcionalidades__recipiente-mockup">
+                                <!-- Grid/Calendário representativo da imagem -->
+                                <div class="mini-painel">
+                                    <div class="mini-painel__cabecalho"></div>
+                                    <div class="mini-painel__grade">
+                                        <div class="mini-painel__celula mini-painel__celula--azul"></div>
+                                        <div class="mini-painel__celula mini-painel__celula--amarelo"></div>
+                                        <div class="mini-painel__celula mini-painel__celula--verde"></div>
+                                        <div class="mini-painel__celula mini-painel__celula--vermelho"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Laptop representativo -->
+                                <div class="notebook">
+                                    <div class="notebook__tela">
+                                        <div class="notebook__conteudo">
+                                            <div class="notebook__avatar"></div>
+                                            <div class="notebook__linha notebook__linha--longa"></div>
+                                            <div class="notebook__linha notebook__linha--curta"></div>
+                                        </div>
+                                    </div>
+                                    <div class="notebook__teclado"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Caixa de seleção no lado direito -->
+                        <div class="funcionalidades__coluna-caixa-checklist">
+                            <ul class="funcionalidades__lista-caixas-selecao">
+                                <li>
+                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <p>O turnover aumenta e você sente o impacto financeiro de desligamentos mal
+                                        planejados;
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <p>A sensação de não conseguir consolidar dados de performance frustra a diretoria;
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <p>As lideranças vivem apagando incêndios operacionais e nunca têm tempo para o
+                                        desenvolvimento do time;</p>
+                                </li>
+                                <li>
+                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <p>O RH se sente soterrado por uma avalanche de demandas burocráticas, sem conseguir
+                                        atuar estrategicamente;</p>
+                                </li>
+                                <li>
+                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <p>Chega o fim do trimestre e a falta de visibilidade do ROI de pessoas consome as
+                                        discussões.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Rodapé da seção de funcionalidades com botão -->
+                    <div class="funcionalidades__rodape-checklist">
+                        <p class="funcionalidades__mensagem-destaque-rodape">
+                            Nós entendemos perfeitamente. Sabemos como é lidar com o orçamento pressionado e a
+                            frustração de
+                            não consolidar a gestão de pessoas.
+                        </p>
+                        <p class="funcionalidades__mensagem-rodape">
+                            Mas não precisa ser assim. A Aurora Pro foi desenvolvida para ajudar a sua empresa a
+                            conquistar
+                            mais controle, clareza e previsibilidade sobre o capital humano.
+                        </p>
+                        <p class="funcionalidades__sub-mensagem-rodape">
+                            Se você se identificou com pelo menos uma das opções acima, não se preocupe – somos
+                            especialistas em estruturar esses cenários corporativos.
+                        </p>
+
+                        <a href="#contato" class="botao-cta">A Aurora é para a minha empresa!</a>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
-    </section>
+        </section>
 
         <!-- ============================  SEÇÃO AVALIAÇÃO DOS CLIENTES - 4 ============================ -->
         <section class="avaliacoes">
@@ -448,7 +736,8 @@
                 <header class="estatisticas__cabecalho">
                     <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="120"
                         class="estatisticas__logo">
-                    <p class="estatisticas__descricao">Nossa plataforma tem um impacto direto nos principais indicadores de gestão de pessoas e resultados financeiros do negócio.</p>
+                    <p class="estatisticas__descricao">Nossa plataforma tem um impacto direto nos principais indicadores
+                        de gestão de pessoas e resultados financeiros do negócio.</p>
                 </header>
 
                 <div class="estatisticas__grade">
@@ -478,50 +767,53 @@
         </section>
 
         <!-- ============================  SEÇÃO FLUXO - 6 ============================ -->
-<section class="fluxo" id="fluxo">
-        <div class="container">
-            <h2 class="fluxo__titulo-principal">Como é o fluxo da Aurora</h2>
+        <section class="fluxo" id="fluxo">
+            <div class="container">
+                <h2 class="fluxo__titulo-principal">Como é o fluxo da Aurora</h2>
 
-            <div class="fluxo__grade-passos">
-                <!-- Passo 1 -->
-                <div class="cartao-fluxo">
-                    <div class="cartao-fluxo__numero">1</div>
-                    <h3 class="cartao-fluxo__titulo">Aprenda sobre o time</h3>
-                    <p class="cartao-fluxo__descricao">
-                        A plataforma consolida o mapeamento inicial e diagnósticos de competência de cada liderança.
-                    </p>
-                </div>
+                <div class="fluxo__grade-passos">
+                    <!-- Passo 1 -->
+                    <div class="cartao-fluxo">
+                        <div class="cartao-fluxo__numero">1</div>
+                        <h3 class="cartao-fluxo__titulo">Aprenda sobre o time</h3>
+                        <p class="cartao-fluxo__descricao">
+                            A plataforma consolida o mapeamento inicial e diagnósticos de competência de cada liderança.
+                        </p>
+                    </div>
 
-                <!-- Passo 2 -->
-                <div class="cartao-fluxo">
-                    <div class="cartao-fluxo__numero">2</div>
-                    <h3 class="cartao-fluxo__titulo">Coloque o aprendizado em prática</h3>
-                    <p class="cartao-fluxo__descricao">
-                        Líderes aplicam planos de ação focados no dia a dia da equipe, promovendo melhorias na rotina.
-                    </p>
-                </div>
+                    <!-- Passo 2 -->
+                    <div class="cartao-fluxo">
+                        <div class="cartao-fluxo__numero">2</div>
+                        <h3 class="cartao-fluxo__titulo">Coloque o aprendizado em prática</h3>
+                        <p class="cartao-fluxo__descricao">
+                            Líderes aplicam planos de ação focados no dia a dia da equipe, promovendo melhorias na
+                            rotina.
+                        </p>
+                    </div>
 
-                <!-- Passo 3 -->
-                <div class="cartao-fluxo">
-                    <div class="cartao-fluxo__numero">3</div>
-                    <h3 class="cartao-fluxo__titulo">Troque conhecimento com especialistas</h3>
-                    <p class="cartao-fluxo__descricao">
-                        Acompanhamento contínuo e feedback para garantir que as ações gerem evolução e foco constante.
-                    </p>
-                </div>
+                    <!-- Passo 3 -->
+                    <div class="cartao-fluxo">
+                        <div class="cartao-fluxo__numero">3</div>
+                        <h3 class="cartao-fluxo__titulo">Troque conhecimento com especialistas</h3>
+                        <p class="cartao-fluxo__descricao">
+                            Acompanhamento contínuo e feedback para garantir que as ações gerem evolução e foco
+                            constante.
+                        </p>
+                    </div>
 
-                <!-- Passo 4 -->
-                <div class="cartao-fluxo">
-                    <div class="cartao-fluxo__numero">4</div>
-                    <h3 class="cartao-fluxo__titulo">Consolide e veja o resultado</h3>
-                    <p class="cartao-fluxo__descricao">
-                        Decisões baseadas em dados que resultam em alta performance, redução de turnover e maior ROI de
-                        talentos.
-                    </p>
+                    <!-- Passo 4 -->
+                    <div class="cartao-fluxo">
+                        <div class="cartao-fluxo__numero">4</div>
+                        <h3 class="cartao-fluxo__titulo">Consolide e veja o resultado</h3>
+                        <p class="cartao-fluxo__descricao">
+                            Decisões baseadas em dados que resultam em alta performance, redução de turnover e maior ROI
+                            de
+                            talentos.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- ============================  FAQ - 8 ============================ -->
         <section class="perguntas-frequentes">
@@ -534,13 +826,16 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">A Aurora é segura? Como tratam os dados dos colaboradores?</h3>
+                            <h3 class="perguntas-frequentes__pergunta">A Aurora é segura? Como tratam os dados dos
+                                colaboradores?</h3>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
                         </summary>
                         <div class="perguntas-frequentes__conteudo">
-                            <p class="perguntas-frequentes__texto">Sim, seguimos uma política interna rigorosa de segurança de dados, adequação total à LGPD e criptografia avançada para garantir a confidencialidade das respostas.</p>
+                            <p class="perguntas-frequentes__texto">Sim, seguimos uma política interna rigorosa de
+                                segurança de dados, adequação total à LGPD e criptografia avançada para garantir a
+                                confidencialidade das respostas.</p>
                         </div>
                     </details>
 
@@ -556,7 +851,9 @@
                             </span>
                         </summary>
                         <div class="perguntas-frequentes__conteudo">
-                            <p class="perguntas-frequentes__texto">O tempo de implantação é ágil e será definido após nossa primeira reunião de alinhamento com a sua equipe técnica (previsão média de fechamento para junho/26).</p>
+                            <p class="perguntas-frequentes__texto">O tempo de implantação é ágil e será definido após
+                                nossa primeira reunião de alinhamento com a sua equipe técnica (previsão média de
+                                fechamento para junho/26).</p>
                         </div>
                     </details>
 
@@ -566,13 +863,16 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-plug"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">A Aurora integra com nosso sistema de RH atual?</h3>
+                            <h3 class="perguntas-frequentes__pergunta">A Aurora integra com nosso sistema de RH atual?
+                            </h3>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
                         </summary>
                         <div class="perguntas-frequentes__conteudo">
-                            <p class="perguntas-frequentes__texto">As integrações são totalmente analisadas e discutidas previamente para realização contínua, conectando-se facilmente ao seu ecossistema existente.</p>
+                            <p class="perguntas-frequentes__texto">As integrações são totalmente analisadas e discutidas
+                                previamente para realização contínua, conectando-se facilmente ao seu ecossistema
+                                existente.</p>
                         </div>
                     </details>
 
@@ -588,7 +888,9 @@
                             </span>
                         </summary>
                         <div class="perguntas-frequentes__conteudo">
-                            <p class="perguntas-frequentes__texto">O investimento varia de acordo com as funcionalidades escolhidas e o número de colaboradores. Consulte os valores com o nosso time comercial.</p>
+                            <p class="perguntas-frequentes__texto">O investimento varia de acordo com as funcionalidades
+                                escolhidas e o número de colaboradores. Consulte os valores com o nosso time comercial.
+                            </p>
                         </div>
                     </details>
 
@@ -598,13 +900,16 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-users"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">Preciso de uma equipe técnica de tecnologia para usar?</h3>
+                            <h3 class="perguntas-frequentes__pergunta">Preciso de uma equipe técnica de tecnologia para
+                                usar?</h3>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
                         </summary>
                         <div class="perguntas-frequentes__conteudo">
-                            <p class="perguntas-frequentes__texto">Não. A Aurora foi desenhada com uma interface intuitiva para ser usada por profissionais de RH e líderes de negócios, sem necessidade de conhecimento técnico em tecnologia.</p>
+                            <p class="perguntas-frequentes__texto">Não. A Aurora foi desenhada com uma interface
+                                intuitiva para ser usada por profissionais de RH e líderes de negócios, sem necessidade
+                                de conhecimento técnico em tecnologia.</p>
                         </div>
                     </details>
                 </div>
@@ -626,17 +931,23 @@
                     <div class="rodape__grupo-navegacao">
                         <h4 class="rodape__titulo-navegacao">Institucional</h4>
                         <ul class="rodape__lista-navegacao">
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Sobre a Aurora</a></li>
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Nossa Metodologia</a></li>
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Trabalhe Conosco</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Sobre a
+                                    Aurora</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Nossa
+                                    Metodologia</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Trabalhe
+                                    Conosco</a></li>
                         </ul>
                     </div>
                     <div class="rodape__grupo-navegacao">
                         <h4 class="rodape__titulo-navegacao">Legal e Privacidade</h4>
                         <ul class="rodape__lista-navegacao">
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Termos de Uso</a></li>
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Política de Privacidade</a></li>
-                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Portal de Privacidade (LGPD)</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Termos de
+                                    Uso</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Política de
+                                    Privacidade</a></li>
+                            <li class="rodape__item-navegacao"><a href="#" class="rodape__link-navegacao">Portal de
+                                    Privacidade (LGPD)</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -674,7 +985,8 @@
 
     <!-- LGPD Banner de Cookies -->
     <div id="cookie-banner" class="banner-cookies">
-        <p class="banner-cookies__texto">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com a nossa <a href="#" class="banner-cookies__link">Política de Privacidade</a>.</p>
+        <p class="banner-cookies__texto">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você
+            concorda com a nossa <a href="#" class="banner-cookies__link">Política de Privacidade</a>.</p>
         <button id="aceitar-cookies" class="botao banner-cookies__botao">Aceitar Cookies</button>
     </div>
 
