@@ -1,89 +1,139 @@
-// @TODO - Verificar se pode entregar com o JS desenvolvido
-// document.addEventListener('DOMContentLoaded', () => {
-//     const videoContainers = document.querySelectorAll('.customer-video-wrapper > div');
-//     const allVideos = document.querySelectorAll('.customer-video-wrapper video');
+document.addEventListener('DOMContentLoaded', () => {
+    initVideoPlayers();
+    initMobileMenu();
+    initScrollToTop();
+    initCookieBanner();
+});
 
-//     videoContainers.forEach(container => {
-//         const video = container.querySelector('video');
-//         const overlay = container.querySelector('.video-overlay');
+/**
+ * Inicializa os players de vídeo dos depoimentos
+ */
+function initVideoPlayers() {
+    const videoContainers = document.querySelectorAll('.avaliacoes__grade-videos > div');
+    const allVideos = document.querySelectorAll('.avaliacoes__grade-videos video');
+
+    if (videoContainers.length === 0) return;
+
+    videoContainers.forEach(container => {
+        const video = container.querySelector('video');
+        const overlay = container.querySelector('.avaliacoes__sobreposicao');
         
-//         if (!video || !overlay) return;
+        if (!video || !overlay) return;
 
-//         // Quando o usuário clicar no overlay, toca o vídeo
-//         overlay.addEventListener('click', () => {
-//             video.play();
-//         });
+        // Quando o usuário clicar no overlay, toca o vídeo
+        overlay.addEventListener('click', () => {
+            video.play();
+        });
 
-//         // Sincroniza o overlay e mostra os controles nativos quando tocar
-//         video.addEventListener('play', () => {
-//             // Pausa todos os outros vídeos automaticamente
-//             allVideos.forEach(v => {
-//                 if (v !== video && !v.paused) {
-//                     v.pause();
-//                 }
-//             });
+        // Sincroniza o overlay e mostra os controles nativos quando tocar
+        video.addEventListener('play', () => {
+            // Pausa todos os outros vídeos automaticamente para não ter sobreposição de áudio
+            allVideos.forEach(v => {
+                if (v !== video && !v.paused) {
+                    v.pause();
+                }
+            });
 
-//             container.classList.add('is-playing');
-//             video.setAttribute('controls', 'controls');
-//         });
+            container.classList.add('is-playing');
+            video.setAttribute('controls', 'controls');
+        });
 
-//         // Restaura o overlay e esconde os controles nativos quando pausar ou acabar
-//         video.addEventListener('pause', () => {
-//             container.classList.remove('is-playing');
-//             video.removeAttribute('controls');
-//         });
+        // Função auxiliar para restaurar o estado visual do player
+        const resetVideoState = () => {
+            container.classList.remove('is-playing');
+            video.removeAttribute('controls');
+        };
 
-//         video.addEventListener('ended', () => {
-//             container.classList.remove('is-playing');
-//             video.removeAttribute('controls');
-//         });
-//     });
+        video.addEventListener('pause', resetVideoState);
+        video.addEventListener('ended', resetVideoState);
+    });
+}
 
-//     // Toggle menu mobile
-//     const menuBtn = document.querySelector('.header__menu-btn');
-//     const navLinks = document.querySelector('.header__nav__links');
+/**
+ * Inicializa o menu mobile e sua navegação
+ */
+function initMobileMenu() {
+    const menuBtn = document.querySelector('.cabecalho__botao-menu');
+    const navLinks = document.querySelector('.cabecalho__lista-navegacao');
 
-//     if (menuBtn && navLinks) {
-//         menuBtn.addEventListener('click', () => {
-//             const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-//             menuBtn.setAttribute('aria-expanded', !isExpanded);
-//             navLinks.classList.toggle('is-active');
-//         });
+    if (!menuBtn || !navLinks) return;
 
-//         // Fechar ao clicar fora
-//         document.addEventListener('click', (e) => {
-//             if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-//                 menuBtn.setAttribute('aria-expanded', 'false');
-//                 navLinks.classList.remove('is-active');
-//             }
-//         });
+    const closeMenu = () => {
+        menuBtn.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('is-active');
+    };
 
-//         // Fechar ao pressionar Escape
-//         document.addEventListener('keydown', (e) => {
-//             if (e.key === 'Escape' && navLinks.classList.contains('is-active')) {
-//                 menuBtn.setAttribute('aria-expanded', 'false');
-//                 navLinks.classList.remove('is-active');
-//                 menuBtn.focus(); // devolve foco para o botão
-//             }
-//         });
-//     }
+    const toggleMenu = () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('is-active');
+    };
 
-//     // Scroll to Top
-//     const scrollTopBtn = document.getElementById('scrollTopBtn');
-//     if (scrollTopBtn) {
-//         window.addEventListener('scroll', () => {
-//             if (window.scrollY > 300) {
-//                 scrollTopBtn.classList.add('is-visible');
-//             } else {
-//                 scrollTopBtn.classList.remove('is-visible');
-//             }
-//         });
+    menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evita que o evento de fechar "clicar fora" seja acionado
+        toggleMenu();
+    });
 
-//         scrollTopBtn.addEventListener('click', () => {
-//             window.scrollTo({
-//                 top: 0,
-//                 behavior: 'smooth'
-//             });
-//         });
-//     }
-// });
+    // Fechar ao clicar fora do menu
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('is-active')) {
+            closeMenu();
+        }
+    });
+
+    // Fechar ao pressionar a tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('is-active')) {
+            closeMenu();
+            menuBtn.focus(); // Devolve foco para o botão para acessibilidade
+        }
+    });
+}
+
+/**
+ * Inicializa o botão de voltar ao topo
+ */
+function initScrollToTop() {
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    if (!scrollTopBtn) return;
+
+    // Usa 'passive: true' para otimizar o desempenho do evento de scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('is-visible');
+        } else {
+            scrollTopBtn.classList.remove('is-visible');
+        }
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+/**
+ * Inicializa o banner de cookies da LGPD
+ */
+function initCookieBanner() {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('aceitar-cookies');
+
+    if (!cookieBanner || !acceptBtn) return;
+
+    // Verifica se o usuário já aceitou
+    if (!localStorage.getItem('cookiesAccepted')) {
+        // Mostra o banner com um pequeno delay para suavidade
+        setTimeout(() => {
+            cookieBanner.classList.add('is-visible');
+        }, 500);
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.classList.remove('is-visible');
+    });
+}
