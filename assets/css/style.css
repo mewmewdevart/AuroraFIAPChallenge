@@ -495,7 +495,7 @@ body {
     z-index: 5;
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-large) 0;
-    max-width: 760px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
