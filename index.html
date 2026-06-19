@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags -->
+    <!-- Meta Tags de SEO -->
     <title>Aurora - Decisões sobre pessoas guiadas por dados</title>
     <meta name="description"
         content="A Aurora transforma dados de performance, cultura e engajamento em insights para líderes. Agende uma demonstração gratuita.">
@@ -20,7 +20,7 @@
 
     <link rel="canonical" href="https://aurorapro.com.br/">
 
-    <!-- Preconnects -->
+    <!-- Pré-conexões de Origem (Preconnect) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -33,19 +33,19 @@
     <meta property="og:url" content="https://aurorapro.com.br/">
     <meta property="og:site_name" content="Aurora">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="#">
+    <meta property="og:image" content="https://aurorapro.com.br/assets/img/social-preview.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Aurora - Plataforma de People Analytics">
 
-    <!-- Twitter Cards -->
+    <!-- Cartões do Twitter (Twitter Cards) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aurora - Decisões sobre pessoas guiadas por dados">
     <meta name="twitter:description"
         content="A Aurora transforma dados de performance, cultura e engajamento em insights para líderes.">
-    <meta name="twitter:image" content="#">
+    <meta name="twitter:image" content="https://aurorapro.com.br/assets/img/social-preview.png">
 
-    <!-- Favicon -->
+    <!-- Favicon (Ícone do Navegador) -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
@@ -61,10 +61,10 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
 
-    <!-- CSS Customizado -->
+    <!-- CSS Customizado (Estilos) -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Dados Estruturados (JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,25 +86,27 @@
       }
     </script>
 
-    <!-- Tracking e Analytics (Placeholders) -->
-    <!-- Google Analytics (GA4) Placeholder -->
-    <!-- Google Tag Manager Placeholder -->
+    <!-- Rastreamento e Analytics (Placeholders) -->
+    <!-- Rastreamento do Google Analytics (GA4) -->
+    <!-- Rastreamento do Google Tag Manager -->
 </head>
 
 <body>
+    <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a>
+
     <header class="cabecalho">
         <div class="cabecalho__recipiente">
-            <h1 class="cabecalho__logo">
+            <div class="cabecalho__logo">
                 <a href="/" class="cabecalho__logo-link" title="Ir para a página inicial da Aurora">
                     <img class="cabecalho__logo-imagem" src="assets/img/aurora-color-logo-people-analytics-platform.png"
                         alt="Logo Aurora - Plataforma de People Analytics e Gestão de Performance" width="180">
                 </a>
-            </h1>
+            </div>
             <nav class="cabecalho__navegacao" aria-label="Menu principal">
-                <button class="cabecalho__botao-menu" aria-label="Abrir menu" aria-expanded="false">
+                <button class="cabecalho__botao-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <ul class="cabecalho__lista-navegacao">
+                <ul class="cabecalho__lista-navegacao" id="menu-navegacao">
                     <li>
                         <a href="#solucao">A Solução</a>
                     </li>
@@ -133,90 +135,90 @@
         </div>
     </header>
 
-    <main class="conteudo-principal">
+    <main class="conteudo-principal" id="conteudo-principal" tabindex="-1">
 
         <!-- ════════════════════════ SEÇÃO 1 — HERO ════════════════════════ -->
-        <section class="hero">
+        <section class="destaque">
 
-            <!-- Aurora Borealis Background -->
-            <div class="hero__aurora-bg" aria-hidden="true">
-                <div class="hero__stars"></div>
-                <div class="hero__aurora-layer hero__aurora-layer--3"></div>
-                <div class="hero__aurora-layer hero__aurora-layer--2"></div>
-                <div class="hero__aurora-layer hero__aurora-layer--1"></div>
-                <div class="hero__aurora-streaks"></div>
+            <!-- Fundo Temático Aurora Boreal -->
+            <div class="destaque__aurora-fundo" aria-hidden="true">
+                <div class="destaque__estrelas"></div>
+                <div class="destaque__aurora-camada destaque__aurora-camada--3"></div>
+                <div class="destaque__aurora-camada destaque__aurora-camada--2"></div>
+                <div class="destaque__aurora-camada destaque__aurora-camada--1"></div>
+                <div class="destaque__aurora-faixas"></div>
             </div>
 
-            <!-- Copy -->
-            <div class="hero__content">
-                <span class="hero__eyebrow">People Analytics para quem decide</span>
-                <h2 class="hero__title">
+            <!-- Textos da Seção (Copy) -->
+            <div class="destaque__conteudo">
+                <span class="destaque__pre-titulo">People Analytics para quem decide</span>
+                <h1 class="destaque__titulo">
                     Transforme dados de pessoas<br>
-                    <span class="hero__title-accent">em resultados para a sua empresa</span>
-                </h2>
-                <p class="hero__subtitle">
+                    <span class="destaque__titulo-destaque">em resultados para a sua empresa</span>
+                </h1>
+                <p class="destaque__subtitulo">
                     A Aurora cruza dados de performance, cultura e engajamento
                     para gerar os insights que sua liderança precisa,
                     com clareza, agilidade e impacto real no negócio.
                 </p>
             </div>
 
-            <!-- Dashboard Mockup -->
-            <div class="hero__dashboard-wrap">
-                <div class="hero__dashboard-card">
+            <!-- Mockup do Dashboard -->
+            <div class="destaque__painel-envoltorio">
+                <div class="destaque__painel-cartao">
 
-                    <!-- Window chrome -->
-                    <div class="hero__dash-header">
-                        <div class="hero__dash-dots" aria-hidden="true">
+                    <!-- Barra superior da janela -->
+                    <div class="destaque__painel-cabecalho">
+                        <div class="destaque__painel-pontos" aria-hidden="true">
                             <span></span><span></span><span></span>
                         </div>
-                        <span class="hero__dash-title">Plano de Ação · Individual</span>
-                        <span class="hero__dash-badge">Tecnologia</span>
+                        <span class="destaque__painel-titulo">Plano de Ação · Individual</span>
+                        <span class="destaque__painel-selo">Tecnologia</span>
                     </div>
 
-                    <!-- Body -->
-                    <div class="hero__dash-body">
+                    <!-- Corpo do dashboard -->
+                    <div class="destaque__painel-corpo">
 
-                        <!-- Sidebar -->
-                        <aside class="hero__dash-sidebar" aria-label="Menu de navegação">
-                            <div class="hero__profile-block">
-                                <div class="hero__avatar" aria-hidden="true">FO</div>
-                                <div class="hero__profile-info">
-                                    <div class="hero__profile-name">Felipe Oliveira</div>
-                                    <div class="hero__profile-role">Product Manager</div>
-                                    <span class="hero__dept-badge">PMO · Avançado</span>
+                        <!-- Barra lateral -->
+                        <aside class="destaque__painel-barra-lateral" aria-label="Menu de navegação">
+                            <div class="destaque__perfil-bloco">
+                                <div class="destaque__avatar" aria-hidden="true">FO</div>
+                                <div class="destaque__perfil-info">
+                                    <div class="destaque__perfil-nome">Felipe Oliveira</div>
+                                    <div class="destaque__perfil-cargo">Product Manager</div>
+                                    <span class="destaque__departamento-selo">PMO · Avançado</span>
                                 </div>
                             </div>
 
                             <div>
-                                <p class="hero__sidebar-label">Menu</p>
-                                <ul class="hero__sidebar-nav">
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◈</span>
+                                <p class="destaque__barra-lateral-rotulo">Menu</p>
+                                <ul class="destaque__barra-lateral-navegacao">
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">◈</span>
                                             Dashboard</a></li>
-                                    <li><a href="#" class="hero__sidebar-link hero__sidebar-link--active"><span
+                                    <li><a href="#" class="destaque__barra-lateral-link destaque__barra-lateral-link--ativo"><span
                                                 aria-hidden="true">◎</span> Visão de Resultados</a></li>
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">⊕</span>
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">⊕</span>
                                             Mapeamento</a></li>
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">✦</span>
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">✦</span>
                                             Highlights</a></li>
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◫</span> Plano
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">◫</span> Plano
                                             de Ação</a></li>
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">◉</span>
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">◉</span>
                                             Recrutamento</a></li>
-                                    <li><a href="#" class="hero__sidebar-link"><span aria-hidden="true">⊞</span>
+                                    <li><a href="#" class="destaque__barra-lateral-link"><span aria-hidden="true">⊞</span>
                                             Mentoria CRHM</a></li>
                                 </ul>
                             </div>
                         </aside>
 
                         <!-- Main Panel -->
-                        <div class="hero__dash-main">
+                        <div class="destaque__painel-principal">
 
                             <!-- Row: Lowlights + Highlights com gráfico -->
-                            <div class="hero__dash-row">
-                                <div class="hero__panel">
-                                    <p class="hero__panel-title">Lowlights</p>
-                                    <ul class="hero__highlight-list">
+                            <div class="destaque__painel-linha">
+                                <div class="destaque__painel-interno">
+                                    <p class="destaque__painel-interno-titulo">Lowlights</p>
+                                    <ul class="destaque__lista-destaques">
                                         <li>Entregou bem mas não comunicou individualmente</li>
                                         <li>Talvez delegue com conflito no ambiente</li>
                                         <li>Decisões lentas e comunicação imprecisa</li>
@@ -224,105 +226,105 @@
                                     </ul>
                                 </div>
 
-                                <div class="hero__panel">
-                                    <p class="hero__panel-title">Highlights</p>
-                                    <ul class="hero__highlight-list hero__highlight-list--mb">
+                                <div class="destaque__painel-interno">
+                                    <p class="destaque__painel-interno-titulo">Highlights</p>
+                                    <ul class="destaque__lista-destaques destaque__lista-destaques--mb">
                                         <li>Alta performance quando comparado com Emily</li>
                                         <li>Tem estado de alta influência nas áreas</li>
                                     </ul>
-                                    <div class="hero__bar-chart" role="img"
+                                    <div class="destaque__grafico-barras" role="img"
                                         aria-label="Gráfico de performance trimestral">
-                                        <div class="hero__bar-group">
-                                            <div class="hero__bar-pair">
-                                                <div class="hero__bar hero__bar--a" style="height:45px"></div>
-                                                <div class="hero__bar hero__bar--b" style="height:38px"></div>
+                                        <div class="destaque__grafico-grupo">
+                                            <div class="destaque__grafico-par">
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--a" style="height:45px"></div>
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--b" style="height:38px"></div>
                                             </div>
-                                            <span class="hero__bar-label">Q1</span>
+                                            <span class="destaque__grafico-barra-label">Q1</span>
                                         </div>
-                                        <div class="hero__bar-group">
-                                            <div class="hero__bar-pair">
-                                                <div class="hero__bar hero__bar--a" style="height:52px"></div>
-                                                <div class="hero__bar hero__bar--b" style="height:58px"></div>
+                                        <div class="destaque__grafico-grupo">
+                                            <div class="destaque__grafico-par">
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--a" style="height:52px"></div>
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--b" style="height:58px"></div>
                                             </div>
-                                            <span class="hero__bar-label">Q2</span>
+                                            <span class="destaque__grafico-barra-label">Q2</span>
                                         </div>
-                                        <div class="hero__bar-group">
-                                            <div class="hero__bar-pair">
-                                                <div class="hero__bar hero__bar--a" style="height:35px"></div>
-                                                <div class="hero__bar hero__bar--b" style="height:48px"></div>
+                                        <div class="destaque__grafico-grupo">
+                                            <div class="destaque__grafico-par">
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--a" style="height:35px"></div>
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--b" style="height:48px"></div>
                                             </div>
-                                            <span class="hero__bar-label">Q3</span>
+                                            <span class="destaque__grafico-barra-label">Q3</span>
                                         </div>
-                                        <div class="hero__bar-group">
-                                            <div class="hero__bar-pair">
-                                                <div class="hero__bar hero__bar--a" style="height:60px"></div>
-                                                <div class="hero__bar hero__bar--b" style="height:55px"></div>
+                                        <div class="destaque__grafico-grupo">
+                                            <div class="destaque__grafico-par">
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--a" style="height:60px"></div>
+                                                <div class="destaque__grafico-barra destaque__grafico-barra--b" style="height:55px"></div>
                                             </div>
-                                            <span class="hero__bar-label">Q4</span>
+                                            <span class="destaque__grafico-barra-label">Q4</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- KPIs -->
-                            <div class="hero__kpi-row">
-                                <div class="hero__kpi">
-                                    <span class="hero__kpi-val hero__kpi-val--up">+24%</span>
-                                    <span class="hero__kpi-lbl">Desempenho</span>
+                            <!-- Indicadores de Performance (KPIs) -->
+                            <div class="destaque__indicadores-linha">
+                                <div class="destaque__indicador">
+                                    <span class="destaque__indicador-valor destaque__indicador-valor--subindo">+24%</span>
+                                    <span class="destaque__indicador-rotulo">Desempenho</span>
                                 </div>
-                                <div class="hero__kpi">
-                                    <span class="hero__kpi-val">132</span>
-                                    <span class="hero__kpi-lbl">Pontos NPS</span>
+                                <div class="destaque__indicador">
+                                    <span class="destaque__indicador-valor">132</span>
+                                    <span class="destaque__indicador-rotulo">Pontos NPS</span>
                                 </div>
-                                <div class="hero__kpi">
-                                    <span class="hero__kpi-val hero__kpi-val--up">8.9</span>
-                                    <span class="hero__kpi-lbl">Engajamento</span>
-                                </div>
-                            </div>
-
-                            <!-- Progress Bars -->
-                            <div class="hero__panel">
-                                <p class="hero__panel-title">Foco Contratação</p>
-                                <div class="hero__progress-list">
-                                    <div class="hero__progress-item">
-                                        <div class="hero__progress-meta"><span>Liderança</span><span>88%</span></div>
-                                        <div class="hero__progress-track">
-                                            <div class="hero__progress-fill" style="width:88%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="hero__progress-item">
-                                        <div class="hero__progress-meta"><span>Comunicação</span><span>69%</span></div>
-                                        <div class="hero__progress-track">
-                                            <div class="hero__progress-fill" style="width:69%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="hero__progress-item">
-                                        <div class="hero__progress-meta"><span>Inovação</span><span>43%</span></div>
-                                        <div class="hero__progress-track">
-                                            <div class="hero__progress-fill" style="width:43%"></div>
-                                        </div>
-                                    </div>
-                                    <div class="hero__progress-item">
-                                        <div class="hero__progress-meta"><span>Estratégia</span><span>22%</span></div>
-                                        <div class="hero__progress-track">
-                                            <div class="hero__progress-fill" style="width:22%"></div>
-                                        </div>
-                                    </div>
+                                <div class="destaque__indicador">
+                                    <span class="destaque__indicador-valor destaque__indicador-valor--subindo">8.9</span>
+                                    <span class="destaque__indicador-rotulo">Engajamento</span>
                                 </div>
                             </div>
 
-                        </div><!-- /.hero__dash-main -->
-                    </div><!-- /.hero__dash-body -->
-                </div><!-- /.hero__dashboard-card -->
-            </div><!-- /.hero__dashboard-wrap -->
+                            <!-- Barras de progresso -->
+                            <div class="destaque__painel-interno">
+                                <p class="destaque__painel-interno-titulo">Foco Contratação</p>
+                                <div class="destaque__progresso-lista">
+                                    <div class="destaque__progresso-item">
+                                        <div class="destaque__progresso-metadados"><span>Liderança</span><span>88%</span></div>
+                                        <div class="destaque__progresso-trilha">
+                                            <div class="destaque__progresso-preenchimento" style="width:88%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="destaque__progresso-item">
+                                        <div class="destaque__progresso-metadados"><span>Comunicação</span><span>69%</span></div>
+                                        <div class="destaque__progresso-trilha">
+                                            <div class="destaque__progresso-preenchimento" style="width:69%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="destaque__progresso-item">
+                                        <div class="destaque__progresso-metadados"><span>Inovação</span><span>43%</span></div>
+                                        <div class="destaque__progresso-trilha">
+                                            <div class="destaque__progresso-preenchimento" style="width:43%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="destaque__progresso-item">
+                                        <div class="destaque__progresso-metadados"><span>Estratégia</span><span>22%</span></div>
+                                        <div class="destaque__progresso-trilha">
+                                            <div class="destaque__progresso-preenchimento" style="width:22%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-            <!-- Cloud Transition -->
-            <div class="hero__cloud-transition" aria-hidden="true">
-                <div class="hero__cloud-puff hero__cloud-puff--1"></div>
-                <div class="hero__cloud-puff hero__cloud-puff--2"></div>
-                <div class="hero__cloud-puff hero__cloud-puff--3"></div>
-                <div class="hero__cloud-puff hero__cloud-puff--4"></div>
-                <div class="hero__cloud-puff hero__cloud-puff--5"></div>
+                        </div><!-- /.destaque__painel-principal -->
+                    </div><!-- /.destaque__painel-corpo -->
+                </div><!-- /.destaque__painel-cartao -->
+            </div><!-- /.destaque__painel-envoltorio -->
+
+            <!-- Transição em formato de nuvem -->
+            <div class="destaque__transicao-nuvens" aria-hidden="true">
+                <div class="destaque__nuvenzinha destaque__nuvenzinha--1"></div>
+                <div class="destaque__nuvenzinha destaque__nuvenzinha--2"></div>
+                <div class="destaque__nuvenzinha destaque__nuvenzinha--3"></div>
+                <div class="destaque__nuvenzinha destaque__nuvenzinha--4"></div>
+                <div class="destaque__nuvenzinha destaque__nuvenzinha--5"></div>
                 <svg viewBox="0 0 1440 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                         <filter id="cloud-blur">
@@ -347,52 +349,52 @@
 
 
         <!-- ════════════════════════ TRUSTED STRIP ═══════════════════════ -->
-        <section class="trusted" aria-label="Empresas parceiras">
-            <p class="trusted__label">Empresas que já confiam na Aurora</p>
-            <div class="trusted__carousel-wrapper">
-                <div class="trusted__carousel-track">
-                    <!-- Set 1 -->
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--adobe">Adobe</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--evernote">Evernote</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--atlassian">ATLASSIAN</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--gusto">gusto</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--spacex">SPACEX</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--spotify">Spotify</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--calendly">Calendly</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--notion">Notion</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--slack">Slack</span></div>
-                    <div class="trusted__logo-item"><span
-                            class="trusted__logo-text trusted__logo-text--figma">Figma</span></div>
-                    <!-- Set 2 – duplicate for infinite loop -->
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--adobe">Adobe</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--evernote">Evernote</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--atlassian">ATLASSIAN</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--gusto">gusto</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--spacex">SPACEX</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--spotify">Spotify</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--calendly">Calendly</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--notion">Notion</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--slack">Slack</span></div>
-                    <div class="trusted__logo-item" aria-hidden="true"><span
-                            class="trusted__logo-text trusted__logo-text--figma">Figma</span></div>
+        <section class="parceiros" aria-label="Empresas parceiras">
+            <p class="parceiros__rotulo">Empresas que já confiam na Aurora</p>
+            <div class="parceiros__carrossel-moldura">
+                <div class="parceiros__carrossel-esteira">
+                    <!-- Conjunto 1 -->
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--adobe">Adobe</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--evernote">Evernote</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--atlassian">ATLASSIAN</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--gusto">gusto</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--spacex">SPACEX</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--spotify">Spotify</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--calendly">Calendly</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--notion">Notion</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--slack">Slack</span></div>
+                    <div class="parceiros__logo-item"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--figma">Figma</span></div>
+                    <!-- Conjunto 2 – duplicado para rotação contínua -->
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--adobe">Adobe</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--evernote">Evernote</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--atlassian">ATLASSIAN</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--gusto">gusto</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--spacex">SPACEX</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--spotify">Spotify</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--calendly">Calendly</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--notion">Notion</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--slack">Slack</span></div>
+                    <div class="parceiros__logo-item" aria-hidden="true"><span
+                            class="parceiros__logo-texto parceiros__logo-texto--figma">Figma</span></div>
                 </div>
             </div>
         </section>
@@ -400,7 +402,7 @@
 
         <!-- ============================ Seção Dores do cliente e Solução - 2 ============================ -->
         <section class="servicos" id="solucao">
-            <div class="container servicos__recipiente">
+            <div class="recipiente servicos__recipiente">
                 <header class="servicos__cabecalho">
                     <h2 class="servicos__titulo">Sua empresa vive algum desses cenários?</h2>
                     <p class="servicos__descricao">Quando os dados de pessoas estão espalhados, as decisões ficam lentas
@@ -408,7 +410,7 @@
                 </header>
                 <div class="servicos__conteudo">
                     <div class="servicos__grade">
-                        <!-- Card 1 -->
+                        <!-- Cartão 1 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--primario" aria-hidden="true">
                                 <i class="fa-solid fa-wand-magic-sparkles"></i>
@@ -419,7 +421,7 @@
                                 real.</p>
                         </article>
 
-                        <!-- Card 2 -->
+                        <!-- Cartão 2 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--rosa" aria-hidden="true">
                                 <i class="fa-solid fa-arrow-trend-up"></i>
@@ -430,7 +432,7 @@
                                 recomendações personalizadas.</p>
                         </article>
 
-                        <!-- Card 3 -->
+                        <!-- Cartão 3 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--verde" aria-hidden="true">
                                 <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -441,7 +443,7 @@
                                 movimentação.</p>
                         </article>
 
-                        <!-- Card 4 -->
+                        <!-- Cartão 4 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--primario" aria-hidden="true">
                                 <i class="fa-regular fa-eye"></i>
@@ -452,7 +454,7 @@
                                 baseadas em inteligência artificial.</p>
                         </article>
 
-                        <!-- Card 5 -->
+                        <!-- Cartão 5 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--rosa" aria-hidden="true">
                                 <i class="fa-solid fa-users"></i>
@@ -463,7 +465,7 @@
                                 painel de cada líder.</p>
                         </article>
 
-                        <!-- Card 6 -->
+                        <!-- Cartão 6 -->
                         <article class="cartao-servico">
                             <div class="cartao-servico__icone cartao-servico__icone--verde" aria-hidden="true">
                                 <i class="fa-solid fa-table-cells-large"></i>
@@ -480,7 +482,7 @@
 
         <!-- ============================  SEÇÃO FUNCIONAMENTO - 3 ============================ -->
         <section class="funcionalidades" id="funcionalidades">
-            <div class="container">
+            <div class="recipiente">
 
                 <!-- Linha Superior: Vantagens e Depoimento -->
                 <div class="funcionalidades__linha-superior">
@@ -525,24 +527,114 @@
                         <p class="funcionalidades__texto-depoimento">Quem já começou a usar conta como foi:</p>
 
                         <div class="cartao-depoimento">
-                            <div class="cartao-depoimento__cabecalho">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                                    alt="Marina M. M. Polverari" class="cartao-depoimento__foto">
-                                <div class="cartao-depoimento__informacoes">
-                                    <h4 class="cartao-depoimento__nome">Marina M. M. Polverari</h4>
-                                    <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
-                                </div>
-                                <span class="cartao-depoimento__icone-coracao">♥</span>
-                            </div>
+                            <div class="cartao-depoimento__slides">
+                                <!-- Depoimento 1 -->
+                                <div class="cartao-depoimento__slide is-ativo" role="tabpanel" id="depoimento-1" aria-labelledby="ponto-1" aria-hidden="false">
+                                    <div class="cartao-depoimento__cabecalho">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                                            alt="Marina M. M. Polverari" class="cartao-depoimento__foto">
+                                        <div class="cartao-depoimento__informacoes">
+                                            <h4 class="cartao-depoimento__nome">Marina M. M. Polverari</h4>
+                                            <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
+                                        </div>
+                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                    </div>
 
-                            <div class="cartao-depoimento__corpo">
-                                <p>
-                                    "Em menos de um mês com a Aurora, a gestão do nosso time mudou de patamar.
-                                    Conseguimos reunir os dados de performance num só lugar e dar pra cada líder
-                                    um plano de ação claro, com metas reais. Pela primeira vez, nossas decisões
-                                    sobre pessoas estão embasadas em dados e os planos de desenvolvimento
-                                    finalmente funcionam no dia a dia."
-                                </p>
+                                    <div class="cartao-depoimento__corpo">
+                                        <p>
+                                            "Em menos de um mês com a Aurora, a gestão do nosso time mudou de patamar.
+                                            Conseguimos reunir os dados de performance num só lugar e dar pra cada líder
+                                            um plano de ação claro, com metas reais. Pela primeira vez, nossas decisões
+                                            sobre pessoas estão embasadas em dados e os planos de desenvolvimento
+                                            finalmente funcionam no dia a dia."
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Depoimento 2 -->
+                                <div class="cartao-depoimento__slide" role="tabpanel" id="depoimento-2" aria-labelledby="ponto-2" aria-hidden="true" style="display: none;">
+                                    <div class="cartao-depoimento__cabecalho">
+                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
+                                            alt="Rodrigo Santos" class="cartao-depoimento__foto">
+                                        <div class="cartao-depoimento__informacoes">
+                                            <h4 class="cartao-depoimento__nome">Rodrigo Santos</h4>
+                                            <p class="cartao-depoimento__cargo">Head de Gente e Gestão na TechFlow</p>
+                                        </div>
+                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                    </div>
+
+                                    <div class="cartao-depoimento__corpo">
+                                        <p>
+                                            "O maior ganho foi a economia de tempo. Antes, gastávamos semanas consolidando
+                                            avaliações de desempenho em planilhas. Com a Aurora, tudo é automatizado.
+                                            O RH agora atua como parceiro estratégico de negócios, focando em pessoas
+                                            e não em processos manuais."
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Depoimento 3 -->
+                                <div class="cartao-depoimento__slide" role="tabpanel" id="depoimento-3" aria-labelledby="ponto-3" aria-hidden="true" style="display: none;">
+                                    <div class="cartao-depoimento__cabecalho">
+                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
+                                            alt="Camila Oliveira" class="cartao-depoimento__foto">
+                                        <div class="cartao-depoimento__informacoes">
+                                            <h4 class="cartao-depoimento__nome">Camila Oliveira</h4>
+                                            <p class="cartao-depoimento__cargo">Gerente de Operações na Vesta Logística</p>
+                                        </div>
+                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                    </div>
+
+                                    <div class="cartao-depoimento__corpo">
+                                        <p>
+                                            "Reduzimos nosso turnover em 35% no primeiro semestre utilizando a Aurora.
+                                            Os alertas preventivos de risco de saída nos permitiram agir antes que os
+                                            talentos decidissem sair, gerando um retorno financeiro imensurável."
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Depoimento 4 -->
+                                <div class="cartao-depoimento__slide" role="tabpanel" id="depoimento-4" aria-labelledby="ponto-4" aria-hidden="true" style="display: none;">
+                                    <div class="cartao-depoimento__cabecalho">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
+                                            alt="Felipe Almeida" class="cartao-depoimento__foto">
+                                        <div class="cartao-depoimento__informacoes">
+                                            <h4 class="cartao-depoimento__nome">Felipe Almeida</h4>
+                                            <p class="cartao-depoimento__cargo">CEO na Nexa Software</p>
+                                        </div>
+                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                    </div>
+
+                                    <div class="cartao-depoimento__corpo">
+                                        <p>
+                                            "Para a diretoria, a Aurora trouxe transparência. Agora conseguimos ver a
+                                            relação direta entre o engajamento das equipes e a performance do negócio.
+                                            É a primeira ferramenta de RH que conversa com a estratégia financeira."
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Depoimento 5 -->
+                                <div class="cartao-depoimento__slide" role="tabpanel" id="depoimento-5" aria-labelledby="ponto-5" aria-hidden="true" style="display: none;">
+                                    <div class="cartao-depoimento__cabecalho">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+                                            alt="Juliana Mendes" class="cartao-depoimento__foto">
+                                        <div class="cartao-depoimento__informacoes">
+                                            <h4 class="cartao-depoimento__nome">Juliana Mendes</h4>
+                                            <p class="cartao-depoimento__cargo">Coordenadora de T&D na Global Retail</p>
+                                        </div>
+                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                    </div>
+
+                                    <div class="cartao-depoimento__corpo">
+                                        <p>
+                                            "Os planos de ação gerados pela Aurora são sensacionais. Cada líder sabe exatamente
+                                            onde e como dar suporte para o desenvolvimento individual de sua equipe.
+                                            As avaliações deixaram de ser burocráticas e passaram a ser produtivas."
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Controles do depoimento -->
@@ -552,16 +644,16 @@
                                     aria-label="Depoimento anterior">‹</button>
                                 <div class="cartao-depoimento__pontos" role="tablist"
                                     aria-label="Navegação de depoimentos">
-                                    <span class="cartao-depoimento__ponto is-ativo" role="tab" aria-selected="true"
-                                        aria-label="Depoimento 1"></span>
-                                    <span class="cartao-depoimento__ponto" role="tab" aria-selected="false"
-                                        aria-label="Depoimento 2"></span>
-                                    <span class="cartao-depoimento__ponto" role="tab" aria-selected="false"
-                                        aria-label="Depoimento 3"></span>
-                                    <span class="cartao-depoimento__ponto" role="tab" aria-selected="false"
-                                        aria-label="Depoimento 4"></span>
-                                    <span class="cartao-depoimento__ponto" role="tab" aria-selected="false"
-                                        aria-label="Depoimento 5"></span>
+                                    <span class="cartao-depoimento__ponto is-ativo" role="tab" id="ponto-1" aria-controls="depoimento-1" aria-selected="true"
+                                        aria-label="Depoimento 1" tabindex="0"></span>
+                                    <span class="cartao-depoimento__ponto" role="tab" id="ponto-2" aria-controls="depoimento-2" aria-selected="false"
+                                        aria-label="Depoimento 2" tabindex="-1"></span>
+                                    <span class="cartao-depoimento__ponto" role="tab" id="ponto-3" aria-controls="depoimento-3" aria-selected="false"
+                                        aria-label="Depoimento 3" tabindex="-1"></span>
+                                    <span class="cartao-depoimento__ponto" role="tab" id="ponto-4" aria-controls="depoimento-4" aria-selected="false"
+                                        aria-label="Depoimento 4" tabindex="-1"></span>
+                                    <span class="cartao-depoimento__ponto" role="tab" id="ponto-5" aria-controls="depoimento-5" aria-selected="false"
+                                        aria-label="Depoimento 5" tabindex="-1"></span>
                                 </div>
                                 <button
                                     class="cartao-depoimento__seta-navegacao cartao-depoimento__seta-navegacao--proximo"
@@ -596,15 +688,15 @@
                                 </div>
 
                                 <!-- Laptop representativo -->
-                                <div class="notebook">
-                                    <div class="notebook__tela">
-                                        <div class="notebook__conteudo">
-                                            <div class="notebook__avatar"></div>
-                                            <div class="notebook__linha notebook__linha--longa"></div>
-                                            <div class="notebook__linha notebook__linha--curta"></div>
+                                <div class="computador">
+                                    <div class="computador__tela">
+                                        <div class="computador__conteudo">
+                                            <div class="computador__avatar"></div>
+                                            <div class="computador__linha computador__linha--longa"></div>
+                                            <div class="computador__linha computador__linha--curta"></div>
                                         </div>
                                     </div>
-                                    <div class="notebook__teclado"></div>
+                                    <div class="computador__teclado"></div>
                                 </div>
                             </div>
                         </div>
@@ -613,26 +705,26 @@
                         <div class="funcionalidades__coluna-caixa-checklist">
                             <ul class="funcionalidades__lista-caixas-selecao">
                                 <li>
-                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <span class="funcionalidades__caixa-selecao" role="checkbox" aria-checked="false" tabindex="0" aria-label="Marcar como identificado: O turnover aumenta e o impacto financeiro dos desligamentos pega todo mundo de surpresa"></span>
                                     <p>O turnover aumenta e o impacto financeiro dos desligamentos pega todo mundo de
                                         surpresa</p>
                                 </li>
                                 <li>
-                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <span class="funcionalidades__caixa-selecao" role="checkbox" aria-checked="false" tabindex="0" aria-label="Marcar como identificado: Consolidar dados de performance pra apresentar à diretoria ainda é um trabalho manual e demorado"></span>
                                     <p>Consolidar dados de performance pra apresentar à diretoria ainda é um trabalho
                                         manual e demorado</p>
                                 </li>
                                 <li>
-                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <span class="funcionalidades__caixa-selecao" role="checkbox" aria-checked="false" tabindex="0" aria-label="Marcar como identificado: As lideranças vivem apagando incêndios e nunca sobra tempo pro desenvolvimento do time"></span>
                                     <p>As lideranças vivem apagando incêndios e nunca sobra tempo pro desenvolvimento do
                                         time</p>
                                 </li>
                                 <li>
-                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <span class="funcionalidades__caixa-selecao" role="checkbox" aria-checked="false" tabindex="0" aria-label="Marcar como identificado: O RH quer atuar de forma estratégica, mas fica preso em demandas operacionais"></span>
                                     <p>O RH quer atuar de forma estratégica, mas fica preso em demandas operacionais</p>
                                 </li>
                                 <li>
-                                    <span class="funcionalidades__caixa-selecao"></span>
+                                    <span class="funcionalidades__caixa-selecao" role="checkbox" aria-checked="false" tabindex="0" aria-label="Marcar como identificado: No fim do trimestre, ninguém consegue mostrar o ROI real da gestão de pessoas"></span>
                                     <p>No fim do trimestre, ninguém consegue mostrar o ROI real da gestão de pessoas</p>
                                 </li>
                             </ul>
@@ -661,9 +753,9 @@
 
         <!-- ============================  SEÇÃO AVALIAÇÃO DOS CLIENTES - 4 ============================ -->
         <section class="avaliacoes" id="depoimentos">
-            <div class="container">
+            <div class="recipiente">
                 <h2>Quem usa a
-                    <span class="avaliacoes__title-accent">Aurora</span>, conta</span>
+                    <span class="avaliacoes__title-accent">Aurora</span>, conta
                 </h2>
 
                 <div class="avaliacoes__grade-videos">
@@ -673,7 +765,7 @@
 
                             <h3 class="avaliacoes__titulo-video">Como o time de RH ganhou 40h por mês</h3>
 
-                            <button class="avaliacoes__botao-play"
+                            <button class="avaliacoes__botao-reproduzir"
                                 aria-label="Reproduzir vídeo: Como o time de RH ganhou 40h por mês">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
@@ -686,7 +778,7 @@
 
                             <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses</h3>
 
-                            <button class="avaliacoes__botao-play"
+                            <button class="avaliacoes__botao-reproduzir"
                                 aria-label="Reproduzir vídeo: De 18% para 9% de turnover em 6 meses">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
@@ -699,7 +791,7 @@
 
                             <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria queria ver</h3>
 
-                            <button class="avaliacoes__botao-play"
+                            <button class="avaliacoes__botao-reproduzir"
                                 aria-label="Reproduzir vídeo: O engajamento que a diretoria queria ver">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
@@ -712,7 +804,7 @@
 
                             <h3 class="avaliacoes__titulo-video">Por que escolhemos a Aurora e não voltamos atrás</h3>
 
-                            <button class="avaliacoes__botao-play"
+                            <button class="avaliacoes__botao-reproduzir"
                                 aria-label="Reproduzir vídeo: Por que escolhemos a Aurora e não voltamos atrás">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
@@ -726,7 +818,7 @@
 
         <!-- ============================  SEÇÃO ROI - 5 ============================ -->
         <section class="estatisticas" id="resultados">
-            <div class="container estatisticas__recipiente">
+            <div class="recipiente estatisticas__recipiente">
                 <header class="estatisticas__cabecalho">
                     <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="120"
                         class="estatisticas__logo">
@@ -763,7 +855,7 @@
 
         <!-- ============================  SEÇÃO FLUXO - 6 ============================ -->
         <section class="fluxo fluxo__linha-inferior" id="fluxo">
-            <div class="container">
+            <div class="recipiente">
                 <h2 class="fluxo__titulo-principal">Como a
                     <span class="fluxo__title-accent">Aurora</span> funciona na prática
                 </h2>
@@ -819,8 +911,8 @@
                 <div class="captacao__aurora-layer captacao__aurora-layer--2"></div>
             </div>
 
-            <div class="container captacao__recipiente">
-                <!-- Coluna Esquerda: Copy e Social Proof -->
+            <div class="recipiente captacao__recipiente">
+                <!-- Coluna Esquerda: Texto e Prova Social -->
                 <div class="captacao__info">
                     <span class="captacao__eyebrow">
                         Demonstração gratuita
@@ -855,7 +947,7 @@
                         </li>
                     </ul>
 
-                    <!-- Social Proof -->
+                    <!-- Prova Social -->
                     <div class="captacao__prova-social">
                         <div class="captacao__avatares" aria-hidden="true">
                             <span class="captacao__avatar-miniatura">KS</span>
@@ -948,7 +1040,7 @@
 
         <!-- ============================  FAQ - 8 ============================ -->
         <section class="perguntas-frequentes" id="faq">
-            <div class="container perguntas-frequentes__recipiente">
+            <div class="recipiente perguntas-frequentes__recipiente">
                 <h2 class="perguntas-frequentes__titulo">Perguntas Frequentes</h2>
                 <div class="perguntas-frequentes__lista">
                     <!-- Item 1 -->
@@ -1050,7 +1142,7 @@
 
     <!-- ============================  FOOTER - 8 ============================ -->
     <footer class="rodape">
-        <div class="container rodape__recipiente">
+        <div class="recipiente rodape__recipiente">
             <div class="rodape__topo">
                 <div class="rodape__marca">
                     <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="150"
@@ -1123,7 +1215,7 @@
     </div>
 
     <!-- ============================  Botão Scroll to Top ============================   -->
-    <button id="scrollTopBtn" class="botao-topo" aria-label="Voltar ao topo">
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao topo">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
