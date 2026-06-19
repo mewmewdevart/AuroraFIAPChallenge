@@ -23,7 +23,7 @@
 
 ## 📌 Sobre o Projeto
 
-<img width="1901" height="910" alt="image" src="<img width="1895" height="955" alt="image" src="https://github.com/user-attachments/assets/a26c4541-c0d6-4968-b574-39ea9ecde354" />
+<img width="1895" height="955" alt="image" src="https://github.com/user-attachments/assets/a26c4541-c0d6-4968-b574-39ea9ecde354" />
 " />
 
 
