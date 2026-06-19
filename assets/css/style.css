@@ -12,29 +12,25 @@
     --color-neutral-black: #111111;
 
     /* ========= VARIÁVEIS DERIVADAS ========= */
-    /* Semânticas — derivadas das cores base */
     --color-text-body: var(--color-neutral-black);
-    --color-text-muted: color-mix(in srgb, var(--color-neutral-black) 55%, transparent);
+    --color-text-muted: rgb(17 17 17 / 55%);
     --color-text-on-dark: var(--color-neutral-white);
-    --color-text-on-dark-muted: color-mix(in srgb, var(--color-neutral-white) 70%, transparent);
+    --color-text-on-dark-muted: rgb(255 255 255 / 70%);
 
-    /* Cores funcionais semânticas */
-    --color-brand-primary-light: color-mix(in srgb, var(--color-brand-primary) 85%, var(--color-neutral-white));
-    --color-brand-primary-lighter: color-mix(in srgb, var(--color-brand-primary) 20%, var(--color-neutral-white));
-    --color-highlight-pink-hover: color-mix(in srgb, var(--color-highlight-pink) 80%, var(--color-neutral-black));
-    
-    /* Labels/meta no dashboard mockup */
-    --color-dashboard-label: color-mix(in srgb, var(--color-neutral-black) 50%, transparent);
-    --color-dashboard-meta: color-mix(in srgb, var(--color-neutral-black) 45%, transparent);
-    
-    /* Fundos */
-    --color-bg-dark: color-mix(in srgb, var(--color-neutral-black) 95%, var(--color-brand-primary));
-    --color-bg-dark-elevated: color-mix(in srgb, var(--color-neutral-black) 85%, var(--color-brand-primary));
-    --color-border-light: color-mix(in srgb, var(--color-neutral-black) 6%, var(--color-neutral-white));
-    
-    /* Status */
-    --color-status-positive: color-mix(in srgb, var(--color-highlight-teal) 85%, var(--color-neutral-black));
-    --color-status-negative: color-mix(in srgb, var(--color-highlight-pink) 80%, var(--color-neutral-black));
+    --color-brand-primary-light: #7d66ab;
+    --color-brand-primary-lighter: #e1dced;
+    --color-highlight-pink-hover: #b53b81;
+
+    --color-dashboard-label: rgb(17 17 17 / 50%);
+    --color-dashboard-meta: rgb(17 17 17 / 45%);
+
+    --color-bg-dark: #151419;
+    --color-bg-dark-elevated: #1d1a27;
+    --color-border-light: rgba(255, 255, 255, 0.1);
+    --color-border-dark: rgba(8, 8, 8, 0.1);
+
+    --color-status-positive: #2a9a8e;
+    --color-status-negative: #b53b81;
 
     /* ========= GRADIENTS ========= */
     --gradient-aurora: linear-gradient(135deg,
@@ -1604,10 +1600,13 @@ body {
 }
 
 @keyframes captacao-aurora-1 {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: .5;
         transform: translate(0, 0) scaleX(1);
     }
+
     50% {
         opacity: .7;
         transform: translate(3%, 2%) scaleX(1.04);
@@ -1615,10 +1614,13 @@ body {
 }
 
 @keyframes captacao-aurora-2 {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: .4;
         transform: translate(0, 0) scaleX(1);
     }
+
     50% {
         opacity: .6;
         transform: translate(-4%, 3%) scaleX(1.06);
@@ -1892,7 +1894,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, .15) 0%, transparent 50%);
     opacity: 0;
     transition: opacity var(--transition-default);
 }
@@ -2333,7 +2335,7 @@ details[open] .perguntas-frequentes__seta {
 .funcionalidades__subtitulo-beneficios {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--color-highlight-pink);
+    color: var(--color-highlight-teal);
     margin-bottom: 24px;
 }
 
@@ -2353,7 +2355,7 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .funcionalidades__seta-marcador {
-    color: var(--color-highlight-pink);
+    color: var(--color-highlight-teal);
     font-weight: bold;
     font-size: 1.1rem;
     flex-shrink: 0;
@@ -2455,7 +2457,7 @@ details[open] .perguntas-frequentes__seta {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #e2e1ec;
+    background-color: var(--color-bg-dark-elevated);
     cursor: pointer;
 }
 
@@ -2466,7 +2468,7 @@ details[open] .perguntas-frequentes__seta {
 
 /* Linha inferior: Checklist de problemas */
 .funcionalidades__linha-inferior {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--color-border-light);
     padding-top: var(--spacing-large);
 }
 
@@ -2591,7 +2593,7 @@ details[open] .perguntas-frequentes__seta {
 .funcionalidades__caixa-selecao {
     width: 22px;
     height: 22px;
-    border: 2px solid var(--color-highlight-pink);
+    border: 2px solid var(--color-highlight-teal);
     border-radius: 4px;
     flex-shrink: 0;
     margin-top: 2px;
@@ -2601,7 +2603,7 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .funcionalidades__caixa-selecao:hover {
-    background-color: color-mix(in srgb, var(--color-highlight-pink) 10%, transparent);
+    background-color: color-mix(in srgb, var(--color-highlight-teal) 10%, transparent);
 }
 
 .funcionalidades__lista-caixas-selecao li p {
@@ -2648,6 +2650,7 @@ details[open] .perguntas-frequentes__seta {
     border-radius: 50px;
     box-shadow: 0 8px 24px color-mix(in srgb, var(--color-highlight-pink) 35%, transparent);
     transition: var(--transition-smooth);
+    text-decoration: none;
 }
 
 .botao-cta:hover {
@@ -2657,9 +2660,15 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .fluxo {
-    background-color: var(--color-highlight-teal);
     padding: var(--spacing-xlarge) 0;
     text-align: center;
+}
+
+.fluxo__linha-inferior {
+    border-top: 1px solid var(--color-border-dark);
+    padding-top: var(--spacing-large);
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 }
 
 .fluxo__titulo-principal {
@@ -2688,7 +2697,7 @@ details[open] .perguntas-frequentes__seta {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background-color: var(--color-highlight-pink);
+    background-color: var(--color-highlight-teal);
     color: var(--color-neutral-white);
     display: flex;
     align-items: center;
@@ -2696,7 +2705,7 @@ details[open] .perguntas-frequentes__seta {
     font-size: 1.8rem;
     font-weight: 800;
     margin-bottom: 24px;
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-highlight-pink) 25%, transparent);
+    box-shadow: 0 8px 20px color-mix(in srgb, var(--color-highlight-teal) 25%, transparent);
     transition: var(--transition-smooth);
 }
 
