@@ -8,7 +8,7 @@
 </p>
 
   <p align="center">
-    <a href="">🔗 Acesse o projeto (Em breve)</a>
+    <a href="https://mewmewdevart.github.io/AuroraFIAPChallenge/">🔗 Acesse o projeto</a>
   </p>
 
   <p align="center">
@@ -22,6 +22,9 @@
 
 
 ## 📌 Sobre o Projeto
+
+<img width="1901" height="910" alt="image" src="https://github.com/user-attachments/assets/9d34277f-2907-407b-a5a5-2ce66bdf3f00" />
+
 
 A Landing Page apresenta as principais soluções da Aurora:
 - **Dados Centralizados:** Reúne informações sobre performance, clima e engajamento em um único painel.
