@@ -23,7 +23,8 @@
 
 ## 📌 Sobre o Projeto
 
-<img width="1901" height="910" alt="image" src="https://github.com/user-attachments/assets/9d34277f-2907-407b-a5a5-2ce66bdf3f00" />
+<img width="1901" height="910" alt="image" src="<img width="1895" height="955" alt="image" src="https://github.com/user-attachments/assets/a26c4541-c0d6-4968-b574-39ea9ecde354" />
+" />
 
 
 A Landing Page apresenta as principais soluções da Aurora:
