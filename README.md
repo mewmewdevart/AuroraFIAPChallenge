@@ -4,7 +4,7 @@
   <h1>Landing Page - Aurora </h1>
   
 <p>
-  🌠 | Landing page desenvolvida para o Enterprise Challenge (FIAP x Aurora x Google), apresentando uma plataforma HR Tech people-first.
+  🌠 | Landing page desenvolvida para o Enterprise Challenge (FIAP x Aurora x Google), apresentando a <strong>Aurora</strong>, uma plataforma HR Tech de People Analytics e Gestão de Performance que transforma dados de desempenho, cultura e engajamento em insights valiosos para líderes e gestores tomarem as melhores decisões.
 </p>
 
   <p align="center">
@@ -21,14 +21,24 @@
 
 
 
-## Estrutura do Projeto
+## 📌 Sobre o Projeto
+
+A Landing Page apresenta as principais soluções da Aurora:
+- **Dados Centralizados:** Reúne informações sobre performance, clima e engajamento em um único painel.
+- **Planos de Ação Direcionados:** Auxilia na criação de planos de desenvolvimento personalizados com recomendações baseadas em dados.
+- **Avaliações baseadas em dados:** Traz clareza para decisões de promoção, aumento ou sucessão.
+- **Redução do Turnover:** Identifica riscos de saída com análises comportamentais e inteligência artificial.
+
+## 📂 Estrutura do Projeto
 
 ```bash
 .
 ├── assets/
-│   ├── css/        # Estilos da aplicação
-│   └── img/         # Imagens e ícones
-├── index.html        # Página principal (Home Page)
+│   ├── css/          # Estilos e formatação visual da aplicação
+│   ├── img/          # Imagens, logos e ícones
+│   ├── js/           # Scripts de interatividade
+│   └── video/        # Arquivos de vídeo utilizados na página
+├── index.html        # Estrutura principal da Landing Page
 ├── LICENSE           # Licença do projeto
 └── README.md         # Documentação principal do repositório
 ````
@@ -63,6 +73,7 @@
 
 * HTML5
 * CSS3
+* JavaScript
 * Git & GitHub
 * Figma
 * Miro
