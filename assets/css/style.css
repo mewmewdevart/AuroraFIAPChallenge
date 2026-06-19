@@ -329,16 +329,36 @@ body {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: radial-gradient(ellipse 120% 60% at 50% 0%,
-            color-mix(in srgb, var(--color-brand-primary) 30%, var(--color-bg-dark)) 0%,
-            var(--color-bg-dark) 70%);
+    background:
+        radial-gradient(
+            ellipse 80% 45% at 20% 0%,
+            rgba(49, 180, 166, 0.18) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 70% 40% at 80% 5%,
+            rgba(207, 71, 147, 0.12) 0%,
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse 150% 80% at 50% -10%,
+            rgba(126, 97, 167, 0.35) 0%,
+            rgba(106, 80, 157, 0.20) 45%,
+            transparent 80%
+        ),
+        linear-gradient(
+            180deg,
+            #2c233f 0%,
+            #241c35 45%,
+            #1c1628 100%
+        );
 }
 
 .destaque__estrelas {
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(1px 1px at 15% 12%, var(--support-color-white-60) 0%, transparent 100%),
+        radial-gradient(2px 1px at 30% 12%, var(--support-color-white-60) 0%, transparent 100%),
         radial-gradient(1px 1px at 32% 8%, var(--support-color-white-40) 0%, transparent 100%),
         radial-gradient(1px 1px at 55% 18%, var(--support-color-white-50) 0%, transparent 100%),
         radial-gradient(1px 1px at 72% 5%, var(--support-color-white-30) 0%, transparent 100%),
@@ -364,20 +384,20 @@ body {
 
 .destaque__aurora-camada--1 {
     background:
-        radial-gradient(ellipse 60% 40% at 40% 50%, color-mix(in srgb, var(--color-highlight-teal) 70%, transparent) 0%, transparent 70%),
-        radial-gradient(ellipse 80% 60% at 70% 40%, color-mix(in srgb, var(--color-brand-primary) 40%, transparent) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 60% at 40% 50%, color-mix(in srgb, var(--color-highlight-teal) 80%, transparent) 0%, transparent 70%),
+        radial-gradient(ellipse 90% 80% at 90% 60%, color-mix(in srgb, var(--color-brand-primary) 70%, transparent) 0%, transparent 60%);
     animation: destaque-aurora-drift-1 12s ease-in-out infinite;
 }
 
 .destaque__aurora-camada--2 {
     background:
-        radial-gradient(ellipse 70% 50% at 60% 60%, color-mix(in srgb, var(--color-highlight-pink) 50%, transparent) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 30% 50%, color-mix(in srgb, var(--color-highlight-teal) 40%, transparent) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 50% at 60% 60%, color-mix(in srgb, var(--color-highlight-pink) 100%, transparent) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 30% 50%, color-mix(in srgb, var(--color-highlight-teal) 80%, transparent) 0%, transparent 60%);
     animation: destaque-aurora-drift-2 16s ease-in-out infinite;
 }
 
 .destaque__aurora-camada--3 {
-    background: radial-gradient(ellipse 90% 45% at 50% 45%, color-mix(in srgb, var(--color-brand-secondary) 30%, transparent) 0%, transparent 70%);
+    background: radial-gradient(ellipse 90% 45% at 50% 45%, color-mix(in srgb, var(--color-brand-secondary) 10%, transparent) 0%, transparent 70%);
     animation: destaque-aurora-drift-3 20s ease-in-out infinite;
 }
 
@@ -406,7 +426,7 @@ body {
     left: 10%;
     background: linear-gradient(180deg,
             color-mix(in srgb, var(--color-highlight-teal) 18%, transparent) 0%,
-            color-mix(in srgb, var(--color-brand-primary) 18%, transparent) 50%,
+            color-mix(in srgb, var(--color-brand-primary) 30%, transparent) 50%,
             transparent 100%);
     animation: destaque-streak-sway 14s ease-in-out infinite;
 }
@@ -542,7 +562,7 @@ body {
 .destaque__titulo-destaque,
 .avaliacoes__title-accent,
 .fluxo__title-accent {
-    background: var(--gradient-aurora);
+    background: var(--color-neutral-white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -623,15 +643,15 @@ body {
 }
 
 .destaque__painel-pontos span:nth-child(1) {
-    background: var(--support-color-red-light);
+    background: var(--color-brand-primary);
 }
 
 .destaque__painel-pontos span:nth-child(2) {
-    background: var(--support-color-yellow);
+    background: var(--color-highlight-teal);
 }
 
 .destaque__painel-pontos span:nth-child(3) {
-    background: var(--support-color-green);
+    background: var(--color-highlight-pink);
 }
 
 .destaque__painel-titulo {
