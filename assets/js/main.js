@@ -34,13 +34,13 @@ function initVideoPlayers() {
                 }
             });
 
-            container.classList.add('is-playing');
+            container.classList.add('is-reproduzindo');
             video.setAttribute('controls', 'controls');
         });
 
         // Função auxiliar para restaurar o estado visual do player
         const resetVideoState = () => {
-            container.classList.remove('is-playing');
+            container.classList.remove('is-reproduzindo');
             video.removeAttribute('controls');
         };
 
@@ -60,13 +60,13 @@ function initMobileMenu() {
 
     const closeMenu = () => {
         menuBtn.setAttribute('aria-expanded', 'false');
-        navLinks.classList.remove('is-active');
+        navLinks.classList.remove('is-ativo');
     };
 
     const toggleMenu = () => {
         const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
         menuBtn.setAttribute('aria-expanded', !isExpanded);
-        navLinks.classList.toggle('is-active');
+        navLinks.classList.toggle('is-ativo');
     };
 
     menuBtn.addEventListener('click', (e) => {
@@ -76,14 +76,14 @@ function initMobileMenu() {
 
     // Fechar ao clicar fora do menu
     document.addEventListener('click', (e) => {
-        if (!menuBtn.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('is-active')) {
+        if (!menuBtn.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('is-ativo')) {
             closeMenu();
         }
     });
 
     // Fechar ao pressionar a tecla Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navLinks.classList.contains('is-active')) {
+        if (e.key === 'Escape' && navLinks.classList.contains('is-ativo')) {
             closeMenu();
             menuBtn.focus(); // Devolve foco para o botão para acessibilidade
         }
@@ -101,9 +101,9 @@ function initScrollToTop() {
     // Usa 'passive: true' para otimizar o desempenho do evento de scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            scrollTopBtn.classList.add('is-visible');
+            scrollTopBtn.classList.add('is-visivel');
         } else {
-            scrollTopBtn.classList.remove('is-visible');
+            scrollTopBtn.classList.remove('is-visivel');
         }
     }, { passive: true });
 
