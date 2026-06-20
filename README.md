@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/b1d64065-5c87-48d7-a9a4-e271366ac246" width="300" alt="Aurora Logo" />
 
-  <h1>🚀 Landing Page - Aurora Platform</h1>
+  <h1>🚀 Landing Page - Aurora </h1>
   
   <p>
     <b>People First Cup - Enterprise Challenge (FIAP x Aurora x Google)</b>

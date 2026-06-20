@@ -439,7 +439,7 @@ function mostrarToastSucesso(nome) {
     notificacao.style.bottom = '32px';
     notificacao.style.right = '32px';
     notificacao.style.background = 'var(--gradient-aurora)';
-    notificacao.style.color = '#ffffff';
+    notificacao.style.color = 'var(--color-neutral-white)';
     notificacao.style.padding = '18px 28px';
     notificacao.style.borderRadius = 'var(--border-radius-small)';
     notificacao.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.25)';
