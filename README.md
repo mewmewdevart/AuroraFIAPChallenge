@@ -33,6 +33,19 @@ A Landing Page apresenta as principais soluções da Aurora:
 - **Avaliações baseadas em dados:** Traz clareza para decisões de promoção, aumento ou sucessão.
 - **Redução do Turnover:** Identifica riscos de saída com análises comportamentais e inteligência artificial.
 
+# Navegação da Documentação
+
+> **Acompanhe a Evolução:** Este repositório está organizado para que você possa acompanhar o progresso e as decisões do projeto em cada etapa de seu desenvolvimento.  
+> Utilize o **sumário** abaixo para acessar a documentação detalhada de cada sprint e entender a evolução da plataforma.
+
+## Sumário
+
+Para manter o repositório organizado e escalável, as entregas foram separadas em arquivos independentes:
+
+1. **[Entrega 01 - ](./docs/01_sprint.md)**:  
+   Estruturação do conteudo e definição da identidade visual.
+
+
 ## 📂 Estrutura do Projeto
 
 ```bash
@@ -80,7 +93,6 @@ A Landing Page apresenta as principais soluções da Aurora:
 * JavaScript
 * Git & GitHub
 * Figma
-* Miro
 * Canva
 
 ## Integrantes
@@ -90,3 +102,10 @@ A Landing Page apresenta as principais soluções da Aurora:
 * **Mayla Mayumi Motobe** — [rm571213@fiap.com.br](mailto:rm571213@fiap.com.br)
 
 ## Referências
+
+*  ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. ABNT NBR 17225:2025 - Acessibilidade em interfaces digitais. Rio de Janeiro: ABNT, 2025. 
+*  NIELSEN, Jakob. 10 Usability Heuristics for User Interface Design. Nielsen Norman Group, 1994. Disponível em: https://www.nngroup.com/articles/ten-usability-heuristics/. Acesso em: mar. 2026. 
+
+<p align="right">
+  <a href="./docs/01_sprint.md">➡️ Ir para inicial (Sprint 01)</a>
+</p>
