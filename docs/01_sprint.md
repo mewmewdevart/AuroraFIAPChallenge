@@ -1,5 +1,7 @@
 # 📖 Enterprise Challenge - Etapa 1: Protótipo
 
+Este markdown é um resumo do PDF [docs/Enterprise challenge - Etapa 1 - Protótipo.pdf](https://github.com/mewmewdevart/AuroraFIAPChallenge/blob/main/docs/Enterprise%20challenge%20-%20Etapa%201%20-%20Prot%C3%B3tipo.pdf) caso queira saber mais sobre o processo de contrução da pagina, acesse-o.
+
 ## 🔗 Acessos
 - 🌐 **Deploy:** [Aurora Landing Page](https://mewmewdevart.github.io/AuroraFIAPChallenge/)
 - 💻 **Repositório:** [GitHub](https://github.com/mewmewdevart/AuroraFIAPChallenge)
@@ -9,7 +11,6 @@
 - **Larissa Cristina Benedito** - RM570970
 - **Mayla Mayumi Motobe** - RM571213
 
----
 
 ## 1. 📌 Introdução e Escopo do Desafio
 A primeira etapa do **Enterprise Challenge (People First Cup)** marca o início da construção da landing page da **Aurora**, uma plataforma de People Analytics B2B. 
