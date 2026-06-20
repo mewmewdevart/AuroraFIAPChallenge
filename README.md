@@ -30,7 +30,8 @@ Este projeto é a entrega da **Etapa 1 do Enterprise Challenge**, cujo foco é a
 
 O objetivo principal desta fase foi estruturar a narrativa, definir a identidade visual e criar uma experiência de navegação fluida e atrativa (utilizando o framework narrativo PAS - *Problem, Agitate, Solve*). A página busca comunicar de forma clara a proposta de valor, captando a atenção de líderes de RH e conduzindo-os ao agendamento de uma demonstração.
 
-![Preview do Projeto](https://github.com/user-attachments/assets/a26c4541-c0d6-4968-b574-39ea9ecde354)
+<img width="1900" height="870" alt="image" src="https://github.com/user-attachments/assets/1890ddec-c0de-4cd3-b25b-4199b33db51f" />
+
 
 ## 💡 Principais Soluções da Aurora
 
@@ -46,7 +47,7 @@ Para manter a organização e escalabilidade do repositório, o detalhamento das
 
 | Etapa | Documentação | Descrição |
 | :---: | :--- | :--- |
-| **01** | [**Sprint 01 - Protótipo e Landing Page**](./docs/01_sprint.md) | Estruturação de conteúdo, identidade visual, acessibilidade e decisões técnicas. |
+| **01** | [**Sprint 01 - Protótipo da Landing Page**](./docs/01_sprint.md) | Estruturação de conteúdo, identidade visual, acessibilidade e decisões técnicas. |
 
 ## 📂 Estrutura do Projeto
 
