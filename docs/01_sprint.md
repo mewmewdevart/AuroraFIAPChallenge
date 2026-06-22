@@ -62,10 +62,4 @@ Criada a partir das diretrizes da marca, visando inovação, confiança e profis
 - **Navegação:** Design inteiramente responsivo e botão *Scroll To Top* para facilitar movimentação vertical.
 
 ## 5. 🚀 Evoluções Previstas
-Caminhos futuros identificados para a plataforma:
-- Aumentar áreas de respiro e uso de superfícies claras para maior contraste e foco.
-- Evolução dos atributos ARIA e suporte pleno para navegação por teclado com foco visível customizado.
-- Versão interativa do mockup do dashboard na Hero Section.
-- Inclusão do VLibras (tradução automática em Libras).
-- Aprimorar o SEO voltado ao contexto de **AEO (Answer Engine Optimization)** e transformá-la em um PWA.
-- Inclusão de um Chatbot e atalhos diretos para atendimento via WhatsApp.
+Detalhadas no documento!
