@@ -1,6 +1,6 @@
 # 📖 Enterprise Challenge - Etapa 1: Protótipo
 
-Este markdown é um resumo do PDF [docs/Enterprise challenge - Etapa 1 - Protótipo.pdf](https://github.com/mewmewdevart/AuroraFIAPChallenge/blob/main/docs/Enterprise%20challenge%20-%20Etapa%201%20-%20Prot%C3%B3tipo.pdf) caso queira saber mais sobre o processo de contrução da pagina, acesse-o.
+Este markdown é um resumo do PDF entregue na atividade!
 
 ## 🔗 Acessos
 - 🌐 **Deploy:** [Aurora Landing Page](https://mewmewdevart.github.io/AuroraFIAPChallenge/)
