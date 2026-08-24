@@ -54,27 +54,41 @@ Para manter a organização e escalabilidade do repositório, o detalhamento das
 ```bash
 .
 ├── assets/
-│   ├── css/          # Estilos e formatação visual da aplicação (variáveis CSS)
+│   ├── css/          # Estilos e formatação visual (variáveis CSS e Design System)
 │   ├── img/          # Imagens, logos e mockups
-│   ├── js/           # Scripts de interatividade (vanilla)
+│   ├── js/           # Scripts de interatividade (main.js + chatbot.js)
 │   └── video/        # Arquivos de vídeo utilizados na página
 ├── docs/             # Documentação do projeto (sprints, pdfs)
+├── .env.example      # Modelo de configuração de variáveis de ambiente
+├── .gitignore        # Arquivos ignorados pelo Git (inclui .env com a chave de API)
 ├── index.html        # Estrutura principal da Landing Page
+├── package.json      # Dependências do backend Node.js (chatbot IRIS)
+├── server.js         # Servidor Express — integração com a API do Google Gemini
 ├── LICENSE           # Licença do projeto
 └── README.md         # Documentação principal do repositório
 ```
 
 ## 🛠️ Tecnologias Utilizadas
 
-A stack foi escolhida priorizando a performance, acessibilidade e controle total sobre a interface sem o uso inicial de frameworks pesados:
-- **HTML5** (Semântico e Acessível)
-- **CSS3** (Custom Properties, Responsividade e Flexbox/Grid)
-- **JavaScript** (Vanilla)
+A stack foi escolhida priorizando a performance, acessibilidade e controle total sobre a interface:
+
+**Frontend:**
+- **HTML5** (Semântico e Acessível — WCAG)
+- **CSS3** (Custom Properties, Design System, Responsividade, Flexbox/Grid)
+- **JavaScript** (Vanilla — sem frameworks)
 - **Figma / Canva** (Prototipação e Identidade Visual)
+
+**Backend (Chatbot IRIS):**
+- **Node.js** com **Express** — servidor local da API
+- **Google Gemini API** (`@google/generative-ai`) — IA generativa
+- **dotenv** — gerenciamento seguro de variáveis de ambiente
+- **cors** — controle de origens permitidas
 
 ## 🚀 Como Executar
 
-**Pré-requisitos:** Git instalado e um navegador web atualizado.
+### 🌐 Opção 1 — Apenas a Landing Page (sem chatbot com IA)
+
+**Pré-requisitos:** Git e um navegador web atualizado.
 
 1. Clone o repositório:
 ```bash
@@ -86,7 +100,42 @@ git clone https://github.com/mewmewdevart/AuroraFIAPChallenge.git
 cd AuroraFIAPChallenge/
 ```
 
-3. Abra o arquivo `index.html` em seu navegador ou utilize extensões como o *Live Server* do VSCode.
+3. Abra o `index.html` no navegador ou use a extensão *Live Server* do VSCode.
+
+> O chatbot **IRIS** funcionará no modo offline (respostas pré-cadastradas), sem necessidade do backend.
+
+---
+
+### 🤖 Opção 2 — Com o Chatbot IRIS completo (IA via Gemini)
+
+**Pré-requisitos adicionais:** [Node.js](https://nodejs.org/) instalado (v18+).
+
+1. Clone e acesse o projeto (mesmos passos acima).
+
+2. Instale as dependências do backend:
+```bash
+npm install
+```
+
+3. Crie o arquivo de configuração copiando o exemplo:
+```bash
+cp .env.example .env
+```
+
+4. Abra o arquivo `.env` e adicione sua chave de API do Google Gemini:
+```env
+GEMINI_API_KEY=sua_chave_aqui
+```
+> 🔑 Obtenha uma chave gratuitamente em [Google AI Studio](https://aistudio.google.com/).
+
+5. Inicie o servidor backend:
+```bash
+npm start
+```
+
+6. Com o servidor rodando em `http://localhost:3000`, abra o `index.html` no navegador. O chatbot IRIS estará totalmente funcional com respostas geradas pela IA do Google.
+
+> ⚠️ **Segurança:** O arquivo `.env` está listado no `.gitignore` e **nunca** será enviado ao repositório público. Nunca compartilhe sua chave de API.
 
 ## 👥 Integrantes
 

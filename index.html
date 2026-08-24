@@ -170,7 +170,8 @@
             <!-- Mockup do Dashboard -->
             <div class="destaque__dashboard">
                 <div class="destaque__dashboard-mockup">
-                    <img class="destaque__dashboard-imagem" src="assets/img/aurora-dashboard.png" alt="Dashboard da Aurora" width="1140">
+                    <img class="destaque__dashboard-imagem" src="assets/img/aurora-dashboard.png"
+                        alt="Dashboard da Aurora" width="1140">
                 </div>
             </div>
 
@@ -398,7 +399,8 @@
                                     aria-labelledby="ponto-1" aria-hidden="false">
                                     <div class="cartao-depoimento__cabecalho">
                                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                                            alt="Marina M. M. Polverari" class="cartao-depoimento__foto" loading="lazy" decoding="async">
+                                            alt="Marina M. M. Polverari" class="cartao-depoimento__foto" loading="lazy"
+                                            decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h4 class="cartao-depoimento__nome">Marina M. M. Polverari</h4>
                                             <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
@@ -422,7 +424,8 @@
                                     aria-labelledby="ponto-2" aria-hidden="true" style="display: none;">
                                     <div class="cartao-depoimento__cabecalho">
                                         <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
-                                            alt="Rodrigo Santos" class="cartao-depoimento__foto" loading="lazy" decoding="async">
+                                            alt="Rodrigo Santos" class="cartao-depoimento__foto" loading="lazy"
+                                            decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h4 class="cartao-depoimento__nome">Rodrigo Santos</h4>
                                             <p class="cartao-depoimento__cargo">Head de Gente e Gestão na TechFlow</p>
@@ -446,7 +449,8 @@
                                     aria-labelledby="ponto-3" aria-hidden="true" style="display: none;">
                                     <div class="cartao-depoimento__cabecalho">
                                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop"
-                                            alt="Camila Oliveira" class="cartao-depoimento__foto" loading="lazy" decoding="async">
+                                            alt="Camila Oliveira" class="cartao-depoimento__foto" loading="lazy"
+                                            decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h4 class="cartao-depoimento__nome">Camila Oliveira</h4>
                                             <p class="cartao-depoimento__cargo">Gerente de Operações na Vesta Logística
@@ -469,7 +473,8 @@
                                     aria-labelledby="ponto-4" aria-hidden="true" style="display: none;">
                                     <div class="cartao-depoimento__cabecalho">
                                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop"
-                                            alt="Felipe Almeida" class="cartao-depoimento__foto" loading="lazy" decoding="async">
+                                            alt="Felipe Almeida" class="cartao-depoimento__foto" loading="lazy"
+                                            decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h4 class="cartao-depoimento__nome">Felipe Almeida</h4>
                                             <p class="cartao-depoimento__cargo">CEO na Nexa Software</p>
@@ -491,7 +496,8 @@
                                     aria-labelledby="ponto-5" aria-hidden="true" style="display: none;">
                                     <div class="cartao-depoimento__cabecalho">
                                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
-                                            alt="Juliana Mendes" class="cartao-depoimento__foto" loading="lazy" decoding="async">
+                                            alt="Juliana Mendes" class="cartao-depoimento__foto" loading="lazy"
+                                            decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h4 class="cartao-depoimento__nome">Juliana Mendes</h4>
                                             <p class="cartao-depoimento__cargo">Coordenadora de T&D na Global Retail</p>
@@ -1107,7 +1113,57 @@
         <i class="fa-solid fa-chevron-up"></i>
     </button>
 
+    <!-- ============================  Chatbot Aurora ============================   -->
+    <div id="chatbot-container" class="chatbot-container">
+        <!-- Botão Flutuante para Abrir Chat -->
+        <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Abrir chat com a Aurora AI" aria-expanded="false"
+            aria-controls="chatbot-window">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span class="chatbot-toggle__badge" id="chatbot-badge" aria-label="1 nova mensagem">1</span>
+        </button>
+
+        <!-- Janela de Conversa (Escondida por padrão) -->
+        <div id="chatbot-window" class="chatbot-window chatbot-window--hidden" aria-hidden="true" role="dialog"
+            aria-modal="true" aria-labelledby="chatbot-title">
+            <div class="chatbot-window__header">
+                <div class="chatbot-window__header-info">
+                    <div class="chatbot-window__avatar" aria-hidden="true">
+                        <img src="assets/img/iris-ai-photo.jpg" alt="IRIS AI Profile">
+                    </div>
+                    <div>
+                        <h4 class="chatbot-window__title" id="chatbot-title">IRIS</h4>
+                        <span class="chatbot-window__status"><span class="chatbot-window__status-dot"
+                                aria-hidden="true"></span>Online</span>
+                    </div>
+                </div>
+                <button id="chatbot-close" class="chatbot-window__close-btn" aria-label="Fechar janela do chat">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="chatbot-window__messages" id="chatbot-messages" role="log" aria-live="polite">
+                <!-- Mensagens aparecerão aqui -->
+                <div class="chatbot-window__message chatbot-window__message--bot">
+                    Olá! Sou a <strong>IRIS</strong>, sua assistente virtual. Como posso te ajudar hoje com People
+                    Analytics e Gestão de Performance na Aurora?
+                </div>
+            </div>
+
+            <div class="chatbot-window__footer">
+                <form id="chatbot-form" class="chatbot-window__form">
+                    <input type="text" id="chatbot-input" class="chatbot-window__input"
+                        placeholder="Pergunte algo sobre a Aurora..." maxlength="200" required autocomplete="off"
+                        aria-label="Mensagem para o chatbot">
+                    <button type="submit" class="chatbot-window__send-btn" aria-label="Enviar mensagem">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
 </body>
 
 </html>

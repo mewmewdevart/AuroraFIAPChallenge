@@ -1,0 +1,11 @@
+# Dependências do NodeJS
+node_modules/
+
+# Arquivo de configuração de credenciais locais (Segurança)
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
