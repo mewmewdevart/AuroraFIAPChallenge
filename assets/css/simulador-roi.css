@@ -51,7 +51,7 @@
 }
 
 .simulador-roi__eyebrow i {
-    font-size: 12px;
+    font-size: var(--font-size-small, 0.975rem);
 }
 
 .simulador-roi__eyebrow svg {
@@ -68,10 +68,10 @@
 }
 
 .simulador-roi__titulo {
-    font-size: clamp(1.8rem, 4vw, var(--font-size-large, 2rem));
-    font-weight: var(--font-weight-black, 900);
+    font-size: var(--font-size-large, 2rem);
+    font-weight: var(--font-weight-bold, 700);
     color: var(--color-text-primary, var(--color-neutral-black));
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: -0.5px;
     margin: 0 0 var(--spacing-medium, 16px);
 }
@@ -88,7 +88,8 @@
 .simulador-roi__descricao {
     max-width: 620px;
     font-size: var(--font-size-base, 1rem);
-    line-height: 1.65;
+    font-weight: var(--font-weight-regular, 400);
+    line-height: 1.6;
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     margin: 0;
 }
@@ -196,7 +197,8 @@
 }
 
 .simulador-roi__painel-titulo p {
-    font-size: 12.5px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     line-height: 1.5;
     margin: 0;
@@ -225,7 +227,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: var(--font-size-small, 0.975rem);
 }
 
 .simulador-roi__icone-sm svg {
@@ -235,7 +237,7 @@
 
 .simulador-roi__campo-label {
     flex: 1;
-    font-size: 13.5px;
+    font-size: var(--font-size-small, 0.975rem);
     font-weight: var(--font-weight-medium, 500);
     color: var(--color-text-primary, var(--color-neutral-black));
     cursor: pointer;
@@ -247,7 +249,7 @@
     background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 4%, var(--color-neutral-white, rgb(255, 255, 255)));
     border-radius: var(--border-radius-small, 10px);
     padding: 7px 10px;
-    font-size: 13.5px;
+    font-size: var(--font-size-small, 0.975rem);
     font-weight: var(--font-weight-bold, 700);
     font-family: var(--font-primary, "Outfit", sans-serif);
     color: var(--color-brand-primary, rgb(106, 80, 157));
@@ -277,7 +279,7 @@
     border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
     background: var(--color-neutral-white, rgb(255, 255, 255));
     color: var(--color-brand-primary, rgb(106, 80, 157));
-    font-size: 16px;
+    font-size: var(--font-size-base, 1rem);
     font-weight: var(--font-weight-bold, 700);
     font-family: var(--font-primary, "Outfit", sans-serif);
     cursor: pointer;
@@ -302,7 +304,8 @@
 
 .simulador-roi__stepper .simulador-roi__valor {
     width: 126px;
-    font-size: 14.5px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-bold, 700);
 }
 
 /* ---------- Slider ---------- */
@@ -355,7 +358,7 @@
 .simulador-roi__intervalo {
     display: flex;
     justify-content: space-between;
-    font-size: 11.5px;
+    font-size: var(--font-size-small, 0.975rem);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     font-weight: var(--font-weight-medium, 500);
 }
@@ -364,7 +367,8 @@
     display: flex;
     gap: 9px;
     align-items: flex-start;
-    font-size: 12px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     line-height: 1.55;
 }
@@ -392,9 +396,9 @@
 }
 
 .simulador-roi__resultado-eyebrow {
-    font-size: 11.5px;
-    font-weight: var(--font-weight-black, 900);
-    letter-spacing: .1em;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-bold, 700);
+    letter-spacing: .08em;
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     text-transform: uppercase;
 }
@@ -408,7 +412,7 @@
 }
 
 .simulador-roi__numero-grande {
-    font-size: clamp(30px, 4vw, 42px);
+    font-size: clamp(2rem, 4vw, var(--font-size-large, 2rem));
     font-weight: var(--font-weight-black, 900);
     background: var(--gradient-aurora, linear-gradient(135deg, rgb(106, 80, 157) 0%, rgb(207, 71, 147) 50%, rgb(49, 180, 166) 100%));
     -webkit-background-clip: text;
@@ -419,14 +423,15 @@
 }
 
 .simulador-roi__numero-grande--solido {
-    font-size: clamp(28px, 3.6vw, 38px);
+    font-size: clamp(1.8rem, 3.6vw, var(--font-size-large, 2rem));
     color: var(--color-text-primary, var(--color-neutral-black));
     -webkit-text-fill-color: initial;
     background: none;
+    font-weight: var(--font-weight-black, 900);
 }
 
 .simulador-roi__legenda-numero {
-    font-size: 13px;
+    font-size: var(--font-size-small, 0.975rem);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     font-weight: var(--font-weight-medium, 500);
     margin-top: 6px;
@@ -437,14 +442,14 @@
 }
 
 .simulador-roi__estatistica .simulador-roi__estatistica-valor {
-    font-size: 20px;
+    font-size: var(--font-size-medium, 1.25rem);
     font-weight: var(--font-weight-black, 900);
     color: var(--color-text-primary, var(--color-neutral-black));
     white-space: nowrap;
 }
 
 .simulador-roi__estatistica .simulador-roi__estatistica-label {
-    font-size: 12px;
+    font-size: var(--font-size-small, 0.975rem);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     margin-top: 3px;
     font-weight: var(--font-weight-medium, 500);
@@ -454,8 +459,8 @@
     display: inline-block;
     background: color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 14%, var(--color-neutral-white, rgb(255, 255, 255)));
     color: var(--color-brand-pink, rgb(207, 71, 147));
-    font-weight: var(--font-weight-black, 900);
-    font-size: 13px;
+    font-weight: var(--font-weight-bold, 700);
+    font-size: var(--font-size-small, 0.975rem);
     padding: 4px 10px;
     border-radius: var(--border-radius-small, 10px);
     margin-left: 10px;
@@ -487,14 +492,15 @@
 }
 
 .simulador-roi__grafico-tooltip .tt-titulo {
-    font-size: 12.5px;
-    font-weight: var(--font-weight-black, 900);
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-bold, 700);
     color: var(--color-brand-primary, rgb(106, 80, 157));
     margin-bottom: 6px;
 }
 
 .simulador-roi__grafico-tooltip .tt-linha {
-    font-size: 12px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     margin-top: 3px;
     white-space: nowrap;
@@ -502,6 +508,7 @@
 
 .simulador-roi__grafico-tooltip .tt-linha b {
     color: var(--color-text-primary, var(--color-neutral-black));
+    font-weight: var(--font-weight-bold, 700);
 }
 
 .simulador-roi__grafico-tooltip .tt-linha.roxo b { color: var(--color-brand-primary, rgb(106, 80, 157)); }
@@ -509,7 +516,8 @@
 .simulador-roi__grafico-tooltip .tt-linha.teal b { color: var(--color-brand-teal, rgb(49, 180, 166)); }
 
 .simulador-roi__grafico-dica {
-    font-size: 11.5px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     margin: -8px 0 0;
     text-align: center;
@@ -518,7 +526,7 @@
 .simulador-roi__legenda {
     display: flex;
     gap: 22px;
-    font-size: 12.5px;
+    font-size: var(--font-size-small, 0.975rem);
     font-weight: var(--font-weight-bold, 700);
     color: var(--color-text-primary, var(--color-neutral-black));
     flex-wrap: wrap;
@@ -574,7 +582,8 @@
     border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 14%, var(--color-neutral-white, rgb(255, 255, 255)));
     border-radius: var(--border-radius-small, 10px);
     padding: 16px 20px;
-    font-size: 14.5px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-primary, var(--color-neutral-black));
 }
 
@@ -588,7 +597,7 @@
     align-items: center;
     justify-content: center;
     color: var(--color-brand-primary, rgb(106, 80, 157));
-    font-size: 13px;
+    font-size: var(--font-size-small, 0.975rem);
     box-shadow: var(--shadow-medium, 0 4px 20px rgba(0, 0, 0, 0.05));
 }
 
@@ -599,6 +608,7 @@
 
 .simulador-roi__insight b {
     color: var(--color-brand-pink, rgb(207, 71, 147));
+    font-weight: var(--font-weight-bold, 700);
 }
 
 .simulador-roi__stats-mini {
@@ -622,7 +632,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: var(--font-size-small, 0.975rem);
     flex-shrink: 0;
 }
 
@@ -637,13 +647,13 @@
 }
 
 .simulador-roi__stat-mini-valor {
-    font-size: 17px;
+    font-size: var(--font-size-base, 1rem);
     font-weight: var(--font-weight-black, 900);
     color: var(--color-text-primary, var(--color-neutral-black));
 }
 
 .simulador-roi__stat-mini-label {
-    font-size: 11.5px;
+    font-size: var(--font-size-small, 0.975rem);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     font-weight: var(--font-weight-medium, 500);
 }
@@ -676,7 +686,7 @@
     justify-content: center;
     color: var(--color-brand-primary, rgb(106, 80, 157));
     box-shadow: var(--shadow-dropdown, 0 10px 15px rgba(0, 0, 0, 0.05));
-    font-size: 17px;
+    font-size: var(--font-size-medium, 1.25rem);
 }
 
 .simulador-roi__feature-icone svg {
@@ -685,14 +695,15 @@
 }
 
 .simulador-roi__feature h4 {
-    font-size: 15px;
-    font-weight: var(--font-weight-black, 900);
+    font-size: var(--font-size-base, 1rem);
+    font-weight: var(--font-weight-bold, 700);
     color: var(--color-text-primary, var(--color-neutral-black));
     margin: 0 0 4px;
 }
 
 .simulador-roi__feature p {
-    font-size: 13px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
     line-height: 1.55;
     margin: 0;
@@ -717,7 +728,8 @@
     border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
     border-radius: var(--border-radius-medium, 18px);
     padding: var(--spacing-large, 32px);
-    font-size: 14px;
+    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-regular, 400);
     line-height: 1.6;
     color: var(--color-text-primary, var(--color-neutral-black));
 }
