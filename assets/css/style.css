@@ -2017,12 +2017,16 @@ details[open] .perguntas-frequentes__seta {
     padding: var(--spacing-large) var(--spacing-xl);
     border-radius: var(--border-radius-medium);
     background-color: color-mix(in srgb, var(--color-brand-pink) 9%, var(--color-neutral-white));
+    border: 1px solid color-mix(in srgb, var(--color-brand-pink) 20%, var(--color-neutral-white));
     text-align: center;
+    box-shadow: var(--shadow-soft);
 }
 
 .newsletter__titulo {
-    color: var(--color-brand-primary);
+    color: var(--color-neutral-black);
     font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary);
     margin-bottom: var(--spacing-small);
 }
 
@@ -2030,37 +2034,75 @@ details[open] .perguntas-frequentes__seta {
     max-width: 620px;
     margin: 0 auto var(--spacing-medium);
     color: var(--color-text-secondary);
-    line-height: 1.5;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+    line-height: 1.6;
 }
 
 .newsletter__formulario {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-small);
+    align-items: center;
+    gap: 12px;
 }
 
 .newsletter__campo {
     width: min(100%, 360px);
-    min-height: 44px;
+    min-height: 48px;
     padding: 0 var(--spacing-medium);
-    border: 1px solid var(--color-border-default);
+    border: 1px solid var(--color-gray-300);
     border-radius: var(--border-radius-small);
-    font: inherit;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    background-color: var(--color-neutral-white);
+    color: var(--color-neutral-black);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.newsletter__campo::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.8;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+}
+
+.newsletter__campo:focus,
+.newsletter__campo:focus-visible {
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 0 0 3px var(--color-aurora-purple-glow-2);
+    outline: none;
 }
 
 .newsletter__botao {
-    min-height: 44px;
-    padding: 0 var(--spacing-medium);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 28px;
     border: 0;
     border-radius: var(--border-radius-small);
     background: var(--gradient-aurora);
     color: var(--color-neutral-white);
     cursor: pointer;
-    font: inherit;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
+    box-shadow: 0 4px 15px color-mix(in srgb, var(--color-brand-primary) 30%, transparent);
+    transition: transform 0.2s ease, box-shadow var(--transition-default), opacity var(--transition-default);
 }
 
-.newsletter__campo:focus-visible,
+.newsletter__botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px color-mix(in srgb, var(--color-brand-primary) 45%, transparent);
+    opacity: 0.95;
+}
+
+.newsletter__botao:active {
+    transform: translateY(0);
+}
+
 .newsletter__botao:focus-visible {
     outline: 3px solid color-mix(in srgb, var(--color-brand-teal) 55%, transparent);
     outline-offset: 2px;
@@ -2071,6 +2113,8 @@ details[open] .perguntas-frequentes__seta {
     margin-top: var(--spacing-small);
     color: var(--color-feedback-success);
     font-size: var(--font-size-small);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
 }
 
 /* ======================================== FOOTER - 8 ======================================== */
@@ -2085,13 +2129,14 @@ details[open] .perguntas-frequentes__seta {
 .rodape__topo {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 48px;
     flex-wrap: wrap;
     margin-bottom: var(--spacing-xlarge);
 }
 
 .rodape__marca {
-    max-width: 300px;
+    max-width: 280px;
+    flex-shrink: 0;
 }
 
 .rodape__logo {
@@ -2107,7 +2152,7 @@ details[open] .perguntas-frequentes__seta {
 
 .rodape__navegacao {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
@@ -2115,6 +2160,7 @@ details[open] .perguntas-frequentes__seta {
     font-size: var(--font-size-base);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-medium);
+    color: var(--color-neutral-white);
 }
 
 .rodape__lista-navegacao {
@@ -2132,11 +2178,13 @@ details[open] .perguntas-frequentes__seta {
     text-decoration: none;
     font-size: var(--font-size-small);
     transition: color var(--transition-default);
+    display: inline-block;
 }
 
 .rodape__link-navegacao:hover,
 .rodape__link-navegacao:focus-visible {
     color: var(--color-neutral-white);
+    transform: translateX(2px);
 }
 
 .rodape__fundo {
@@ -2152,6 +2200,7 @@ details[open] .perguntas-frequentes__seta {
 .rodape__contato {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .rodape__rotulo-contato {
@@ -2210,6 +2259,11 @@ details[open] .perguntas-frequentes__seta {
         width: 100%;
     }
 
+    .rodape__topo {
+        flex-direction: column;
+        gap: 36px;
+    }
+
     .rodape__navegacao {
         gap: 40px;
     }
@@ -2225,18 +2279,14 @@ details[open] .perguntas-frequentes__seta {
         padding: var(--spacing-large) var(--spacing-medium);
     }
 
-    .rodape__topo {
-        flex-direction: column;
-    }
-
     .rodape__navegacao {
         flex-direction: column;
-        gap: 32px;
+        gap: 28px;
     }
 
     .rodape__contato {
         flex-direction: column;
-        gap: 20px;
+        gap: 16px;
     }
 }
 
