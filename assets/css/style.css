@@ -50,15 +50,17 @@
     --color-feedback-info-light: rgb(219, 234, 254);
     --color-feedback-warning-light: rgb(254, 240, 138);
 
-    /* Marcas Parceiras */
-    --color-brand-adobe: rgb(255, 0, 0);
-    --color-brand-evernote: rgb(0, 112, 60);
-    --color-brand-atlassian: rgb(0, 82, 204);
-    --color-brand-gusto: rgb(249, 93, 50);
-    --color-brand-spacex: rgb(0, 82, 136);
-    --color-brand-spotify: rgb(29, 185, 84);
-    --color-brand-calendly: rgb(0, 107, 255);
-    --color-brand-figma: rgb(74, 21, 75);
+    /* Marcas Parceiras (Empresas Brasileiras) */
+    --color-brand-nubank: rgb(130, 10, 209);
+    --color-brand-ifood: rgb(234, 29, 44);
+    --color-brand-totvs: rgb(0, 92, 138);
+    --color-brand-itau: rgb(236, 112, 0);
+    --color-brand-magalu: rgb(0, 134, 255);
+    --color-brand-stone: rgb(0, 168, 104);
+    --color-brand-quintoandar: rgb(0, 30, 98);
+    --color-brand-rdstation: rgb(25, 118, 210);
+    --color-brand-ambev: rgb(0, 45, 98);
+    --color-brand-natura: rgb(243, 112, 33);
 
     /* Cores de Suporte de Componentes Especificos */
     --color-dashboard-label: rgba(17, 17, 17, 0.5);
@@ -923,47 +925,59 @@ section {
     letter-spacing: -0.5px;
 }
 
-/* Cores individuais dos logotipos */
-.parceiros__logo-texto--adobe {
-    color: var(--color-brand-adobe);
+/* Cores individuais dos logotipos (Empresas Brasileiras) */
+.parceiros__logo-texto--nubank {
+    color: var(--color-brand-nubank);
+    font-weight: var(--font-weight-black);
+}
+
+.parceiros__logo-texto--ifood {
+    color: var(--color-brand-ifood);
     font-style: italic;
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--evernote {
-    color: var(--color-brand-evernote);
+.parceiros__logo-texto--totvs {
+    color: var(--color-brand-totvs);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--atlassian {
-    color: var(--color-brand-atlassian);
+.parceiros__logo-texto--itau {
+    color: var(--color-brand-itau);
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--gusto {
-    color: var(--color-brand-gusto);
+.parceiros__logo-texto--magalu {
+    color: var(--color-brand-magalu);
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--spacex {
-    color: var(--color-brand-spacex);
-    letter-spacing: 3px;
+.parceiros__logo-texto--stone {
+    color: var(--color-brand-stone);
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--spotify {
-    color: var(--color-brand-spotify);
+.parceiros__logo-texto--quintoandar {
+    color: var(--color-brand-quintoandar);
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--calendly {
-    color: var(--color-brand-calendly);
+.parceiros__logo-texto--rdstation {
+    color: var(--color-brand-rdstation);
+    letter-spacing: 0.5px;
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--notion {
-    color: var(--color-brand-primary);
+.parceiros__logo-texto--ambev {
+    color: var(--color-brand-ambev);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-black);
 }
 
-.parceiros__logo-texto--slack {
-    color: var(--color-brand-pink);
-}
-
-.parceiros__logo-texto--figma {
-    color: var(--color-brand-figma);
+.parceiros__logo-texto--natura {
+    color: var(--color-brand-natura);
+    font-weight: var(--font-weight-black);
 }
 
 /* ─── RESPONSIVIDADE ─────────────────────────────────────────── */
