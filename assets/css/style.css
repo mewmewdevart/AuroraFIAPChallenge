@@ -2109,11 +2109,12 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .newsletter__privacidade {
-    font-size: 0.85rem;
+    font-size: var(--font-size-small);
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
     color: var(--color-text-secondary);
     margin: var(--spacing-small) auto 0;
     line-height: 1.5;
-    font-family: var(--font-primary);
 }
 
 .newsletter__link-privacidade {
