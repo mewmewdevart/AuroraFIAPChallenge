@@ -15,7 +15,9 @@ function inicializarChatbot() {
         return;
     }
 
-    const API_URL = 'http://localhost:3000/api/chat';
+    const isLocalCustomPort = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && 
+        window.location.port !== '3000' && window.location.port !== '';
+    const API_URL = isLocalCustomPort ? 'http://localhost:3000/api/chat' : '/api/chat';
 
     // Base de Conhecimento Local (Perguntas Frequentes - Resposta Instantânea)
     const FAQ_DATABASE = {
