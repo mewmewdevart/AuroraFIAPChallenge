@@ -59,9 +59,9 @@
     const val = parseFloat(range.value);
     const pct = ((val - min) / (max - min)) * 100;
     range.style.background =
-      "linear-gradient(90deg, var(--color-brand-primary, #7C3AED) 0%, var(--color-brand-pink, #EC4899) " +
-      pct + "%, color-mix(in srgb, var(--color-brand-primary, #7C3AED) 12%, white) " + pct +
-      "%, color-mix(in srgb, var(--color-brand-primary, #7C3AED) 12%, white) 100%)";
+      "linear-gradient(90deg, var(--color-brand-primary, rgb(106, 80, 157)) 0%, var(--color-brand-pink, rgb(207, 71, 147)) " +
+      pct + "%, color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 12%, white) " + pct +
+      "%, color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 12%, white) 100%)";
   }
 
   // Catmull-Rom -> curva suave em Bézier cúbica
@@ -111,8 +111,8 @@
   // =========================================================================
   const CW = 760, CH = 300;
   const PAD = { top: 16, right: 18, bottom: 30, left: 46 };
-  const GRID_COLOR = "#F0ECF8";
-  const AXIS_LABEL_COLOR = "#A79FC0";
+  const GRID_COLOR = "rgba(106, 80, 157, 0.08)";
+  const AXIS_LABEL_COLOR = "rgba(17, 17, 17, 0.65)";
 
   function makeChart(svgEl_) {
     svgEl_.innerHTML = "";
@@ -233,11 +233,11 @@
     const retPts = retSeries.map((p) => ({ x: X(p.t), y: Y(p.v) }));
     const invPts = invSeries.map((p) => ({ x: X(p.t), y: Y(p.v) }));
 
-    drawGradientArea(chart, retPts, "retGrad", "#C084FC", floorY);
-    drawLine(chart, retPts, "#7C3AED", { width: 2.5 });
-    drawLine(chart, invPts, "#14B8A6", { width: 2.2, dashed: true });
-    drawEndMarker(chart, retPts[retPts.length - 1], "#7C3AED");
-    drawEndMarker(chart, invPts[invPts.length - 1], "#14B8A6");
+    drawGradientArea(chart, retPts, "retGrad", "rgb(207, 71, 147)", floorY);
+    drawLine(chart, retPts, "rgb(106, 80, 157)", { width: 2.5 });
+    drawLine(chart, invPts, "rgb(49, 180, 166)", { width: 2.2, dashed: true });
+    drawEndMarker(chart, retPts[retPts.length - 1], "rgb(106, 80, 157)");
+    drawEndMarker(chart, invPts[invPts.length - 1], "rgb(49, 180, 166)");
   }
 
   const announceDirectInsight = debounce((text) => {
@@ -336,11 +336,11 @@
       linPts.push({ x: X(t), y: Y(principal + principal * r * t) });
     }
 
-    drawGradientArea(chart, compPts, "compGrad", "#7C3AED", floorY);
-    drawLine(chart, linPts, "#14B8A6", { width: 2.2, dashed: true });
-    drawLine(chart, compPts, "#7C3AED", { width: 2.6 });
-    drawEndMarker(chart, compPts[compPts.length - 1], "#7C3AED");
-    drawEndMarker(chart, linPts[linPts.length - 1], "#14B8A6");
+    drawGradientArea(chart, compPts, "compGrad", "rgb(106, 80, 157)", floorY);
+    drawLine(chart, linPts, "rgb(49, 180, 166)", { width: 2.2, dashed: true });
+    drawLine(chart, compPts, "rgb(106, 80, 157)", { width: 2.6 });
+    drawEndMarker(chart, compPts[compPts.length - 1], "rgb(106, 80, 157)");
+    drawEndMarker(chart, linPts[linPts.length - 1], "rgb(49, 180, 166)");
   }
 
   /** Última escala usada para desenhar o gráfico composto — o hover lê

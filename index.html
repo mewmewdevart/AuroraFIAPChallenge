@@ -18,7 +18,7 @@
     <meta name="theme-color" content="#6a509d">
     <meta name="color-scheme" content="light dark">
 
-    <link rel="canonical" href="https://mewmewdevart.github.io/AuroraFIAPChallenge/">
+    <link rel="canonical" href="https://aurora-fiap-challenge.vercel.app/">
 
     <!-- Pré-conexões de Origem (Preconnect) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,24 +27,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Redes Sociais -->
-    <!-- <meta property="og:type" content="website">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Aurora - Decisões sobre pessoas guiadas por dados">
     <meta property="og:description"
-        content="A Aurora transforma dados de performance, cultura e engajamento em insights para líderes. Agende uma demonstração gratuita.">
-    <meta property="og:url" content="https://mewmewdevart.github.io/AuroraFIAPChallenge/">
+        content="A Aurora transforma dados de performance, cultura e engajamento em insights acionáveis para líderes. Agende uma demonstração gratuita.">
+    <meta property="og:url" content="https://aurora-fiap-challenge.vercel.app/">
     <meta property="og:site_name" content="Aurora">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="https://mewmewdevart.github.io/AuroraFIAPChallenge/assets/img/social-preview.png">
+    <meta property="og:image" content="https://aurora-fiap-challenge.vercel.app/assets/img/aurora-dashboard.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Aurora - Plataforma de People Analytics"> -->
+    <meta property="og:image:alt" content="Aurora - Plataforma de People Analytics">
 
     <!-- Cartões do Twitter (Twitter Cards) -->
-    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aurora - Decisões sobre pessoas guiadas por dados">
     <meta name="twitter:description"
-        content="A Aurora transforma dados de performance, cultura e engajamento em insights para líderes.">
-    <meta name="twitter:image" content="https://mewmewdevart.github.io/AuroraFIAPChallenge/assets/img/social-preview.png"> -->
+        content="A Aurora transforma dados de performance, cultura e engajamento em insights acionáveis para líderes.">
+    <meta name="twitter:image" content="https://aurora-fiap-challenge.vercel.app/assets/img/aurora-dashboard.png">
 
     <!-- Favicon (Ícone do Navegador) -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -66,35 +66,80 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/simulador-roi.css">
 
-    <!-- Dados Estruturados (JSON-LD) -->
+    <!-- Dados Estruturados (JSON-LD) para SEO & AEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Aurora",
-        "url": "https://mewmewdevart.github.io/AuroraFIAPChallenge/",
-        "description": "Plataforma de People Analytics e Gestão de Performance.",
-        "inLanguage": "pt-BR",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Aurora",
-          "url": "https://mewmewdevart.github.io/AuroraFIAPChallenge/"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://mewmewdevart.github.io/AuroraFIAPChallenge/?search={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://aurora-fiap-challenge.vercel.app/#organization",
+            "name": "Aurora",
+            "url": "https://aurora-fiap-challenge.vercel.app/",
+            "logo": "https://aurora-fiap-challenge.vercel.app/assets/img/aurora-color-logo-people-analytics-platform.png",
+            "description": "Plataforma de People Analytics e Gestão de Performance orientada por dados."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://aurora-fiap-challenge.vercel.app/#website",
+            "name": "Aurora",
+            "url": "https://aurora-fiap-challenge.vercel.app/",
+            "publisher": {
+              "@id": "https://aurora-fiap-challenge.vercel.app/#organization"
+            },
+            "inLanguage": "pt-BR"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://aurora-fiap-challenge.vercel.app/#software",
+            "name": "Aurora People Analytics",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All (Web-based SaaS)",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "BRL",
+              "name": "Demonstração Gratuita"
+            },
+            "description": "Plataforma de People Analytics e Gestão de Performance que cruza dados de clima, engajamento e turnover com assistente virtual inteligente."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://aurora-fiap-challenge.vercel.app/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "O que é a Aurora?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Aurora é uma plataforma de People Analytics e Gestão de Performance que cruza dados de clima, engajamento e desempenho para gerar insights automáticos para equipes de RH e líderes tomarem melhores decisões de gestão."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como a Aurora ajuda a reduzir o turnover?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Aurora utiliza algoritmos avançados para analisar padrões de engajamento, feedbacks e histórico de avaliações, detectando precocemente riscos de saída de colaboradores e sugerindo planos de ação preventivos."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Como funciona o People Analytics na prática?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Coletamos e integramos dados de múltiplas fontes como pesquisas de clima, avaliações 360 e feedbacks em um painel unificado em tempo real para apoiar a tomada de decisões justa e estratégica."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
-
-    <!-- Rastreamento e Analytics (Placeholders)? -->
-    <!-- Rastreamento do Google Analytics (GA4)? -->
-    <!-- Rastreamento do Google Tag Manager? -->
 </head>
 
 <body>
-    <!-- <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a> -->
+    <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a>
 
     <header class="cabecalho">
         <div class="cabecalho__recipiente">
@@ -655,7 +700,7 @@
 
                 <div class="avaliacoes__grade-videos">
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">Como o time da Aurora Tech ganhou 40h por mês</h3>
@@ -676,7 +721,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses</h3>
@@ -697,7 +742,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria queria ver</h3>
@@ -718,7 +763,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">Por que escolhemos a Aurora e não voltamos atrás</h3>
@@ -1393,16 +1438,16 @@
                 </div>
 
                 <div class="rodape__redes-sociais" aria-label="Redes Sociais">
-                    <a href="#" class="rodape__link-social" aria-label="Instagram">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="Instagram da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-instagram rodape__icone-social"></i>
                     </a>
-                    <a href="#" class="rodape__link-social" aria-label="Facebook">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="Facebook da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-facebook-f rodape__icone-social"></i>
                     </a>
-                    <a href="#" class="rodape__link-social" aria-label="YouTube">
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="YouTube da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-youtube rodape__icone-social"></i>
                     </a>
-                    <a href="#" class="rodape__link-social" aria-label="LinkedIn">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="LinkedIn da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-linkedin-in rodape__icone-social"></i>
                     </a>
                 </div>
@@ -1472,9 +1517,9 @@
         </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/chatbot.js"></script>
-    <script src="assets/js/simulador-roi.js"></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/chatbot.js" defer></script>
+    <script src="assets/js/simulador-roi.js" defer></script>
 </body>
 
 </html>
