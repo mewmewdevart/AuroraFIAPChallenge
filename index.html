@@ -700,7 +700,8 @@
 
                 <div class="avaliacoes__grade-videos">
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
+                        <!-- Adcionar o  poster="assets/img/aurora-dashboard.png no futuro -->
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">Como o time da Aurora Tech ganhou 40h por mês</h3>
@@ -710,10 +711,8 @@
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
 
-                            <a class="avaliacoes__link-linkedin"
-                                href="https://www.linkedin.com/company/aurorapro/"
-                                target="_blank" rel="noopener noreferrer"
-                                aria-label="Visitar a Aurora no LinkedIn">
+                            <a class="avaliacoes__link-linkedin" href="https://www.linkedin.com/company/aurorapro/"
+                                target="_blank" rel="noopener noreferrer" aria-label="Visitar a Aurora no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                                 Conectar com a Aurora
                             </a>
@@ -721,7 +720,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses</h3>
@@ -733,8 +732,7 @@
 
                             <a class="avaliacoes__link-linkedin"
                                 href="https://www.linkedin.com/search/results/companies/?keywords=TechFlow"
-                                target="_blank" rel="noopener noreferrer"
-                                aria-label="Visitar a TechFlow no LinkedIn">
+                                target="_blank" rel="noopener noreferrer" aria-label="Visitar a TechFlow no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                                 Conectar no LinkedIn
                             </a>
@@ -742,7 +740,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria queria ver</h3>
@@ -763,7 +761,7 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none" poster="assets/img/aurora-dashboard.png"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">Por que escolhemos a Aurora e não voltamos atrás</h3>
@@ -787,240 +785,383 @@
 
         </section>
 
-         <!-- ============================  CALCULADORA DE ROI (SIMULADOR INTERATIVO) ============================ -->
+        <!-- ============================  CALCULADORA DE ROI (SIMULADOR INTERATIVO) ============================ -->
         <section class="simulador-roi" aria-labelledby="simulador-roi-titulo">
- 
-          <div class="simulador-roi__container">
- 
-            <div class="simulador-roi__cabecalho">
-              <div class="simulador-roi__eyebrow">
-                <img class="simulador-roi__eyebrow-icone" src="assets/img/aurora-color-symbol-people-analytics-platform.png" alt="Aurora" width="14" height="14">
-                Simulação interativa
-              </div>
- 
-              <h2 class="simulador-roi__titulo" id="simulador-roi-titulo">E se você pudesse visualizar<br>o <span class="simulador-roi__title-accent">retorno</span> antes de decidir?</h2>
-              <p class="simulador-roi__descricao">Use nossa calculadora de ROI para simular cenários e entender como pequenas mudanças nos seus números podem gerar grandes resultados para a sua empresa.</p>
+
+            <div class="simulador-roi__container">
+
+                <div class="simulador-roi__cabecalho">
+                    <div class="simulador-roi__eyebrow">
+                        <img class="simulador-roi__eyebrow-icone"
+                            src="assets/img/aurora-color-symbol-people-analytics-platform.png" alt="Aurora" width="14"
+                            height="14">
+                        Simulação interativa
+                    </div>
+
+                    <h2 class="simulador-roi__titulo" id="simulador-roi-titulo">E se você pudesse visualizar<br>o <span
+                            class="simulador-roi__title-accent">retorno</span> antes de decidir?</h2>
+                    <p class="simulador-roi__descricao">Use nossa calculadora de ROI para simular cenários e entender
+                        como pequenas mudanças nos seus números podem gerar grandes resultados para a sua empresa.</p>
+                </div>
+
+                <div class="simulador-roi__tabs" role="tablist" aria-label="Tipo de cálculo de ROI">
+                    <button class="simulador-roi__tab" id="tab-direct" role="tab" type="button" aria-selected="true"
+                        aria-controls="panel-left-direct panel-right-direct" data-tab="direct" tabindex="0">ROI
+                        direto</button>
+                    <button class="simulador-roi__tab" id="tab-compound" role="tab" type="button" aria-selected="false"
+                        aria-controls="panel-left-compound panel-right-compound" data-tab="compound" tabindex="-1">ROI
+                        no tempo (composto)</button>
+                </div>
+
+                <noscript>
+                    <p class="simulador-roi__noscript">Esta simulação é interativa e requer JavaScript habilitado no
+                        navegador. Os valores abaixo mostram um cenário de exemplo (ROI direto).</p>
+                </noscript>
+
+                <div class="simulador-roi__card">
+
+                    <!-- ===================== ESQUERDA: ROI DIRETO ===================== -->
+                    <div class="simulador-roi__controles" id="panel-left-direct" role="tabpanel"
+                        aria-labelledby="tab-direct">
+                        <div class="simulador-roi__painel-titulo">
+                            <div class="simulador-roi__icone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" aria-hidden="true" focusable="false">
+                                    <circle cx="12" cy="12" r="8" />
+                                    <path
+                                        d="M12 8v8M9 10.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .9-3 1.9 1.3 1.8 3 1.8 3-.7 3-1.8" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>ROI direto</h3>
+                                <p>Compare o valor investido com o retorno gerado em um único período.</p>
+                            </div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="8" cy="8" r="5" />
+                                        <circle cx="16" cy="16" r="5" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="d-inv-range">Investimento total</label>
+                                <input class="simulador-roi__valor" id="d-inv-box" type="text" inputmode="decimal"
+                                    autocomplete="off" value="R$ 25.000" aria-label="Investimento total (valor exato)">
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="d-inv-range" min="5000" max="200000"
+                                step="1000" value="25000">
+                            <div class="simulador-roi__intervalo"><span>R$ 5 mil</span><span>R$ 200 mil</span></div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M3 17l6-6 4 4 8-8M15 7h6v6" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="d-ret-range">Retorno gerado</label>
+                                <input class="simulador-roi__valor" id="d-ret-box" type="text" inputmode="decimal"
+                                    autocomplete="off" value="R$ 35.000" aria-label="Retorno gerado (valor exato)">
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="d-ret-range" min="5000" max="500000"
+                                step="1000" value="35000">
+                            <div class="simulador-roi__intervalo"><span>R$ 5 mil</span><span>R$ 500 mil</span></div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <rect x="3" y="4" width="18" height="17" rx="2" />
+                                        <path d="M3 9h18M8 2v4M16 2v4" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="d-period-range">Período da
+                                    análise</label>
+                                <input class="simulador-roi__valor" id="d-period-box" type="text" inputmode="numeric"
+                                    autocomplete="off" value="12 meses" aria-label="Período da análise (valor exato)">
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="d-period-range" min="1" max="60"
+                                step="1" value="12">
+                            <div class="simulador-roi__intervalo"><span>1 mês</span><span>60 meses</span></div>
+                        </div>
+
+                        <p class="simulador-roi__nota">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 16v-4M12 8h.01" />
+                            </svg>
+                            <span>Os valores são atualizados automaticamente conforme você ajusta.</span>
+                        </p>
+                    </div>
+
+                    <!-- ===================== ESQUERDA: ROI COMPOSTO ===================== -->
+                    <div class="simulador-roi__controles" id="panel-left-compound" role="tabpanel"
+                        aria-labelledby="tab-compound" hidden>
+                        <div class="simulador-roi__painel-titulo">
+                            <div class="simulador-roi__icone">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" aria-hidden="true" focusable="false">
+                                    <path d="M4 6h16M4 12h10M4 18h16" />
+                                    <circle cx="18" cy="12" r="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Configurar cenário</h3>
+                            </div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <circle cx="8" cy="8" r="5" />
+                                        <circle cx="16" cy="16" r="5" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="c-inv-range">Investimento inicial</label>
+                            </div>
+                            <div class="simulador-roi__stepper">
+                                <button type="button" id="c-inv-minus"
+                                    aria-label="Diminuir investimento inicial em R$ 1.000">−</button>
+                                <input class="simulador-roi__valor" id="c-inv-box" type="text" inputmode="decimal"
+                                    autocomplete="off" value="R$ 25.000"
+                                    aria-label="Investimento inicial (valor exato)">
+                                <button type="button" id="c-inv-plus"
+                                    aria-label="Aumentar investimento inicial em R$ 1.000">+</button>
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="c-inv-range" min="1000" max="1000000"
+                                step="1000" value="25000">
+                            <div class="simulador-roi__intervalo"><span>R$ 1 mil</span><span>R$ 1 milhão</span></div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M3 17l6-6 4 4 8-8M15 7h6v6" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="c-rate-range">Crescimento mensal (juros
+                                    compostos)</label>
+                            </div>
+                            <div class="simulador-roi__stepper">
+                                <button type="button" id="c-rate-minus"
+                                    aria-label="Diminuir crescimento mensal em 0,1 ponto percentual">−</button>
+                                <input class="simulador-roi__valor" id="c-rate-box" type="text" inputmode="decimal"
+                                    autocomplete="off" value="3,5%" aria-label="Crescimento mensal (valor exato)">
+                                <button type="button" id="c-rate-plus"
+                                    aria-label="Aumentar crescimento mensal em 0,1 ponto percentual">+</button>
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="c-rate-range" min="0.1" max="10"
+                                step="0.1" value="3.5">
+                            <div class="simulador-roi__intervalo"><span>0,1%</span><span>10%</span></div>
+                        </div>
+
+                        <div class="simulador-roi__campo">
+                            <div class="simulador-roi__campo-cabecalho">
+                                <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <rect x="3" y="4" width="18" height="17" rx="2" />
+                                        <path d="M3 9h18M8 2v4M16 2v4" />
+                                    </svg></div>
+                                <label class="simulador-roi__campo-label" for="c-period-range">Período</label>
+                            </div>
+                            <div class="simulador-roi__stepper">
+                                <button type="button" id="c-period-minus"
+                                    aria-label="Diminuir período em 1 mês">−</button>
+                                <input class="simulador-roi__valor" id="c-period-box" type="text" inputmode="numeric"
+                                    autocomplete="off" value="24 meses" aria-label="Período (valor exato)">
+                                <button type="button" id="c-period-plus"
+                                    aria-label="Aumentar período em 1 mês">+</button>
+                            </div>
+                            <input class="simulador-roi__slider" type="range" id="c-period-range" min="1" max="60"
+                                step="1" value="24">
+                            <div class="simulador-roi__intervalo"><span>1 mês</span><span>60 meses</span></div>
+                        </div>
+
+                        <p class="simulador-roi__nota">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 16v-4M12 8h.01" />
+                            </svg>
+                            <span>Os cálculos utilizam juros compostos.</span>
+                        </p>
+                    </div>
+
+                    <!-- ===================== DIREITA: RESULTADOS (DIRETO) ===================== -->
+                    <div class="simulador-roi__resultado" id="panel-right-direct" role="tabpanel"
+                        aria-labelledby="tab-direct">
+                        <div class="simulador-roi__resultado-eyebrow">Resultado</div>
+                        <div class="simulador-roi__linha-resultado">
+                            <div>
+                                <div class="simulador-roi__numero-grande" id="d-roi-pct">+40,0%</div>
+                                <div class="simulador-roi__legenda-numero">ROI sobre o investimento</div>
+                            </div>
+                            <div class="simulador-roi__estatistica">
+                                <div class="simulador-roi__estatistica-valor" id="d-gain">R$ 10.000</div>
+                                <div class="simulador-roi__estatistica-label">Ganho estimado</div>
+                            </div>
+                            <div class="simulador-roi__estatistica">
+                                <div class="simulador-roi__estatistica-valor" id="d-total">R$ 35.000</div>
+                                <div class="simulador-roi__estatistica-label">Retorno total</div>
+                            </div>
+                            <div class="simulador-roi__estatistica">
+                                <div class="simulador-roi__estatistica-valor" id="d-per-real">R$ 1,40</div>
+                                <div class="simulador-roi__estatistica-label">Para cada R$ 1 investido</div>
+                            </div>
+                        </div>
+
+                        <div class="simulador-roi__legenda">
+                            <span><span class="ponto ponto--roxo"></span>Retorno</span>
+                            <span><span class="traco traco--teal"></span>Investimento</span>
+                        </div>
+
+                        <div class="simulador-roi__grafico-wrap" id="chart-direct-wrap">
+                            <svg id="chart-direct" viewBox="0 0 760 300"></svg>
+                            <div class="simulador-roi__grafico-tooltip" id="tooltip-direct" aria-hidden="true"></div>
+                        </div>
+                        <p class="simulador-roi__grafico-dica">Passe o mouse sobre o gráfico para ver os valores mês a
+                            mês.</p>
+
+                        <div class="simulador-roi__insight">
+                            <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                    <path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z" />
+                                </svg></span>
+                            <span>A cada R$ 1 investido, o cenário retorna <b id="d-insight-val">R$ 1,40</b>.</span>
+                            <span id="d-insight-text" class="simulador-roi__sr-only" aria-live="polite"
+                                aria-atomic="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- ===================== DIREITA: RESULTADOS (COMPOSTO) ===================== -->
+                    <div class="simulador-roi__resultado" id="panel-right-compound" role="tabpanel"
+                        aria-labelledby="tab-compound" hidden>
+                        <div class="simulador-roi__resultado-eyebrow">Valor projetado ao final do período</div>
+                        <div>
+                            <span class="simulador-roi__numero-grande simulador-roi__numero-grande--solido"
+                                id="c-final-value">R$ 57.300</span>
+                            <span class="simulador-roi__etiqueta-percentual" id="c-return-pct">+129,2%</span>
+                        </div>
+                        <div class="simulador-roi__legenda-numero">Retorno acumulado</div>
+
+                        <div class="simulador-roi__legenda">
+                            <span><span class="traco traco--roxo"></span>Composto (<span id="c-legend-rate">3,5</span>%
+                                a.m.)</span>
+                            <span><span class="traco traco--teal-tracejado"></span>Linear (sem juros compostos)</span>
+                        </div>
+
+                        <div class="simulador-roi__grafico-wrap" id="chart-compound-wrap">
+                            <svg id="chart-compound" viewBox="0 0 760 300"></svg>
+                            <div class="simulador-roi__grafico-tooltip" id="tooltip-compound" aria-hidden="true"></div>
+                        </div>
+                        <p class="simulador-roi__grafico-dica">Passe o mouse sobre o gráfico para ver os valores mês a
+                            mês.</p>
+
+                        <div class="simulador-roi__stats-mini">
+                            <div class="simulador-roi__stat-mini">
+                                <div class="simulador-roi__stat-mini-icone"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M7 17l5-5 4 4 6-8" />
+                                    </svg></div>
+                                <div>
+                                    <div class="simulador-roi__stat-mini-valor" id="c-gain">+R$ 32.300</div>
+                                    <div class="simulador-roi__stat-mini-label">Ganho estimado</div>
+                                </div>
+                            </div>
+                            <div class="simulador-roi__stat-mini">
+                                <div class="simulador-roi__stat-mini-icone"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                        focusable="false">
+                                        <path d="M4 20V10M11 20V4M18 20v-7" />
+                                    </svg></div>
+                                <div>
+                                    <div class="simulador-roi__stat-mini-valor" id="c-final2">R$ 57.300</div>
+                                    <div class="simulador-roi__stat-mini-label">Valor final projetado</div>
+                                </div>
+                            </div>
+                            <div class="simulador-roi__stat-mini">
+                                <div class="simulador-roi__stat-mini-icone simulador-roi__stat-mini-icone--teal"><svg
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" aria-hidden="true" focusable="false">
+                                        <path d="M4 12h16" />
+                                    </svg></div>
+                                <div>
+                                    <div class="simulador-roi__stat-mini-valor" id="c-final-linear">R$ 46.000</div>
+                                    <div class="simulador-roi__stat-mini-label">Total sem juros compostos</div>
+                                </div>
+                            </div>
+                            <div class="simulador-roi__stat-mini">
+                                <div class="simulador-roi__stat-mini-icone simulador-roi__stat-mini-icone--teal"><svg
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        aria-hidden="true" focusable="false">
+                                        <circle cx="12" cy="12" r="8" />
+                                        <circle cx="12" cy="12" r="3.2" />
+                                    </svg></div>
+                                <div>
+                                    <div class="simulador-roi__stat-mini-valor" id="c-per-real">R$ 2,29</div>
+                                    <div class="simulador-roi__stat-mini-label">Para cada R$ 1 investido</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="simulador-roi__insight">
+                            <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                    <path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z" />
+                                </svg></span>
+                            <span>No longo prazo, pequenas diferenças percentuais geram <b>grandes
+                                    transformações</b>.</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="simulador-roi__features">
+                    <div class="simulador-roi__feature">
+                        <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+                                focusable="false">
+                                <path d="M4 19h16M7 15l4-5 3 3 5-7" />
+                            </svg></div>
+                        <div>
+                            <h4>Decisões mais inteligentes</h4>
+                            <p>Com dados claros, você investe com mais segurança.</p>
+                        </div>
+                    </div>
+                    <div class="simulador-roi__feature">
+                        <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="8" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg></div>
+                        <div>
+                            <h4>Impacto real nos resultados</h4>
+                            <p>Pequenas mudanças nos números podem gerar grandes transformações.</p>
+                        </div>
+                    </div>
+                    <div class="simulador-roi__feature">
+                        <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 7v5l3.5 2" />
+                            </svg></div>
+                        <div>
+                            <h4>Planeje, simule e cresça</h4>
+                            <p>Teste cenários, compare resultados e antecipe oportunidades.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
- 
-            <div class="simulador-roi__tabs" role="tablist" aria-label="Tipo de cálculo de ROI">
-              <button class="simulador-roi__tab" id="tab-direct" role="tab" type="button" aria-selected="true" aria-controls="panel-left-direct panel-right-direct" data-tab="direct" tabindex="0">ROI direto</button>
-              <button class="simulador-roi__tab" id="tab-compound" role="tab" type="button" aria-selected="false" aria-controls="panel-left-compound panel-right-compound" data-tab="compound" tabindex="-1">ROI no tempo (composto)</button>
-            </div>
- 
-            <noscript>
-              <p class="simulador-roi__noscript">Esta simulação é interativa e requer JavaScript habilitado no navegador. Os valores abaixo mostram um cenário de exemplo (ROI direto).</p>
-            </noscript>
- 
-            <div class="simulador-roi__card">
- 
-              <!-- ===================== ESQUERDA: ROI DIRETO ===================== -->
-              <div class="simulador-roi__controles" id="panel-left-direct" role="tabpanel" aria-labelledby="tab-direct">
-                <div class="simulador-roi__painel-titulo">
-                  <div class="simulador-roi__icone">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9 10.5c0-1 1-1.8 3-1.8s3 .8 3 1.8-1 1.5-3 1.8-3 .9-3 1.9 1.3 1.8 3 1.8 3-.7 3-1.8"/></svg>
-                  </div>
-                  <div>
-                    <h3>ROI direto</h3>
-                    <p>Compare o valor investido com o retorno gerado em um único período.</p>
-                  </div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="d-inv-range">Investimento total</label>
-                    <input class="simulador-roi__valor" id="d-inv-box" type="text" inputmode="decimal" autocomplete="off" value="R$ 25.000" aria-label="Investimento total (valor exato)">
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="d-inv-range" min="5000" max="200000" step="1000" value="25000">
-                  <div class="simulador-roi__intervalo"><span>R$ 5 mil</span><span>R$ 200 mil</span></div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="d-ret-range">Retorno gerado</label>
-                    <input class="simulador-roi__valor" id="d-ret-box" type="text" inputmode="decimal" autocomplete="off" value="R$ 35.000" aria-label="Retorno gerado (valor exato)">
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="d-ret-range" min="5000" max="500000" step="1000" value="35000">
-                  <div class="simulador-roi__intervalo"><span>R$ 5 mil</span><span>R$ 500 mil</span></div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="d-period-range">Período da análise</label>
-                    <input class="simulador-roi__valor" id="d-period-box" type="text" inputmode="numeric" autocomplete="off" value="12 meses" aria-label="Período da análise (valor exato)">
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="d-period-range" min="1" max="60" step="1" value="12">
-                  <div class="simulador-roi__intervalo"><span>1 mês</span><span>60 meses</span></div>
-                </div>
- 
-                <p class="simulador-roi__nota">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
-                  <span>Os valores são atualizados automaticamente conforme você ajusta.</span>
-                </p>
-              </div>
- 
-              <!-- ===================== ESQUERDA: ROI COMPOSTO ===================== -->
-              <div class="simulador-roi__controles" id="panel-left-compound" role="tabpanel" aria-labelledby="tab-compound" hidden>
-                <div class="simulador-roi__painel-titulo">
-                  <div class="simulador-roi__icone">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h10M4 18h16"/><circle cx="18" cy="12" r="2"/></svg>
-                  </div>
-                  <div><h3>Configurar cenário</h3></div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="c-inv-range">Investimento inicial</label>
-                  </div>
-                  <div class="simulador-roi__stepper">
-                    <button type="button" id="c-inv-minus" aria-label="Diminuir investimento inicial em R$ 1.000">−</button>
-                    <input class="simulador-roi__valor" id="c-inv-box" type="text" inputmode="decimal" autocomplete="off" value="R$ 25.000" aria-label="Investimento inicial (valor exato)">
-                    <button type="button" id="c-inv-plus" aria-label="Aumentar investimento inicial em R$ 1.000">+</button>
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="c-inv-range" min="1000" max="1000000" step="1000" value="25000">
-                  <div class="simulador-roi__intervalo"><span>R$ 1 mil</span><span>R$ 1 milhão</span></div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="c-rate-range">Crescimento mensal (juros compostos)</label>
-                  </div>
-                  <div class="simulador-roi__stepper">
-                    <button type="button" id="c-rate-minus" aria-label="Diminuir crescimento mensal em 0,1 ponto percentual">−</button>
-                    <input class="simulador-roi__valor" id="c-rate-box" type="text" inputmode="decimal" autocomplete="off" value="3,5%" aria-label="Crescimento mensal (valor exato)">
-                    <button type="button" id="c-rate-plus" aria-label="Aumentar crescimento mensal em 0,1 ponto percentual">+</button>
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="c-rate-range" min="0.1" max="10" step="0.1" value="3.5">
-                  <div class="simulador-roi__intervalo"><span>0,1%</span><span>10%</span></div>
-                </div>
- 
-                <div class="simulador-roi__campo">
-                  <div class="simulador-roi__campo-cabecalho">
-                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
-                    <label class="simulador-roi__campo-label" for="c-period-range">Período</label>
-                  </div>
-                  <div class="simulador-roi__stepper">
-                    <button type="button" id="c-period-minus" aria-label="Diminuir período em 1 mês">−</button>
-                    <input class="simulador-roi__valor" id="c-period-box" type="text" inputmode="numeric" autocomplete="off" value="24 meses" aria-label="Período (valor exato)">
-                    <button type="button" id="c-period-plus" aria-label="Aumentar período em 1 mês">+</button>
-                  </div>
-                  <input class="simulador-roi__slider" type="range" id="c-period-range" min="1" max="60" step="1" value="24">
-                  <div class="simulador-roi__intervalo"><span>1 mês</span><span>60 meses</span></div>
-                </div>
- 
-                <p class="simulador-roi__nota">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
-                  <span>Os cálculos utilizam juros compostos.</span>
-                </p>
-              </div>
- 
-              <!-- ===================== DIREITA: RESULTADOS (DIRETO) ===================== -->
-              <div class="simulador-roi__resultado" id="panel-right-direct" role="tabpanel" aria-labelledby="tab-direct">
-                <div class="simulador-roi__resultado-eyebrow">Resultado</div>
-                <div class="simulador-roi__linha-resultado">
-                  <div>
-                    <div class="simulador-roi__numero-grande" id="d-roi-pct">+40,0%</div>
-                    <div class="simulador-roi__legenda-numero">ROI sobre o investimento</div>
-                  </div>
-                  <div class="simulador-roi__estatistica">
-                    <div class="simulador-roi__estatistica-valor" id="d-gain">R$ 10.000</div>
-                    <div class="simulador-roi__estatistica-label">Ganho estimado</div>
-                  </div>
-                  <div class="simulador-roi__estatistica">
-                    <div class="simulador-roi__estatistica-valor" id="d-total">R$ 35.000</div>
-                    <div class="simulador-roi__estatistica-label">Retorno total</div>
-                  </div>
-                  <div class="simulador-roi__estatistica">
-                    <div class="simulador-roi__estatistica-valor" id="d-per-real">R$ 1,40</div>
-                    <div class="simulador-roi__estatistica-label">Para cada R$ 1 investido</div>
-                  </div>
-                </div>
- 
-                <div class="simulador-roi__legenda">
-                  <span><span class="ponto ponto--roxo"></span>Retorno</span>
-                  <span><span class="traco traco--teal"></span>Investimento</span>
-                </div>
- 
-                <div class="simulador-roi__grafico-wrap" id="chart-direct-wrap">
-                  <svg id="chart-direct" viewBox="0 0 760 300"></svg>
-                  <div class="simulador-roi__grafico-tooltip" id="tooltip-direct" aria-hidden="true"></div>
-                </div>
-                <p class="simulador-roi__grafico-dica">Passe o mouse sobre o gráfico para ver os valores mês a mês.</p>
- 
-                <div class="simulador-roi__insight">
-                  <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z"/></svg></span>
-                  <span>A cada R$ 1 investido, o cenário retorna <b id="d-insight-val">R$ 1,40</b>.</span>
-                  <span id="d-insight-text" class="simulador-roi__sr-only" aria-live="polite" aria-atomic="true"></span>
-                </div>
-              </div>
- 
-              <!-- ===================== DIREITA: RESULTADOS (COMPOSTO) ===================== -->
-              <div class="simulador-roi__resultado" id="panel-right-compound" role="tabpanel" aria-labelledby="tab-compound" hidden>
-                <div class="simulador-roi__resultado-eyebrow">Valor projetado ao final do período</div>
-                <div>
-                  <span class="simulador-roi__numero-grande simulador-roi__numero-grande--solido" id="c-final-value">R$ 57.300</span>
-                  <span class="simulador-roi__etiqueta-percentual" id="c-return-pct">+129,2%</span>
-                </div>
-                <div class="simulador-roi__legenda-numero">Retorno acumulado</div>
- 
-                <div class="simulador-roi__legenda">
-                  <span><span class="traco traco--roxo"></span>Composto (<span id="c-legend-rate">3,5</span>% a.m.)</span>
-                  <span><span class="traco traco--teal-tracejado"></span>Linear (sem juros compostos)</span>
-                </div>
- 
-                <div class="simulador-roi__grafico-wrap" id="chart-compound-wrap">
-                  <svg id="chart-compound" viewBox="0 0 760 300"></svg>
-                  <div class="simulador-roi__grafico-tooltip" id="tooltip-compound" aria-hidden="true"></div>
-                </div>
-                <p class="simulador-roi__grafico-dica">Passe o mouse sobre o gráfico para ver os valores mês a mês.</p>
- 
-                <div class="simulador-roi__stats-mini">
-                  <div class="simulador-roi__stat-mini">
-                    <div class="simulador-roi__stat-mini-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M7 17l5-5 4 4 6-8"/></svg></div>
-                    <div><div class="simulador-roi__stat-mini-valor" id="c-gain">+R$ 32.300</div><div class="simulador-roi__stat-mini-label">Ganho estimado</div></div>
-                  </div>
-                  <div class="simulador-roi__stat-mini">
-                    <div class="simulador-roi__stat-mini-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 20V10M11 20V4M18 20v-7"/></svg></div>
-                    <div><div class="simulador-roi__stat-mini-valor" id="c-final2">R$ 57.300</div><div class="simulador-roi__stat-mini-label">Valor final projetado</div></div>
-                  </div>
-                  <div class="simulador-roi__stat-mini">
-                    <div class="simulador-roi__stat-mini-icone simulador-roi__stat-mini-icone--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 12h16"/></svg></div>
-                    <div><div class="simulador-roi__stat-mini-valor" id="c-final-linear">R$ 46.000</div><div class="simulador-roi__stat-mini-label">Total sem juros compostos</div></div>
-                  </div>
-                  <div class="simulador-roi__stat-mini">
-                    <div class="simulador-roi__stat-mini-icone simulador-roi__stat-mini-icone--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg></div>
-                    <div><div class="simulador-roi__stat-mini-valor" id="c-per-real">R$ 2,29</div><div class="simulador-roi__stat-mini-label">Para cada R$ 1 investido</div></div>
-                  </div>
-                </div>
- 
-                <div class="simulador-roi__insight">
-                  <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z"/></svg></span>
-                  <span>No longo prazo, pequenas diferenças percentuais geram <b>grandes transformações</b>.</span>
-                </div>
-              </div>
- 
-            </div>
- 
-            <div class="simulador-roi__features">
-              <div class="simulador-roi__feature">
-                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 19h16M7 15l4-5 3 3 5-7"/></svg></div>
-                <div><h4>Decisões mais inteligentes</h4><p>Com dados claros, você investe com mais segurança.</p></div>
-              </div>
-              <div class="simulador-roi__feature">
-                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
-                <div><h4>Impacto real nos resultados</h4><p>Pequenas mudanças nos números podem gerar grandes transformações.</p></div>
-              </div>
-              <div class="simulador-roi__feature">
-                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
-                <div><h4>Planeje, simule e cresça</h4><p>Teste cenários, compare resultados e antecipe oportunidades.</p></div>
-              </div>
-            </div>
- 
-          </div>
         </section>
 
 
@@ -1233,12 +1374,24 @@
                         <fieldset class="captacao__seletor">
                             <legend class="captacao__seletor-titulo">Selecione uma data *</legend>
                             <div class="captacao__opcoes-data">
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="12/11" required><span class="captacao__opcao-conteudo"><small>TER</small><strong>12</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="13/11"><span class="captacao__opcao-conteudo"><small>QUA</small><strong>13</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="14/11"><span class="captacao__opcao-conteudo"><small>QUI</small><strong>14</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="15/11"><span class="captacao__opcao-conteudo"><small>SEX</small><strong>15</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="18/11"><span class="captacao__opcao-conteudo"><small>SEG</small><strong>18</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="19/11"><span class="captacao__opcao-conteudo"><small>TER</small><strong>19</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="12/11" required><span
+                                        class="captacao__opcao-conteudo"><small>TER</small><strong>12</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="13/11"><span
+                                        class="captacao__opcao-conteudo"><small>QUA</small><strong>13</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="14/11"><span
+                                        class="captacao__opcao-conteudo"><small>QUI</small><strong>14</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="15/11"><span
+                                        class="captacao__opcao-conteudo"><small>SEX</small><strong>15</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="18/11"><span
+                                        class="captacao__opcao-conteudo"><small>SEG</small><strong>18</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
+                                        name="data" value="19/11"><span
+                                        class="captacao__opcao-conteudo"><small>TER</small><strong>19</strong></span></label>
                             </div>
                             <div id="erro-data" class="captacao__erro sr-only" aria-live="polite"></div>
                         </fieldset>
@@ -1246,9 +1399,30 @@
                         <fieldset class="captacao__seletor">
                             <legend class="captacao__seletor-titulo">Selecione um horário *</legend>
                             <div class="captacao__horarios">
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-sun" aria-hidden="true"></i> Manhã</span><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="09:00" required><span>09:00</span></label><label class="captacao__horario captacao__horario--indisponivel"><input class="captacao__opcao-input" type="radio" name="horario" value="10:30" disabled><span>10:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="11:00"><span>11:00</span></label></div>
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-sun" aria-hidden="true"></i> Tarde</span><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="14:00"><span>14:00</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="15:30"><span>15:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="17:00"><span>17:00</span></label></div>
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-moon" aria-hidden="true"></i> Noite</span><label class="captacao__horario captacao__horario--indisponivel"><input class="captacao__opcao-input" type="radio" name="horario" value="18:30" disabled><span>18:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="19:00"><span>19:00</span></label></div>
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                            class="fa-regular fa-sun" aria-hidden="true"></i> Manhã</span><label
+                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                            name="horario" value="09:00" required><span>09:00</span></label><label
+                                        class="captacao__horario captacao__horario--indisponivel"><input
+                                            class="captacao__opcao-input" type="radio" name="horario" value="10:30"
+                                            disabled><span>10:30</span></label><label class="captacao__horario"><input
+                                            class="captacao__opcao-input" type="radio" name="horario"
+                                            value="11:00"><span>11:00</span></label></div>
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                            class="fa-regular fa-sun" aria-hidden="true"></i> Tarde</span><label
+                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                            name="horario" value="14:00"><span>14:00</span></label><label
+                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                            name="horario" value="15:30"><span>15:30</span></label><label
+                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                            name="horario" value="17:00"><span>17:00</span></label></div>
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                            class="fa-regular fa-moon" aria-hidden="true"></i> Noite</span><label
+                                        class="captacao__horario captacao__horario--indisponivel"><input
+                                            class="captacao__opcao-input" type="radio" name="horario" value="18:30"
+                                            disabled><span>18:30</span></label><label class="captacao__horario"><input
+                                            class="captacao__opcao-input" type="radio" name="horario"
+                                            value="19:00"><span>19:00</span></label></div>
                             </div>
                             <div id="erro-horario" class="captacao__erro sr-only" aria-live="polite"></div>
                         </fieldset>
@@ -1438,16 +1612,20 @@
                 </div>
 
                 <div class="rodape__redes-sociais" aria-label="Redes Sociais">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="Instagram da Aurora (abre em nova aba)">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                        class="rodape__link-social" aria-label="Instagram da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-instagram rodape__icone-social"></i>
                     </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="Facebook da Aurora (abre em nova aba)">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social"
+                        aria-label="Facebook da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-facebook-f rodape__icone-social"></i>
                     </a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="YouTube da Aurora (abre em nova aba)">
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social"
+                        aria-label="YouTube da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-youtube rodape__icone-social"></i>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social" aria-label="LinkedIn da Aurora (abre em nova aba)">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social"
+                        aria-label="LinkedIn da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-linkedin-in rodape__icone-social"></i>
                     </a>
                 </div>
