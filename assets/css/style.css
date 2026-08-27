@@ -2108,6 +2108,26 @@ details[open] .perguntas-frequentes__seta {
     outline-offset: 2px;
 }
 
+.newsletter__privacidade {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-small) auto 0;
+    line-height: 1.5;
+    font-family: var(--font-primary);
+}
+
+.newsletter__link-privacidade {
+    color: var(--color-brand-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-default);
+}
+
+.newsletter__link-privacidade:hover,
+.newsletter__link-privacidade:focus-visible {
+    color: var(--color-brand-pink);
+}
+
 .newsletter__mensagem {
     min-height: 1.4em;
     margin-top: var(--spacing-small);
