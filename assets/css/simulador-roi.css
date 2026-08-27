@@ -1,0 +1,788 @@
+/* ======================================================================
+   SEÇÃO SIMULADOR DE ROI — Calculadora interativa (ROI direto / composto)
+   Depende dos tokens definidos em assets/css/style.css (:root)
+
+   ESTRATÉGIA DE FALLBACK
+   Todo var(--token) aqui usa um segundo argumento com um valor de
+   fallback (ex.: var(--spacing-large, 32px)). Assim o componente:
+     1) usa os tokens reais do design system quando ele está presente;
+     2) continua funcional e visualmente correto quando testado isolado
+        (ex.: abrindo roi-calculator.html direto no navegador).
+   Nenhum valor é redefinido em :root para não sobrescrever os tokens
+   globais do site quando este arquivo for carregado junto com eles.
+   ====================================================================== */
+
+.simulador-roi,
+.simulador-roi *,
+.simulador-roi *::before,
+.simulador-roi *::after {
+    box-sizing: border-box;
+}
+
+.simulador-roi {
+    --simulador-roi-container-max: 1180px;
+
+    position: relative;
+    overflow: hidden;
+    padding: var(--spacing-xlarge, 88px) clamp(16px, 4vw, 24px) var(--spacing-xl, 64px);
+    background-color: var(--color-neutral-white, #FFFFFF);
+    color: var(--color-neutral-black, #1E1B4B);
+    font-family: var(--font-primary, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif);
+}
+
+.simulador-roi__container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--simulador-roi-container-max);
+    margin-inline: auto;
+}
+
+/* ---------- Cabeçalho ---------- */
+.simulador-roi__cabecalho {
+    max-width: 640px;
+    margin-bottom: var(--spacing-xl, 40px);
+}
+
+.simulador-roi__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 8%, var(--color-neutral-white, #fff));
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, #7C3AED) 16%, var(--color-neutral-white, #fff));
+    border-radius: var(--border-radius-small, 12px);
+    padding: 5px var(--spacing-medium, 16px);
+    font-size: var(--font-size-small, 12px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-brand-primary, #7C3AED);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-medium, 16px);
+}
+
+/* Ícone de fonte (ex.: Font Awesome), caso o eyebrow use um ícone de fonte */
+.simulador-roi__eyebrow i {
+    font-size: 12px;
+}
+
+/* Ícone em SVG inline, caso o eyebrow use uma marca vetorial */
+.simulador-roi__eyebrow svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Símbolo da marca (imagem), usado por padrão neste componente */
+.simulador-roi__eyebrow-icone {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.simulador-roi__titulo {
+    font-size: clamp(1.8rem, 4vw, var(--font-size-large, 46px));
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-neutral-black, #1E1B4B);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0 0 var(--spacing-medium, 16px);
+}
+
+.simulador-roi__title-accent,
+.avaliacoes__title-accent,
+.fluxo__title-accent {
+    background: var(--gradient-aurora, linear-gradient(90deg, #EC4899, #7C3AED));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.simulador-roi__descricao {
+    max-width: 620px;
+    font-size: var(--font-size-base, 16.5px);
+    line-height: 1.65;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 60%, transparent);
+    margin: 0;
+}
+
+/* ---------- Tabs ---------- */
+.simulador-roi__tabs {
+    display: inline-flex;
+    gap: 4px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 8%, var(--color-neutral-white, #fff));
+    padding: 6px;
+    border-radius: var(--border-radius-small, 14px);
+    margin-bottom: var(--spacing-large, 22px);
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.simulador-roi__tab {
+    border: none;
+    background: transparent;
+    padding: 11px 22px;
+    font-size: var(--font-size-small, 14.5px);
+    font-weight: var(--font-weight-bold, 700);
+    font-family: var(--font-primary, inherit);
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color var(--transition-default, .2s ease), color var(--transition-default, .2s ease);
+}
+
+.simulador-roi__tab[aria-selected="true"] {
+    background: var(--color-neutral-white, #fff);
+    color: var(--color-brand-pink, #EC4899);
+    box-shadow: var(--shadow-dropdown, 0 6px 16px rgba(124, 58, 237, .12));
+}
+
+.simulador-roi__tab:not([aria-selected="true"]):hover {
+    color: var(--color-neutral-black, #1E1B4B);
+}
+
+.simulador-roi__tab:focus-visible {
+    outline: 2px solid var(--color-brand-primary, #7C3AED);
+    outline-offset: 2px;
+}
+
+/* ---------- Card principal ---------- */
+.simulador-roi__card {
+    background-color: var(--color-neutral-white, #FFFFFF);
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, #7C3AED) 10%, var(--color-neutral-white, #fff));
+    border-radius: var(--border-radius-medium, 24px);
+    box-shadow: var(--shadow-soft, 0 20px 60px -20px rgba(94, 46, 175, .25));
+    display: grid;
+    grid-template-columns: clamp(260px, 30vw, 340px) minmax(0, 1fr);
+    overflow: hidden;
+    container-type: inline-size;
+    container-name: roi-card;
+}
+
+/* ---------- Coluna de controles (esquerda) ---------- */
+.simulador-roi__controles {
+    padding: var(--spacing-large, 34px) var(--spacing-large, 30px);
+    border-right: 1px solid var(--color-border-default, #E8E3F5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-large, 26px);
+    min-width: 0;
+}
+
+.simulador-roi__controles[hidden] {
+    display: none;
+}
+
+.simulador-roi__painel-titulo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.simulador-roi__painel-titulo .simulador-roi__icone {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--border-radius-small, 12px);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-brand-primary, #7C3AED) 14%, white), color-mix(in srgb, var(--color-brand-pink, #EC4899) 14%, white));
+    color: var(--color-brand-primary, #7C3AED);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-base, 16px);
+}
+
+.simulador-roi__icone svg {
+    width: 19px;
+    height: 19px;
+}
+
+.simulador-roi__painel-titulo h3 {
+    font-size: var(--font-size-base, 16px);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-neutral-black, #1E1B4B);
+    margin: 0 0 3px;
+}
+
+.simulador-roi__painel-titulo p {
+    font-size: 12.5px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 60%, transparent);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.simulador-roi__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.simulador-roi__campo-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.simulador-roi__campo-cabecalho .simulador-roi__icone-sm {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 7%, var(--color-neutral-white, #fff));
+    color: var(--color-brand-primary, #7C3AED);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.simulador-roi__icone-sm svg {
+    width: 15px;
+    height: 15px;
+}
+
+.simulador-roi__campo-label {
+    flex: 1;
+    font-size: 13.5px;
+    font-weight: var(--font-weight-medium, 600);
+    color: var(--color-neutral-black, #1E1B4B);
+    cursor: pointer;
+    min-width: 0;
+}
+
+.simulador-roi__valor {
+    border: 1px solid var(--color-border-default, #E8E3F5);
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 3%, var(--color-neutral-white, #fff));
+    border-radius: var(--border-radius-small, 10px);
+    padding: 7px 10px;
+    font-size: 13.5px;
+    font-weight: var(--font-weight-bold, 700);
+    font-family: var(--font-primary, inherit);
+    color: var(--color-brand-primary, #7C3AED);
+    width: 116px;
+    max-width: 40vw;
+    text-align: center;
+    transition: border-color var(--transition-default, .15s ease);
+}
+
+.simulador-roi__valor:focus-visible {
+    border-color: var(--color-brand-primary, #7C3AED);
+    outline: 2px solid color-mix(in srgb, var(--color-brand-primary, #7C3AED) 35%, transparent);
+    outline-offset: 1px;
+}
+
+.simulador-roi__stepper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.simulador-roi__stepper button {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 9px;
+    border: 1px solid var(--color-border-default, #E8E3F5);
+    background: var(--color-neutral-white, #fff);
+    color: var(--color-brand-primary, #7C3AED);
+    font-size: 16px;
+    font-weight: var(--font-weight-bold, 700);
+    font-family: var(--font-primary, inherit);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background-color var(--transition-default, .15s ease);
+}
+
+.simulador-roi__stepper button:hover {
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 8%, var(--color-neutral-white, #fff));
+}
+
+.simulador-roi__stepper button:focus-visible,
+.simulador-roi__tab:focus-visible,
+.simulador-roi__slider:focus-visible {
+    outline: 2px solid var(--color-brand-primary, #7C3AED);
+    outline-offset: 2px;
+}
+
+.simulador-roi__stepper .simulador-roi__valor {
+    width: 126px;
+    font-size: 14.5px;
+}
+
+/* ---------- Slider ---------- */
+.simulador-roi__slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 12%, var(--color-neutral-white, #fff));
+    outline: none;
+    margin: 2px 0;
+    touch-action: pan-y;
+}
+
+.simulador-roi__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-neutral-white, #fff);
+    border: 3px solid var(--color-brand-primary, #7C3AED);
+    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(124, 58, 237, .35));
+    cursor: pointer;
+    margin-top: -6px;
+}
+
+.simulador-roi__slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-neutral-white, #fff);
+    border: 3px solid var(--color-brand-primary, #7C3AED);
+    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(124, 58, 237, .35));
+    cursor: pointer;
+}
+
+.simulador-roi__slider::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 12%, var(--color-neutral-white, #fff));
+}
+
+.simulador-roi__slider:focus-visible {
+    outline: 2px solid var(--color-brand-primary, #7C3AED);
+    outline-offset: 4px;
+}
+
+.simulador-roi__intervalo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 45%, transparent);
+    font-weight: var(--font-weight-medium, 600);
+}
+
+.simulador-roi__nota {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    line-height: 1.55;
+}
+
+.simulador-roi__nota svg,
+.simulador-roi__nota i {
+    flex-shrink: 0;
+    margin-top: 2px;
+    width: 15px;
+    height: 15px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 35%, transparent);
+}
+
+/* ---------- Coluna de resultados (direita) ---------- */
+.simulador-roi__resultado {
+    padding: var(--spacing-large, 30px) var(--spacing-large, 34px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium, 20px);
+    min-width: 0;
+}
+
+.simulador-roi__resultado[hidden] {
+    display: none;
+}
+
+.simulador-roi__resultado-eyebrow {
+    font-size: 11.5px;
+    font-weight: var(--font-weight-black, 800);
+    letter-spacing: .1em;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 40%, transparent);
+}
+
+.simulador-roi__linha-resultado {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 36px;
+    row-gap: 16px;
+}
+
+.simulador-roi__numero-grande {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: var(--font-weight-black, 800);
+    background: var(--gradient-aurora, linear-gradient(90deg, #EC4899, #7C3AED));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.simulador-roi__numero-grande--solido {
+    font-size: clamp(28px, 3.6vw, 38px);
+    color: var(--color-neutral-black, #1E1B4B);
+    -webkit-text-fill-color: initial;
+    background: none;
+}
+
+.simulador-roi__legenda-numero {
+    font-size: 13px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    font-weight: var(--font-weight-medium, 600);
+    margin-top: 6px;
+}
+
+.simulador-roi__estatistica {
+    min-width: 96px;
+}
+
+.simulador-roi__estatistica .simulador-roi__estatistica-valor {
+    font-size: 20px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-neutral-black, #1E1B4B);
+    white-space: nowrap;
+}
+
+.simulador-roi__estatistica .simulador-roi__estatistica-label {
+    font-size: 12px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    margin-top: 3px;
+    font-weight: var(--font-weight-medium, 600);
+}
+
+.simulador-roi__etiqueta-percentual {
+    display: inline-block;
+    background: color-mix(in srgb, var(--color-brand-pink, #EC4899) 12%, var(--color-neutral-white, #fff));
+    color: var(--color-brand-pink, #EC4899);
+    font-weight: var(--font-weight-black, 800);
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Tooltip do gráfico: só fica visível quando o mouse (ou toque) está
+   sobre a área do gráfico. Posição é definida via left/top inline pelo JS. */
+.simulador-roi__grafico-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, calc(-100% - 14px));
+    pointer-events: none;
+    background: var(--color-neutral-white, #fff);
+    border: 1px solid var(--color-border-default, #E8E3F5);
+    border-radius: var(--border-radius-small, 12px);
+    padding: 10px 14px;
+    box-shadow: var(--shadow-dropdown, 0 10px 30px rgba(94, 46, 175, .12));
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .12s ease;
+    z-index: 2;
+}
+
+.simulador-roi__grafico-tooltip.is-visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.simulador-roi__grafico-tooltip .tt-titulo {
+    font-size: 12.5px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-brand-primary, #7C3AED);
+    margin-bottom: 6px;
+}
+
+.simulador-roi__grafico-tooltip .tt-linha {
+    font-size: 12px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+.simulador-roi__grafico-tooltip .tt-linha b {
+    color: var(--color-neutral-black, #1E1B4B);
+}
+
+.simulador-roi__grafico-tooltip .tt-linha.roxo b { color: var(--color-brand-primary, #7C3AED); }
+.simulador-roi__grafico-tooltip .tt-linha.rosa b { color: var(--color-brand-pink, #EC4899); }
+.simulador-roi__grafico-tooltip .tt-linha.teal b { color: var(--color-brand-teal, #14B8A6); }
+
+.simulador-roi__grafico-dica {
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 42%, transparent);
+    margin: -8px 0 0;
+    text-align: center;
+}
+
+.simulador-roi__legenda {
+    display: flex;
+    gap: 22px;
+    font-size: 12.5px;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-neutral-black, #1E1B4B);
+    flex-wrap: wrap;
+}
+
+.simulador-roi__legenda span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.simulador-roi__legenda .ponto {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.simulador-roi__legenda .ponto--roxo { background: var(--color-brand-primary, #7C3AED); }
+.simulador-roi__legenda .ponto--teal { background: var(--color-brand-teal, #14B8A6); }
+.simulador-roi__legenda .ponto--rosa { background: var(--color-brand-pink, #EC4899); }
+
+.simulador-roi__legenda .traco {
+    width: 18px;
+    height: 0;
+    border-top: 2px solid;
+    flex-shrink: 0;
+}
+
+.simulador-roi__legenda .traco--roxo { border-color: var(--color-brand-primary, #7C3AED); }
+.simulador-roi__legenda .traco--teal { border-color: var(--color-brand-teal, #14B8A6); }
+.simulador-roi__legenda .traco--teal-tracejado { border-color: var(--color-brand-teal, #14B8A6); border-top-style: dashed; }
+
+.simulador-roi__grafico-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 760 / 300;
+}
+
+.simulador-roi__grafico-wrap svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.simulador-roi__insight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(90deg,
+            color-mix(in srgb, var(--color-brand-primary, #7C3AED) 8%, var(--color-neutral-white, #fff)),
+            color-mix(in srgb, var(--color-brand-pink, #EC4899) 8%, var(--color-neutral-white, #fff)));
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, #7C3AED) 12%, var(--color-neutral-white, #fff));
+    border-radius: var(--border-radius-small, 14px);
+    padding: 16px 20px;
+    font-size: 14.5px;
+    color: var(--color-neutral-black, #1E1B4B);
+}
+
+.simulador-roi__insight .simulador-roi__icone-spark {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: var(--color-neutral-white, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-primary, #7C3AED);
+    font-size: 13px;
+}
+
+.simulador-roi__icone-spark svg {
+    width: 16px;
+    height: 16px;
+}
+
+.simulador-roi__insight b {
+    color: var(--color-brand-pink, #EC4899);
+}
+
+.simulador-roi__stats-mini {
+    display: flex;
+    gap: var(--spacing-large, 30px);
+    flex-wrap: wrap;
+}
+
+.simulador-roi__stat-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.simulador-roi__stat-mini-icone {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 7%, var(--color-neutral-white, #fff));
+    color: var(--color-brand-primary, #7C3AED);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.simulador-roi__stat-mini-icone svg {
+    width: 16px;
+    height: 16px;
+}
+
+.simulador-roi__stat-mini-icone--teal {
+    background: color-mix(in srgb, var(--color-brand-teal, #14B8A6) 10%, var(--color-neutral-white, #fff));
+    color: var(--color-brand-teal, #14B8A6);
+}
+
+.simulador-roi__stat-mini-valor {
+    font-size: 17px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-neutral-black, #1E1B4B);
+}
+
+.simulador-roi__stat-mini-label {
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    font-weight: var(--font-weight-medium, 600);
+}
+
+/* ---------- Faixa de features ---------- */
+.simulador-roi__features {
+    margin-top: var(--spacing-xl, 56px);
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 6%, var(--color-neutral-white, #fff));
+    border-radius: var(--border-radius-medium, 22px);
+    padding: var(--spacing-large, 40px) clamp(20px, 4vw, 44px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-large, 30px);
+}
+
+.simulador-roi__feature {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.simulador-roi__feature-icone {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: var(--border-radius-small, 12px);
+    background: var(--color-neutral-white, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand-primary, #7C3AED);
+    box-shadow: var(--shadow-dropdown, 0 6px 16px rgba(124, 58, 237, .10));
+    font-size: 17px;
+}
+
+.simulador-roi__feature-icone svg {
+    width: 20px;
+    height: 20px;
+}
+
+.simulador-roi__feature h4 {
+    font-size: 15px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-neutral-black, #1E1B4B);
+    margin: 0 0 4px;
+}
+
+.simulador-roi__feature p {
+    font-size: 13px;
+    color: color-mix(in srgb, var(--color-neutral-black, #1E1B4B) 55%, transparent);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ---------- Utilitário: visível apenas para leitores de tela ---------- */
+.simulador-roi__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- noscript ---------- */
+.simulador-roi__noscript {
+    background: color-mix(in srgb, var(--color-brand-primary, #7C3AED) 6%, var(--color-neutral-white, #fff));
+    border: 1px solid var(--color-border-default, #E8E3F5);
+    border-radius: var(--border-radius-medium, 16px);
+    padding: var(--spacing-large, 24px);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- Responsividade (breakpoints de viewport) ---------- */
+@media (max-width: 992px) {
+    .simulador-roi__card {
+        grid-template-columns: 1fr;
+    }
+
+    .simulador-roi__controles {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-default, #E8E3F5);
+    }
+}
+
+@media (max-width: 768px) {
+    .simulador-roi {
+        padding: var(--spacing-large, 56px) clamp(16px, 4vw, 24px) var(--spacing-large, 64px);
+    }
+}
+
+@media (max-width: 480px) {
+    .simulador-roi__linha-resultado {
+        gap: 22px;
+    }
+
+    .simulador-roi__resultado,
+    .simulador-roi__controles {
+        padding: var(--spacing-medium, 20px);
+    }
+
+    .simulador-roi__valor {
+        max-width: 46vw;
+    }
+}
+
+/* Responsividade "de dentro para fora": ajusta o card mesmo quando ele
+   é embutido em um espaço estreito (ex.: sidebar), independente do
+   tamanho da viewport. Navegadores sem suporte a container queries
+   simplesmente ignoram este bloco e usam as media queries acima. */
+@container roi-card (max-width: 420px) {
+    .simulador-roi__controles,
+    .simulador-roi__resultado {
+        padding: var(--spacing-medium, 18px);
+    }
+
+    .simulador-roi__stepper .simulador-roi__valor {
+        width: 100px;
+    }
+}
+
+/* ---------- Acessibilidade: movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .simulador-roi__tab,
+    .simulador-roi__stepper button,
+    .simulador-roi__valor,
+    .simulador-roi__slider {
+        transition: none;
+    }
+}
