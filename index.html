@@ -657,12 +657,20 @@
                         <video src="./assets/video/video-placeholder.mp4" muted></video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">Como o time de RH ganhou 40h por mês</h3>
+                            <h3 class="avaliacoes__titulo-video">Como o time da Aurora Tech ganhou 40h por mês</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
-                                aria-label="Reproduzir vídeo: Como o time de RH ganhou 40h por mês">
+                                aria-label="Reproduzir vídeo: Como o time da Aurora Tech ganhou 40h por mês">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
+
+                            <a class="avaliacoes__link-linkedin"
+                                href="https://www.linkedin.com/company/aurorapro/"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Visitar a Aurora no LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                Conectar com a Aurora
+                            </a>
                         </div>
                     </div>
 
@@ -676,6 +684,14 @@
                                 aria-label="Reproduzir vídeo: De 18% para 9% de turnover em 6 meses">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
+
+                            <a class="avaliacoes__link-linkedin"
+                                href="https://www.linkedin.com/search/results/companies/?keywords=TechFlow"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Visitar a TechFlow no LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                Conectar no LinkedIn
+                            </a>
                         </div>
                     </div>
 
@@ -689,6 +705,14 @@
                                 aria-label="Reproduzir vídeo: O engajamento que a diretoria queria ver">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
+
+                            <a class="avaliacoes__link-linkedin"
+                                href="https://www.linkedin.com/search/results/companies/?keywords=Vesta%20Log%C3%ADstica"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Visitar a Vesta Logística no LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                Conectar no LinkedIn
+                            </a>
                         </div>
                     </div>
 
@@ -702,6 +726,14 @@
                                 aria-label="Reproduzir vídeo: Por que escolhemos a Aurora e não voltamos atrás">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
+
+                            <a class="avaliacoes__link-linkedin"
+                                href="https://www.linkedin.com/search/results/companies/?keywords=Nexa%20Software"
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Visitar a Nexa Software no LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                Conectar no LinkedIn
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -862,22 +894,24 @@
                         <p class="captacao__formulario-subtitulo">Preencha os campos abaixo e nossa equipe entrará em
                             contato em até 24h.</p>
 
-                        <div class="captacao__campo">
-                            <label for="captacao-nome" class="captacao__label">Nome completo * <span
-                                    class="sr-only">(obrigatório)</span></label>
-                            <input type="text" id="captacao-nome" name="nome" class="captacao__input"
-                                placeholder="Seu nome" required aria-required="true" aria-invalid="false"
-                                aria-describedby="erro-nome" autocomplete="name">
-                            <div id="erro-nome" class="captacao__erro sr-only" aria-live="polite"></div>
-                        </div>
+                        <div class="captacao__campo-duplo">
+                            <div class="captacao__campo">
+                                <label for="captacao-nome" class="captacao__label">Nome completo * <span
+                                        class="sr-only">(obrigatório)</span></label>
+                                <input type="text" id="captacao-nome" name="nome" class="captacao__input"
+                                    placeholder="Seu nome" required aria-required="true" aria-invalid="false"
+                                    aria-describedby="erro-nome" autocomplete="name">
+                                <div id="erro-nome" class="captacao__erro sr-only" aria-live="polite"></div>
+                            </div>
 
-                        <div class="captacao__campo">
-                            <label for="captacao-email" class="captacao__label">E-mail corporativo * <span
-                                    class="sr-only">(obrigatório)</span></label>
-                            <input type="email" id="captacao-email" name="email" class="captacao__input"
-                                placeholder="voce@empresa.com.br" required aria-required="true" aria-invalid="false"
-                                aria-describedby="erro-email" autocomplete="email">
-                            <div id="erro-email" class="captacao__erro sr-only" aria-live="polite"></div>
+                            <div class="captacao__campo">
+                                <label for="captacao-email" class="captacao__label">E-mail corporativo * <span
+                                        class="sr-only">(obrigatório)</span></label>
+                                <input type="email" id="captacao-email" name="email" class="captacao__input"
+                                    placeholder="voce@empresa.com.br" required aria-required="true" aria-invalid="false"
+                                    aria-describedby="erro-email" autocomplete="email">
+                                <div id="erro-email" class="captacao__erro sr-only" aria-live="polite"></div>
+                            </div>
                         </div>
 
                         <div class="captacao__campo-duplo">
@@ -913,6 +947,29 @@
                             </select>
                             <div id="erro-colaboradores" class="captacao__erro sr-only" aria-live="polite"></div>
                         </div>
+
+                        <fieldset class="captacao__seletor">
+                            <legend class="captacao__seletor-titulo">Selecione uma data *</legend>
+                            <div class="captacao__opcoes-data">
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="12/11" required><span class="captacao__opcao-conteudo"><small>TER</small><strong>12</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="13/11"><span class="captacao__opcao-conteudo"><small>QUA</small><strong>13</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="14/11"><span class="captacao__opcao-conteudo"><small>QUI</small><strong>14</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="15/11"><span class="captacao__opcao-conteudo"><small>SEX</small><strong>15</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="18/11"><span class="captacao__opcao-conteudo"><small>SEG</small><strong>18</strong></span></label>
+                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="19/11"><span class="captacao__opcao-conteudo"><small>TER</small><strong>19</strong></span></label>
+                            </div>
+                            <div id="erro-data" class="captacao__erro sr-only" aria-live="polite"></div>
+                        </fieldset>
+
+                        <fieldset class="captacao__seletor">
+                            <legend class="captacao__seletor-titulo">Selecione um horário *</legend>
+                            <div class="captacao__horarios">
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-sun" aria-hidden="true"></i> Manhã</span><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="09:00" required><span>09:00</span></label><label class="captacao__horario captacao__horario--indisponivel"><input class="captacao__opcao-input" type="radio" name="horario" value="10:30" disabled><span>10:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="11:00"><span>11:00</span></label></div>
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-sun" aria-hidden="true"></i> Tarde</span><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="14:00"><span>14:00</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="15:30"><span>15:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="17:00"><span>17:00</span></label></div>
+                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i class="fa-regular fa-moon" aria-hidden="true"></i> Noite</span><label class="captacao__horario captacao__horario--indisponivel"><input class="captacao__opcao-input" type="radio" name="horario" value="18:30" disabled><span>18:30</span></label><label class="captacao__horario"><input class="captacao__opcao-input" type="radio" name="horario" value="19:00"><span>19:00</span></label></div>
+                            </div>
+                            <div id="erro-horario" class="captacao__erro sr-only" aria-live="polite"></div>
+                        </fieldset>
 
                         <button type="submit" class="botao-cta captacao__botao-enviar" id="btn-agendar"
                             aria-busy="false">
@@ -1033,6 +1090,22 @@
             </div>
         </section>
     </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter" aria-labelledby="newsletter-titulo">
+        <div class="recipiente newsletter__recipiente">
+            <h2 id="newsletter-titulo" class="newsletter__titulo">Fique por dentro das novidades</h2>
+            <p class="newsletter__descricao">Assine nossa newsletter para receber atualizações sobre People Analytics,
+                tendências de RH e novidades da Aurora diretamente na sua caixa de entrada.</p>
+            <form class="newsletter__formulario" id="form-newsletter">
+                <label class="sr-only" for="newsletter-email">Seu melhor e-mail</label>
+                <input class="newsletter__campo" type="email" id="newsletter-email" name="email"
+                    placeholder="Seu melhor e-mail" autocomplete="email" required>
+                <button class="newsletter__botao" type="submit">Inscrever-se</button>
+            </form>
+            <p class="newsletter__mensagem" id="newsletter-mensagem" role="status" aria-live="polite"></p>
+        </div>
+    </section>
 
     <!-- ============================  FOOTER - 8 ============================ -->
     <footer class="rodape">

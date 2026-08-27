@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarCarrosselDepoimentos();
     inicializarChecklistInterativo();
     inicializarValidacaoFormulario();
+    inicializarNewsletter();
 });
 
 /**
@@ -18,22 +19,30 @@ function inicializarReprodutoresVideo() {
     if (recipientesVideo.length === 0) return;
 
     recipientesVideo.forEach(recipiente => {
-        const video = recipiente.querySelector('video');
+        const videoDepoimento = recipiente.querySelector('video');
         const sobreposicao = recipiente.querySelector('.avaliacoes__sobreposicao');
         
-        if (!video || !sobreposicao) return;
+        if (!videoDepoimento || !sobreposicao) return;
+
+        const linkEmpresaLinkedin = sobreposicao.querySelector('.avaliacoes__link-linkedin');
+
+        if (linkEmpresaLinkedin) {
+            linkEmpresaLinkedin.addEventListener('click', (evento) => {
+                evento.stopPropagation();
+            });
+        }
 
         // Quando o usuário clicar na sobreposição, toca o vídeo
         sobreposicao.addEventListener('click', () => {
-            video.play();
+            videoDepoimento.play();
         });
 
         // Sincroniza a sobreposição e mostra os controles nativos quando tocar
-        video.addEventListener('play', () => {
+        videoDepoimento.addEventListener('play', () => {
             // Pausa todos os outros vídeos automaticamente para não ter sobreposição de áudio
-            todosVideos.forEach(v => {
-                if (v !== video && !v.paused) {
-                    v.pause();
+            todosVideos.forEach(outroVideo => {
+                if (outroVideo !== videoDepoimento && !outroVideo.paused) {
+                    outroVideo.pause();
                 }
             });
 
@@ -44,11 +53,11 @@ function inicializarReprodutoresVideo() {
         // Função auxiliar para restaurar o estado visual do player
         const restaurarEstadoVideo = () => {
             recipiente.classList.remove('is-reproduzindo');
-            video.removeAttribute('controls');
+            videoDepoimento.removeAttribute('controls');
         };
 
-        video.addEventListener('pause', restaurarEstadoVideo);
-        video.addEventListener('ended', restaurarEstadoVideo);
+        videoDepoimento.addEventListener('pause', restaurarEstadoVideo);
+        videoDepoimento.addEventListener('ended', restaurarEstadoVideo);
     });
 }
 
@@ -313,6 +322,10 @@ function inicializarValidacaoFormulario() {
     if (!formulario || !botaoEnviar) return;
 
     const campos = Array.from(formulario.querySelectorAll('.captacao__input'));
+    const gruposOpcoes = [
+        { nome: 'data', erro: document.getElementById('erro-data') },
+        { nome: 'horario', erro: document.getElementById('erro-horario') }
+    ];
 
     // Lista de domínios públicos de e-mail comuns a serem rejeitados
     const dominiosPublicos = [
@@ -370,6 +383,20 @@ function inicializarValidacaoFormulario() {
         return eValido;
     };
 
+    const validarGrupoOpcoes = (grupo) => {
+        const opcoes = formulario.querySelectorAll(`input[name="${grupo.nome}"]`);
+        const selecionado = formulario.querySelector(`input[name="${grupo.nome}"]:checked`);
+        const eValido = Boolean(selecionado);
+
+        if (grupo.erro) {
+            grupo.erro.textContent = eValido ? '' : 'Selecione uma opção.';
+            grupo.erro.classList.toggle('sr-only', eValido);
+        }
+
+        opcoes.forEach(opcao => opcao.setAttribute('aria-invalid', eValido ? 'false' : 'true'));
+        return eValido;
+    };
+
     campos.forEach(input => {
         input.addEventListener('blur', () => {
             validarCampo(input);
@@ -399,6 +426,15 @@ function inicializarValidacaoFormulario() {
             }
         });
 
+        gruposOpcoes.forEach(grupo => {
+            if (!validarGrupoOpcoes(grupo)) {
+                formularioEValido = false;
+                if (!primeiroCampoInvalido) {
+                    primeiroCampoInvalido = formulario.querySelector(`input[name="${grupo.nome}"]`);
+                }
+            }
+        });
+
         if (!formularioEValido) {
             // Foca no primeiro campo com erro para facilitar a correção via teclado
             if (primeiroCampoInvalido) {
@@ -423,6 +459,26 @@ function inicializarValidacaoFormulario() {
             mostrarToastSucesso(formulario.querySelector('[name="nome"]').value);
             formulario.reset();
         }, 1500);
+    });
+}
+
+function inicializarNewsletter() {
+    const formularioNewsletter = document.getElementById('form-newsletter');
+    const campoEmailNewsletter = document.getElementById('newsletter-email');
+    const mensagemNewsletter = document.getElementById('newsletter-mensagem');
+
+    if (!formularioNewsletter || !campoEmailNewsletter || !mensagemNewsletter) return;
+
+    formularioNewsletter.addEventListener('submit', (evento) => {
+        evento.preventDefault();
+
+        if (!campoEmailNewsletter.checkValidity()) {
+            campoEmailNewsletter.reportValidity();
+            return;
+        }
+
+        mensagemNewsletter.textContent = 'Inscrição realizada! Em breve você receberá nossas novidades.';
+        formularioNewsletter.reset();
     });
 }
 
