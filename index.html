@@ -786,39 +786,162 @@
         </section>
 
         <!-- ============================  CALCULADORA DE ROI (SIMULADOR INTERATIVO) ============================ -->
-        <section class="simulador-roi" aria-labelledby="simulador-roi-titulo">
+      <section class="simulador-roi" aria-labelledby="simulador-roi-titulo">
 
-            <div class="simulador-roi__container">
+          <div class="simulador-roi__container">
 
-                <div class="simulador-roi__cabecalho">
-                    <div class="simulador-roi__eyebrow">
-                        <img class="simulador-roi__eyebrow-icone"
-                            src="assets/img/aurora-color-symbol-people-analytics-platform.png" alt="Aurora" width="14"
-                            height="14">
-                        Simulação interativa
+            <div class="simulador-roi__cabecalho">
+              <div class="simulador-roi__eyebrow">
+                <img class="simulador-roi__eyebrow-icone" src="assets/img/aurora-color-symbol-people-analytics-platform.png" alt="Aurora" width="14" height="14">
+                Simulação interativa
+              </div>
+
+              <h2 class="simulador-roi__titulo" id="simulador-roi-titulo">Quanto o turnover custa hoje <br>e quanto a <span class="simulador-roi__title-accent">Aurora</span> devolve</h2>
+              <p class="simulador-roi__descricao">Cada saída custa recrutamento, treinamento e meses de produtividade perdida. Ajuste os números abaixo para ver esse custo na sua empresa e quanto a Aurora devolve reduzindo o turnover.</p>
+            </div>
+
+            <noscript>
+              <p class="simulador-roi__noscript">Esta simulação é interativa e requer JavaScript habilitado no navegador. Os valores abaixo mostram um cenário de exemplo.</p>
+            </noscript>
+
+            <div class="simulador-roi__card">
+
+              <!-- Esquerda: dados do cenário -->
+              <div class="simulador-roi__controles">
+                <div class="simulador-roi__painel-titulo">
+                  <div class="simulador-roi__icone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <div>
+                    <h3>Seu cenário hoje</h3>
+                    <p>Preencha com números aproximados da sua empresa.</p>
+                  </div>
+                </div>
+
+                <div class="simulador-roi__campo">
+                  <div class="simulador-roi__campo-cabecalho">
+                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <label class="simulador-roi__campo-label" for="i-colaboradores-range">Número de colaboradores</label>
+                    <input class="simulador-roi__valor" id="i-colaboradores-box" type="text" inputmode="numeric" autocomplete="off" value="150" aria-label="Número de colaboradores (valor exato)">
+                  </div>
+                  <input class="simulador-roi__slider" type="range" id="i-colaboradores-range" min="10" max="2000" step="10" value="150">
+                  <div class="simulador-roi__intervalo"><span>10</span><span>2.000</span></div>
+                </div>
+
+                <div class="simulador-roi__campo">
+                  <div class="simulador-roi__campo-cabecalho">
+                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <label class="simulador-roi__campo-label" for="i-salario-range">Salário médio mensal</label>
+                    <input class="simulador-roi__valor" id="i-salario-box" type="text" inputmode="decimal" autocomplete="off" value="R$ 6.000" aria-label="Salário médio mensal (valor exato)">
+                  </div>
+                  <input class="simulador-roi__slider" type="range" id="i-salario-range" min="1500" max="30000" step="100" value="6000">
+                  <div class="simulador-roi__intervalo"><span>R$ 1,5 mil</span><span>R$ 30 mil</span></div>
+                </div>
+
+                <div class="simulador-roi__campo">
+                  <div class="simulador-roi__campo-cabecalho">
+                    <div class="simulador-roi__icone-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M16 17l5-5-5-5M21 12H9M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7"/></svg></div>
+                    <label class="simulador-roi__campo-label" for="i-turnover-range">Turnover anual atual</label>
+                    <input class="simulador-roi__valor" id="i-turnover-box" type="text" inputmode="decimal" autocomplete="off" value="18%" aria-label="Turnover anual atual (valor exato)">
+                  </div>
+                  <input class="simulador-roi__slider" type="range" id="i-turnover-range" min="3" max="50" step="1" value="18">
+                  <div class="simulador-roi__intervalo"><span>3%</span><span>50%</span></div>
+                </div>
+
+                <p class="simulador-roi__nota">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+                  <span>Estimativa baseada em referências de mercado (~7 salários por saída) e na redução média de turnover em clientes Aurora (25% em 6 meses).</span>
+                </p>
+              </div>
+
+              <!-- Direita: diagnóstico e retorno -->
+              <div class="simulador-roi__resultado">
+
+                <div class="simulador-roi__resultado-eyebrow">O rombo hoje</div>
+                <div class="simulador-roi__rombo">
+                  <div class="simulador-roi__numero-grande simulador-roi__numero-grande--alerta" id="r-custo-hoje">R$ 1.134.000</div>
+                  <div class="simulador-roi__legenda-numero">é o custo estimado do turnover por ano</div>
+                  <p class="simulador-roi__rombo-texto"><b id="r-saidas">27 colaboradores</b> saem por ano, a um custo médio de <b id="r-custo-por-saida">R$ 42.000</b> cada.</p>
+
+                  <div class="simulador-roi__composicao">
+                    <div class="simulador-roi__composicao-item">
+                      <span class="simulador-roi__composicao-barra"><span class="simulador-roi__composicao-fill simulador-roi__composicao-fill--a" id="r-comp-recrutamento-fill" style="width:30%"></span></span>
+                      <span class="simulador-roi__composicao-label">Recrutamento <b id="r-comp-recrutamento">R$ 340.200</b></span>
                     </div>
-
-                    <h2 class="simulador-roi__titulo" id="simulador-roi-titulo">E se você pudesse visualizar<br>o <span
-                            class="simulador-roi__title-accent">retorno</span> antes de decidir?</h2>
-                    <p class="simulador-roi__descricao">Use nossa calculadora de ROI para simular cenários e entender
-                        como pequenas mudanças nos seus números podem gerar grandes resultados para a sua empresa.</p>
+                    <div class="simulador-roi__composicao-item">
+                      <span class="simulador-roi__composicao-barra"><span class="simulador-roi__composicao-fill simulador-roi__composicao-fill--b" id="r-comp-onboarding-fill" style="width:25%"></span></span>
+                      <span class="simulador-roi__composicao-label">Treinamento e onboarding <b id="r-comp-onboarding">R$ 283.500</b></span>
+                    </div>
+                    <div class="simulador-roi__composicao-item">
+                      <span class="simulador-roi__composicao-barra"><span class="simulador-roi__composicao-fill simulador-roi__composicao-fill--c" id="r-comp-produtividade-fill" style="width:45%"></span></span>
+                      <span class="simulador-roi__composicao-label">Produtividade perdida na adaptação <b id="r-comp-produtividade">R$ 510.300</b></span>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="simulador-roi__tabs" role="tablist" aria-label="Tipo de cálculo de ROI">
-                    <button class="simulador-roi__tab" id="tab-direct" role="tab" type="button" aria-selected="true"
-                        aria-controls="panel-left-direct panel-right-direct" data-tab="direct" tabindex="0">ROI
-                        direto</button>
-                    <button class="simulador-roi__tab" id="tab-compound" role="tab" type="button" aria-selected="false"
-                        aria-controls="panel-left-compound panel-right-compound" data-tab="compound" tabindex="-1">ROI
-                        no tempo (composto)</button>
+                <div class="simulador-roi__seta-divisora">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                  <span>Com a Aurora</span>
                 </div>
 
-                <noscript>
-                    <p class="simulador-roi__noscript">Esta simulação é interativa e requer JavaScript habilitado no
-                        navegador. Os valores abaixo mostram um cenário de exemplo (ROI direto).</p>
-                </noscript>
+                <div class="simulador-roi__ganho">
+                  <div class="simulador-roi__linha-resultado">
+                    <div>
+                      <div class="simulador-roi__numero-grande" id="r-economia">R$ 283.500</div>
+                      <div class="simulador-roi__legenda-numero">economizados por ano, reduzindo o turnover</div>
+                    </div>
+                    <span class="simulador-roi__etiqueta-percentual" id="r-reducao-badge">-25% de turnover</span>
+                  </div>
 
-                <div class="simulador-roi__card">
+                  <div class="simulador-roi__stats-mini">
+                    <div class="simulador-roi__stat-mini">
+                      <div class="simulador-roi__stat-mini-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M20 6L9 17l-5-5"/></svg></div>
+                      <div><div class="simulador-roi__stat-mini-valor" id="r-retidos">7 colaboradores</div><div class="simulador-roi__stat-mini-label">deixariam de sair por ano</div></div>
+                    </div>
+                    <div class="simulador-roi__stat-mini">
+                      <div class="simulador-roi__stat-mini-icone simulador-roi__stat-mini-icone--teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+                      <div><div class="simulador-roi__stat-mini-valor" id="r-novo-custo">R$ 850.500</div><div class="simulador-roi__stat-mini-label">novo custo do turnover por ano</div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="simulador-roi__legenda">
+                  <span><span class="ponto ponto--alerta"></span>Custo do turnover hoje</span>
+                  <span><span class="ponto ponto--roxo"></span>Custo do turnover com a Aurora</span>
+                </div>
+
+                <div class="simulador-roi__grafico-wrap" id="chart-wrap">
+                  <svg id="chart-comparativo" viewBox="0 0 760 300"></svg>
+                  <div class="simulador-roi__grafico-tooltip" id="tooltip-comparativo" aria-hidden="true"></div>
+                </div>
+                <p class="simulador-roi__grafico-dica">Passe o mouse sobre as barras para ver o detalhamento.</p>
+
+                <div class="simulador-roi__insight">
+                  <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z"/></svg></span>
+                  <span><b id="d-insight-val">7 colaboradores</b> por ano poderiam ser retidos se os sinais de risco fossem identificados a tempo.</span>
+                  <span id="d-insight-text" class="simulador-roi__sr-only" aria-live="polite" aria-atomic="true"></span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="simulador-roi__features">
+              <div class="simulador-roi__feature">
+                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg></div>
+                <div><h4>Contas abertas</h4><p>O custo de reposição aparece dividido em recrutamento, onboarding e produtividade perdida, não como um número único.</p></div>
+              </div>
+              <div class="simulador-roi__feature">
+                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+                <div><h4>Baseado em clientes reais</h4><p>A redução de 25% no turnover vem de dados de clientes Aurora, não de uma média genérica de mercado.</p></div>
+              </div>
+              <div class="simulador-roi__feature">
+                <div class="simulador-roi__feature-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+                <div><h4>Prevenção, não remédio</h4><p>Colaborador retido a tempo nunca chega a virar estatística de desligamento.</p></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
 
                     <!-- ===================== ESQUERDA: ROI DIRETO ===================== -->
                     <div class="simulador-roi__controles" id="panel-left-direct" role="tabpanel"
