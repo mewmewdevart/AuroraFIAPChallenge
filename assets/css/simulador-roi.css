@@ -1,6 +1,5 @@
 /* ======================================================================
    SEÇÃO SIMULADOR DE ROI — Calculadora interativa (ROI direto / composto)
-   Padronizado com os tokens de design system de assets/css/style.css (:root)
    ====================================================================== */
 
 .simulador-roi,
@@ -11,14 +10,14 @@
 }
 
 .simulador-roi {
-    --simulador-roi-container-max: var(--recipiente-max-width, 1200px);
+    --simulador-roi-container-max: 1180px;
 
     position: relative;
     overflow: hidden;
-    padding: var(--spacing-xlarge, 80px) clamp(16px, 4vw, 24px) var(--spacing-xl, 48px);
-    background-color: var(--color-surface-primary, var(--color-neutral-white));
-    color: var(--color-text-primary, var(--color-neutral-black));
-    font-family: var(--font-primary, "Outfit", sans-serif);
+    padding: var(--spacing-xl, 56px) clamp(16px, 4vw, 24px) var(--spacing-large, 40px);
+    background-color: var(--color-surface-primary, rgb(255, 255, 255));
+    color: var(--color-text-primary, rgb(17, 17, 17));
+    font-family: var(--font-primary, 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif);
 }
 
 .simulador-roi__container {
@@ -31,18 +30,18 @@
 /* ---------- Cabeçalho ---------- */
 .simulador-roi__cabecalho {
     max-width: 640px;
-    margin-bottom: var(--spacing-large, 32px);
+    margin-bottom: var(--spacing-large, 28px);
 }
 
 .simulador-roi__eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 10%, var(--color-neutral-white, rgb(255, 255, 255)));
-    border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 20%, var(--color-neutral-white, rgb(255, 255, 255)));
-    border-radius: var(--border-radius-small, 10px);
-    padding: 6px var(--spacing-medium, 16px);
-    font-size: var(--font-size-small, 0.975rem);
+    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 8%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 16%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: var(--border-radius-small, 12px);
+    padding: 5px var(--spacing-medium, 16px);
+    font-size: var(--font-size-small, 12px);
     font-weight: var(--font-weight-bold, 700);
     color: var(--color-brand-primary, rgb(106, 80, 157));
     letter-spacing: .06em;
@@ -50,16 +49,19 @@
     margin-bottom: var(--spacing-medium, 16px);
 }
 
+/* Ícone de fonte (ex.: Font Awesome), caso o eyebrow use um ícone de fonte */
 .simulador-roi__eyebrow i {
-    font-size: var(--font-size-small, 0.975rem);
+    font-size: 12px;
 }
 
+/* Ícone em SVG inline, caso o eyebrow use uma marca vetorial */
 .simulador-roi__eyebrow svg {
     width: 14px;
     height: 14px;
     flex-shrink: 0;
 }
 
+/* Símbolo da marca (imagem), usado por padrão neste componente */
 .simulador-roi__eyebrow-icone {
     width: 14px;
     height: 14px;
@@ -68,10 +70,10 @@
 }
 
 .simulador-roi__titulo {
-    font-size: var(--font-size-large, 2rem);
-    font-weight: var(--font-weight-bold, 700);
-    color: var(--color-text-primary, var(--color-neutral-black));
-    line-height: 1.25;
+    font-size: clamp(1.8rem, 4vw, var(--font-size-large, 46px));
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-text-primary, rgb(17, 17, 17));
+    line-height: 1.2;
     letter-spacing: -0.5px;
     margin: 0 0 var(--spacing-medium, 16px);
 }
@@ -79,7 +81,7 @@
 .simulador-roi__title-accent,
 .avaliacoes__title-accent,
 .fluxo__title-accent {
-    background: var(--gradient-aurora, linear-gradient(135deg, rgb(106, 80, 157) 0%, rgb(207, 71, 147) 50%, rgb(49, 180, 166) 100%));
+    background: var(--gradient-aurora, linear-gradient(90deg, rgb(207, 71, 147), rgb(106, 80, 157)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -87,61 +89,18 @@
 
 .simulador-roi__descricao {
     max-width: 620px;
-    font-size: var(--font-size-base, 1rem);
-    font-weight: var(--font-weight-regular, 400);
-    line-height: 1.6;
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: var(--font-size-base, 16.5px);
+    line-height: 1.65;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
     margin: 0;
-}
-
-/* ---------- Tabs ---------- */
-.simulador-roi__tabs {
-    display: inline-flex;
-    gap: 6px;
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 8%, var(--color-neutral-white, rgb(255, 255, 255)));
-    padding: 6px;
-    border-radius: var(--border-radius-small, 10px);
-    margin-bottom: var(--spacing-large, 32px);
-    max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.simulador-roi__tab {
-    border: none;
-    background: transparent;
-    padding: 10px 20px;
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-bold, 700);
-    font-family: var(--font-primary, "Outfit", sans-serif);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    border-radius: var(--border-radius-small, 10px);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background-color var(--transition-default, .3s ease), color var(--transition-default, .3s ease), box-shadow var(--transition-default, .3s ease);
-}
-
-.simulador-roi__tab[aria-selected="true"] {
-    background: var(--color-neutral-white, rgb(255, 255, 255));
-    color: var(--color-brand-pink, rgb(207, 71, 147));
-    box-shadow: var(--shadow-dropdown, 0 10px 15px rgba(0, 0, 0, 0.05));
-}
-
-.simulador-roi__tab:not([aria-selected="true"]):hover {
-    color: var(--color-text-primary, var(--color-neutral-black));
-}
-
-.simulador-roi__tab:focus-visible {
-    outline: 2px solid var(--color-brand-primary, rgb(106, 80, 157));
-    outline-offset: 2px;
 }
 
 /* ---------- Card principal ---------- */
 .simulador-roi__card {
-    background-color: var(--color-neutral-white, rgb(255, 255, 255));
-    border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
-    border-radius: var(--border-radius-medium, 18px);
-    box-shadow: var(--shadow-soft, 0 10px 30px rgba(0, 0, 0, 0.1));
+    background-color: var(--color-surface-primary, rgb(255, 255, 255));
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 10%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: var(--border-radius-medium, 24px);
+    box-shadow: var(--shadow-soft, 0 20px 60px -20px rgba(106, 80, 157, .25));
     display: grid;
     grid-template-columns: clamp(260px, 30vw, 340px) minmax(0, 1fr);
     overflow: hidden;
@@ -151,11 +110,12 @@
 
 /* ---------- Coluna de controles (esquerda) ---------- */
 .simulador-roi__controles {
-    padding: var(--spacing-large, 32px);
+    padding: var(--spacing-large, 28px) var(--spacing-medium, 28px);
     border-right: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-large, 26px);
+    justify-content: center;
+    gap: var(--spacing-medium, 20px);
     min-width: 0;
 }
 
@@ -173,15 +133,13 @@
     flex-shrink: 0;
     width: 38px;
     height: 38px;
-    border-radius: var(--border-radius-small, 10px);
-    background: linear-gradient(135deg, 
-        color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 15%, var(--color-neutral-white, rgb(255, 255, 255))), 
-        color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 15%, var(--color-neutral-white, rgb(255, 255, 255))));
+    border-radius: var(--border-radius-small, 12px);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 14%, white), color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 14%, white));
     color: var(--color-brand-primary, rgb(106, 80, 157));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-base, 1rem);
+    font-size: var(--font-size-base, 16px);
 }
 
 .simulador-roi__icone svg {
@@ -190,16 +148,15 @@
 }
 
 .simulador-roi__painel-titulo h3 {
-    font-size: var(--font-size-base, 1rem);
+    font-size: var(--font-size-base, 16px);
     font-weight: var(--font-weight-bold, 700);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    color: var(--color-text-primary, rgb(17, 17, 17));
     margin: 0 0 3px;
 }
 
 .simulador-roi__painel-titulo p {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: 12.5px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
     line-height: 1.5;
     margin: 0;
 }
@@ -221,13 +178,13 @@
     flex-shrink: 0;
     width: 30px;
     height: 30px;
-    border-radius: var(--border-radius-small, 10px);
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 10%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 7%, var(--color-neutral-white, rgb(255, 255, 255)));
     color: var(--color-brand-primary, rgb(106, 80, 157));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-small, 0.975rem);
+    font-size: 13px;
 }
 
 .simulador-roi__icone-sm svg {
@@ -237,75 +194,32 @@
 
 .simulador-roi__campo-label {
     flex: 1;
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-medium, 500);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    font-size: 13.5px;
+    font-weight: var(--font-weight-medium, 600);
+    color: var(--color-text-primary, rgb(17, 17, 17));
     cursor: pointer;
     min-width: 0;
 }
 
 .simulador-roi__valor {
     border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 4%, var(--color-neutral-white, rgb(255, 255, 255)));
+    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 3%, var(--color-neutral-white, rgb(255, 255, 255)));
     border-radius: var(--border-radius-small, 10px);
     padding: 7px 10px;
-    font-size: var(--font-size-small, 0.975rem);
+    font-size: 13.5px;
     font-weight: var(--font-weight-bold, 700);
-    font-family: var(--font-primary, "Outfit", sans-serif);
+    font-family: var(--font-primary, inherit);
     color: var(--color-brand-primary, rgb(106, 80, 157));
     width: 116px;
     max-width: 40vw;
     text-align: center;
-    transition: border-color var(--transition-default, .3s ease);
+    transition: border-color var(--transition-default, .15s ease);
 }
 
 .simulador-roi__valor:focus-visible {
     border-color: var(--color-brand-primary, rgb(106, 80, 157));
     outline: 2px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 35%, transparent);
     outline-offset: 1px;
-}
-
-.simulador-roi__stepper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.simulador-roi__stepper button {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    border-radius: var(--border-radius-small, 10px);
-    border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
-    background: var(--color-neutral-white, rgb(255, 255, 255));
-    color: var(--color-brand-primary, rgb(106, 80, 157));
-    font-size: var(--font-size-base, 1rem);
-    font-weight: var(--font-weight-bold, 700);
-    font-family: var(--font-primary, "Outfit", sans-serif);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    transition: background-color var(--transition-default, .3s ease), border-color var(--transition-default, .3s ease);
-}
-
-.simulador-roi__stepper button:hover {
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 10%, var(--color-neutral-white, rgb(255, 255, 255)));
-    border-color: var(--color-brand-primary, rgb(106, 80, 157));
-}
-
-.simulador-roi__stepper button:focus-visible,
-.simulador-roi__tab:focus-visible,
-.simulador-roi__slider:focus-visible {
-    outline: 2px solid var(--color-brand-primary, rgb(106, 80, 157));
-    outline-offset: 2px;
-}
-
-.simulador-roi__stepper .simulador-roi__valor {
-    width: 126px;
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-bold, 700);
 }
 
 /* ---------- Slider ---------- */
@@ -327,9 +241,9 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: var(--color-neutral-white, rgb(255, 255, 255));
+    background: var(--color-surface-primary, rgb(255, 255, 255));
     border: 3px solid var(--color-brand-primary, rgb(106, 80, 157));
-    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(34, 29, 72, 0.25));
+    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(106, 80, 157, .35));
     cursor: pointer;
     margin-top: -6px;
 }
@@ -338,9 +252,9 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: var(--color-neutral-white, rgb(255, 255, 255));
+    background: var(--color-surface-primary, rgb(255, 255, 255));
     border: 3px solid var(--color-brand-primary, rgb(106, 80, 157));
-    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(34, 29, 72, 0.25));
+    box-shadow: 0 2px 8px var(--color-shadow-purple, rgba(106, 80, 157, .35));
     cursor: pointer;
 }
 
@@ -358,18 +272,17 @@
 .simulador-roi__intervalo {
     display: flex;
     justify-content: space-between;
-    font-size: var(--font-size-small, 0.975rem);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    font-weight: var(--font-weight-medium, 500);
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--color-text-secondary, rgba(17, 17, 17, .65)) 65%, transparent);
+    font-weight: var(--font-weight-medium, 600);
 }
 
 .simulador-roi__nota {
     display: flex;
     gap: 9px;
     align-items: flex-start;
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: 12px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
     line-height: 1.55;
 }
 
@@ -379,15 +292,15 @@
     margin-top: 2px;
     width: 15px;
     height: 15px;
-    color: var(--color-brand-primary, rgb(106, 80, 157));
+    color: color-mix(in srgb, var(--color-text-secondary, rgba(17, 17, 17, .65)) 65%, transparent);
 }
 
 /* ---------- Coluna de resultados (direita) ---------- */
 .simulador-roi__resultado {
-    padding: var(--spacing-large, 32px);
+    padding: var(--spacing-medium, 26px) var(--spacing-large, 30px);
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-medium, 20px);
+    gap: var(--spacing-medium, 16px);
     min-width: 0;
 }
 
@@ -396,11 +309,10 @@
 }
 
 .simulador-roi__resultado-eyebrow {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-bold, 700);
-    letter-spacing: .08em;
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    text-transform: uppercase;
+    font-size: 11.5px;
+    font-weight: var(--font-weight-black, 800);
+    letter-spacing: .1em;
+    color: color-mix(in srgb, var(--color-text-secondary, rgba(17, 17, 17, .65)) 65%, transparent);
 }
 
 .simulador-roi__linha-resultado {
@@ -412,9 +324,9 @@
 }
 
 .simulador-roi__numero-grande {
-    font-size: clamp(2rem, 4vw, var(--font-size-large, 2rem));
-    font-weight: var(--font-weight-black, 900);
-    background: var(--gradient-aurora, linear-gradient(135deg, rgb(106, 80, 157) 0%, rgb(207, 71, 147) 50%, rgb(49, 180, 166) 100%));
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: var(--font-weight-black, 800);
+    background: var(--gradient-aurora, linear-gradient(90deg, rgb(207, 71, 147), rgb(106, 80, 157)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -422,67 +334,138 @@
     line-height: 1;
 }
 
-.simulador-roi__numero-grande--solido {
-    font-size: clamp(1.8rem, 3.6vw, var(--font-size-large, 2rem));
-    color: var(--color-text-primary, var(--color-neutral-black));
-    -webkit-text-fill-color: initial;
+.simulador-roi__numero-grande--alerta {
     background: none;
-    font-weight: var(--font-weight-black, 900);
+    -webkit-text-fill-color: initial;
+    color: var(--color-feedback-error, rgb(181, 59, 129));
 }
 
 .simulador-roi__legenda-numero {
-    font-size: var(--font-size-small, 0.975rem);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    font-weight: var(--font-weight-medium, 500);
+    font-size: 13px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
+    font-weight: var(--font-weight-medium, 600);
     margin-top: 6px;
-}
-
-.simulador-roi__estatistica {
-    min-width: 96px;
-}
-
-.simulador-roi__estatistica .simulador-roi__estatistica-valor {
-    font-size: var(--font-size-medium, 1.25rem);
-    font-weight: var(--font-weight-black, 900);
-    color: var(--color-text-primary, var(--color-neutral-black));
-    white-space: nowrap;
-}
-
-.simulador-roi__estatistica .simulador-roi__estatistica-label {
-    font-size: var(--font-size-small, 0.975rem);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    margin-top: 3px;
-    font-weight: var(--font-weight-medium, 500);
 }
 
 .simulador-roi__etiqueta-percentual {
     display: inline-block;
-    background: color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 14%, var(--color-neutral-white, rgb(255, 255, 255)));
+    background: color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 12%, var(--color-neutral-white, rgb(255, 255, 255)));
     color: var(--color-brand-pink, rgb(207, 71, 147));
-    font-weight: var(--font-weight-bold, 700);
-    font-size: var(--font-size-small, 0.975rem);
+    font-weight: var(--font-weight-black, 800);
+    font-size: 13px;
     padding: 4px 10px;
-    border-radius: var(--border-radius-small, 10px);
+    border-radius: 8px;
     margin-left: 10px;
     vertical-align: middle;
+    white-space: nowrap;
 }
 
-/* Tooltip do gráfico */
+/* ---------- "O rombo hoje" (diagnóstico) ---------- */
+.simulador-roi__rombo {
+    background: color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 5%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border: 1px solid color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 16%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: var(--border-radius-small, 14px);
+    padding: 16px var(--spacing-medium, 22px);
+}
+
+.simulador-roi__rombo-texto {
+    font-size: 13.5px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
+    line-height: 1.55;
+    margin: 8px 0 0;
+}
+
+.simulador-roi__rombo-texto b {
+    color: var(--color-text-primary, rgb(17, 17, 17));
+}
+
+.simulador-roi__composicao {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 20%, var(--color-neutral-white, rgb(255, 255, 255)));
+}
+
+.simulador-roi__composicao-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.simulador-roi__composicao-barra {
+    flex-shrink: 0;
+    width: 46px;
+    height: 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 12%, var(--color-neutral-white, rgb(255, 255, 255)));
+    overflow: hidden;
+}
+
+.simulador-roi__composicao-fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    transition: width var(--transition-default, .2s ease);
+}
+
+.simulador-roi__composicao-fill--a { background: var(--color-feedback-error, rgb(181, 59, 129)); }
+.simulador-roi__composicao-fill--b { background: color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 75%, black 5%); }
+.simulador-roi__composicao-fill--c { background: color-mix(in srgb, var(--color-feedback-error, rgb(181, 59, 129)) 55%, black 15%); }
+
+.simulador-roi__composicao-label {
+    font-size: 12px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
+}
+
+.simulador-roi__composicao-label b {
+    color: var(--color-text-primary, rgb(17, 17, 17));
+    font-weight: var(--font-weight-bold, 700);
+}
+
+/* ---------- Seta divisora entre o problema e a solução ---------- */
+.simulador-roi__seta-divisora {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-brand-primary, rgb(106, 80, 157));
+    font-size: 12.5px;
+    font-weight: var(--font-weight-bold, 700);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.simulador-roi__seta-divisora svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ---------- "Com a Aurora" (retorno) ---------- */
+.simulador-roi__ganho {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Tooltip do gráfico: só fica visível quando o mouse (ou toque) está
+   sobre a área do gráfico. Posição é definida via left/top inline pelo JS. */
 .simulador-roi__grafico-tooltip {
     position: absolute;
     top: 0;
     left: 0;
     transform: translate(-50%, calc(-100% - 14px));
     pointer-events: none;
-    background: var(--color-neutral-white, rgb(255, 255, 255));
+    background: var(--color-surface-primary, rgb(255, 255, 255));
     border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
-    border-radius: var(--border-radius-small, 10px);
+    border-radius: var(--border-radius-small, 12px);
     padding: 10px 14px;
-    box-shadow: var(--shadow-dropdown, 0 10px 15px rgba(0, 0, 0, 0.05));
+    box-shadow: var(--shadow-dropdown, 0 10px 30px rgba(106, 80, 157, .12));
     min-width: 150px;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .15s ease;
+    transition: opacity .12s ease;
     z-index: 2;
 }
 
@@ -492,33 +475,31 @@
 }
 
 .simulador-roi__grafico-tooltip .tt-titulo {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-bold, 700);
+    font-size: 12.5px;
+    font-weight: var(--font-weight-black, 800);
     color: var(--color-brand-primary, rgb(106, 80, 157));
     margin-bottom: 6px;
 }
 
 .simulador-roi__grafico-tooltip .tt-linha {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: 12px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
     margin-top: 3px;
     white-space: nowrap;
 }
 
 .simulador-roi__grafico-tooltip .tt-linha b {
-    color: var(--color-text-primary, var(--color-neutral-black));
-    font-weight: var(--font-weight-bold, 700);
+    color: var(--color-text-primary, rgb(17, 17, 17));
 }
 
 .simulador-roi__grafico-tooltip .tt-linha.roxo b { color: var(--color-brand-primary, rgb(106, 80, 157)); }
 .simulador-roi__grafico-tooltip .tt-linha.rosa b { color: var(--color-brand-pink, rgb(207, 71, 147)); }
 .simulador-roi__grafico-tooltip .tt-linha.teal b { color: var(--color-brand-teal, rgb(49, 180, 166)); }
+.simulador-roi__grafico-tooltip .tt-linha.alerta b { color: var(--color-feedback-error, rgb(181, 59, 129)); }
 
 .simulador-roi__grafico-dica {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--color-text-secondary, rgba(17, 17, 17, .65)) 65%, transparent);
     margin: -8px 0 0;
     text-align: center;
 }
@@ -526,9 +507,9 @@
 .simulador-roi__legenda {
     display: flex;
     gap: 22px;
-    font-size: var(--font-size-small, 0.975rem);
+    font-size: 12.5px;
     font-weight: var(--font-weight-bold, 700);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    color: var(--color-text-primary, rgb(17, 17, 17));
     flex-wrap: wrap;
 }
 
@@ -548,17 +529,7 @@
 .simulador-roi__legenda .ponto--roxo { background: var(--color-brand-primary, rgb(106, 80, 157)); }
 .simulador-roi__legenda .ponto--teal { background: var(--color-brand-teal, rgb(49, 180, 166)); }
 .simulador-roi__legenda .ponto--rosa { background: var(--color-brand-pink, rgb(207, 71, 147)); }
-
-.simulador-roi__legenda .traco {
-    width: 18px;
-    height: 0;
-    border-top: 2px solid;
-    flex-shrink: 0;
-}
-
-.simulador-roi__legenda .traco--roxo { border-color: var(--color-brand-primary, rgb(106, 80, 157)); }
-.simulador-roi__legenda .traco--teal { border-color: var(--color-brand-teal, rgb(49, 180, 166)); }
-.simulador-roi__legenda .traco--teal-tracejado { border-color: var(--color-brand-teal, rgb(49, 180, 166)); border-top-style: dashed; }
+.simulador-roi__legenda .ponto--alerta { background: var(--color-feedback-error, rgb(181, 59, 129)); }
 
 .simulador-roi__grafico-wrap {
     position: relative;
@@ -579,26 +550,24 @@
     background: linear-gradient(90deg,
             color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 8%, var(--color-neutral-white, rgb(255, 255, 255))),
             color-mix(in srgb, var(--color-brand-pink, rgb(207, 71, 147)) 8%, var(--color-neutral-white, rgb(255, 255, 255))));
-    border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 14%, var(--color-neutral-white, rgb(255, 255, 255)));
-    border-radius: var(--border-radius-small, 10px);
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 12%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: var(--border-radius-small, 14px);
     padding: 16px 20px;
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    font-size: 14.5px;
+    color: var(--color-text-primary, rgb(17, 17, 17));
 }
 
 .simulador-roi__insight .simulador-roi__icone-spark {
     flex-shrink: 0;
     width: 30px;
     height: 30px;
-    border-radius: var(--border-radius-small, 10px);
-    background: var(--color-neutral-white, rgb(255, 255, 255));
+    border-radius: 9px;
+    background: var(--color-surface-primary, rgb(255, 255, 255));
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-brand-primary, rgb(106, 80, 157));
-    font-size: var(--font-size-small, 0.975rem);
-    box-shadow: var(--shadow-medium, 0 4px 20px rgba(0, 0, 0, 0.05));
+    font-size: 13px;
 }
 
 .simulador-roi__icone-spark svg {
@@ -608,12 +577,11 @@
 
 .simulador-roi__insight b {
     color: var(--color-brand-pink, rgb(207, 71, 147));
-    font-weight: var(--font-weight-bold, 700);
 }
 
 .simulador-roi__stats-mini {
     display: flex;
-    gap: var(--spacing-large, 32px);
+    gap: var(--spacing-large, 30px);
     flex-wrap: wrap;
 }
 
@@ -626,13 +594,13 @@
 .simulador-roi__stat-mini-icone {
     width: 32px;
     height: 32px;
-    border-radius: var(--border-radius-small, 10px);
-    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 10%, var(--color-neutral-white, rgb(255, 255, 255)));
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 7%, var(--color-neutral-white, rgb(255, 255, 255)));
     color: var(--color-brand-primary, rgb(106, 80, 157));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-small, 0.975rem);
+    font-size: 14px;
     flex-shrink: 0;
 }
 
@@ -642,31 +610,31 @@
 }
 
 .simulador-roi__stat-mini-icone--teal {
-    background: color-mix(in srgb, var(--color-brand-teal, rgb(49, 180, 166)) 12%, var(--color-neutral-white, rgb(255, 255, 255)));
+    background: color-mix(in srgb, var(--color-brand-teal-light, rgb(139, 245, 233)) 40%, var(--color-neutral-white, rgb(255, 255, 255)));
     color: var(--color-brand-teal, rgb(49, 180, 166));
 }
 
 .simulador-roi__stat-mini-valor {
-    font-size: var(--font-size-base, 1rem);
-    font-weight: var(--font-weight-black, 900);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    font-size: 17px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-text-primary, rgb(17, 17, 17));
 }
 
 .simulador-roi__stat-mini-label {
-    font-size: var(--font-size-small, 0.975rem);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
-    font-weight: var(--font-weight-medium, 500);
+    font-size: 11.5px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
+    font-weight: var(--font-weight-medium, 600);
 }
 
 /* ---------- Faixa de features ---------- */
 .simulador-roi__features {
-    margin-top: var(--spacing-xlarge, 64px);
+    margin-top: var(--spacing-large, 32px);
     background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 6%, var(--color-neutral-white, rgb(255, 255, 255)));
-    border-radius: var(--border-radius-medium, 18px);
-    padding: var(--spacing-large, 32px) clamp(20px, 4vw, 44px);
+    border-radius: var(--border-radius-medium, 22px);
+    padding: var(--spacing-medium, 26px) clamp(20px, 4vw, 36px);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--spacing-large, 32px);
+    gap: var(--spacing-medium, 22px);
 }
 
 .simulador-roi__feature {
@@ -679,14 +647,14 @@
     flex-shrink: 0;
     width: 42px;
     height: 42px;
-    border-radius: var(--border-radius-small, 10px);
-    background: var(--color-neutral-white, rgb(255, 255, 255));
+    border-radius: var(--border-radius-small, 12px);
+    background: var(--color-surface-primary, rgb(255, 255, 255));
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-brand-primary, rgb(106, 80, 157));
-    box-shadow: var(--shadow-dropdown, 0 10px 15px rgba(0, 0, 0, 0.05));
-    font-size: var(--font-size-medium, 1.25rem);
+    box-shadow: var(--shadow-dropdown, 0 6px 16px rgba(106, 80, 157, .10));
+    font-size: 17px;
 }
 
 .simulador-roi__feature-icone svg {
@@ -695,16 +663,15 @@
 }
 
 .simulador-roi__feature h4 {
-    font-size: var(--font-size-base, 1rem);
-    font-weight: var(--font-weight-bold, 700);
-    color: var(--color-text-primary, var(--color-neutral-black));
+    font-size: 15px;
+    font-weight: var(--font-weight-black, 800);
+    color: var(--color-text-primary, rgb(17, 17, 17));
     margin: 0 0 4px;
 }
 
 .simulador-roi__feature p {
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
-    color: var(--color-text-secondary, rgba(17, 17, 17, 0.65));
+    font-size: 13px;
+    color: var(--color-text-secondary, rgba(17, 17, 17, .65));
     line-height: 1.55;
     margin: 0;
 }
@@ -726,12 +693,10 @@
 .simulador-roi__noscript {
     background: color-mix(in srgb, var(--color-brand-primary, rgb(106, 80, 157)) 6%, var(--color-neutral-white, rgb(255, 255, 255)));
     border: 1px solid var(--color-border-default, rgba(8, 8, 8, 0.1));
-    border-radius: var(--border-radius-medium, 18px);
-    padding: var(--spacing-large, 32px);
-    font-size: var(--font-size-small, 0.975rem);
-    font-weight: var(--font-weight-regular, 400);
+    border-radius: var(--border-radius-medium, 16px);
+    padding: var(--spacing-large, 24px);
+    font-size: 14px;
     line-height: 1.6;
-    color: var(--color-text-primary, var(--color-neutral-black));
 }
 
 /* ---------- Responsividade (breakpoints de viewport) ---------- */
@@ -748,7 +713,7 @@
 
 @media (max-width: 768px) {
     .simulador-roi {
-        padding: var(--spacing-large, 48px) clamp(16px, 4vw, 24px) var(--spacing-large, 48px);
+        padding: var(--spacing-large, 56px) clamp(16px, 4vw, 24px) var(--spacing-large, 64px);
     }
 }
 
@@ -759,7 +724,7 @@
 
     .simulador-roi__resultado,
     .simulador-roi__controles {
-        padding: var(--spacing-medium, 16px);
+        padding: var(--spacing-medium, 20px);
     }
 
     .simulador-roi__valor {
@@ -767,23 +732,22 @@
     }
 }
 
+/* Responsividade "de dentro para fora": ajusta o card mesmo quando ele
+   é embutido em um espaço estreito (ex.: sidebar), independente do
+   tamanho da viewport. Navegadores sem suporte a container queries
+   simplesmente ignoram este bloco e usam as media queries acima. */
 @container roi-card (max-width: 420px) {
     .simulador-roi__controles,
     .simulador-roi__resultado {
-        padding: var(--spacing-medium, 16px);
-    }
-
-    .simulador-roi__stepper .simulador-roi__valor {
-        width: 100px;
+        padding: var(--spacing-medium, 18px);
     }
 }
 
 /* ---------- Acessibilidade: movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
-    .simulador-roi__tab,
-    .simulador-roi__stepper button,
     .simulador-roi__valor,
-    .simulador-roi__slider {
+    .simulador-roi__slider,
+    .simulador-roi__composicao-fill {
         transition: none;
     }
 }
