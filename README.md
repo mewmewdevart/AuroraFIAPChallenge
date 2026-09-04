@@ -48,6 +48,7 @@ Para manter a organização e escalabilidade do repositório, o detalhamento das
 | Etapa | Documentação | Descrição |
 | :---: | :--- | :--- |
 | **01** | [**Sprint 01 - Protótipo da Landing Page**](./docs/01_sprint.md) | Estruturação de conteúdo, identidade visual, acessibilidade e decisões técnicas. |
+| **02** | [**Sprint 02 - Protótipo Funcional & Deploy**](./docs/02_sprint.md) | Deploy online, formulário de captação funcional, calculadora de ROI e assistente IRIS. |
 
 ## 📂 Estrutura do Projeto
 
