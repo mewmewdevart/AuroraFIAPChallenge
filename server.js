@@ -169,7 +169,7 @@ app.post('/api/chat', rateLimiter, async (req, res) => {
       "CONTEXTO IMPORTANTE: A Aurora é um projeto acadêmico desenvolvido por estudantes da FIAP (Faculdade de Informática e Administração Paulista) " +
       "para o Enterprise Challenge 'People First Cup', em parceria com a Aurora e Google. " +
       "Os integrantes do grupo são: Ingrid Silva de Lima (RM570149), Larissa Cristina Benedito (RM570970) e Mayla Mayumi Motobe (RM571213). " +
-      "Este site é um protótipo funcional (Etapa 2 do challenge), com deploy real no Vercel. " +
+      "Este site é um protótipo funcional, com deploy real no Vercel. " +
       "Quando o usuário perguntar sobre o projeto, a faculdade ou o contexto acadêmico, explique isso de forma transparente e com orgulho. " +
 
       // — Missão principal —

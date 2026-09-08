@@ -31,7 +31,7 @@ function inicializarChatbot() {
         },
         integrantes: {
             titulo: "Quais os integrantes do grupo?",
-            resposta: "Este projeto foi desenvolvido pelo seguinte time da FIAP:<br>• <strong>Ingrid Silva de Lima</strong> (RM570149)<br>• <strong>Larissa Cristina Benedito</strong> (RM570970)<br>• <strong>Mayla Mayumi Motobe</strong> (RM571213)"
+            resposta: "Este projeto foi desenvolvido pelo grupo <strong>Ctrl+People</strong> da FIAP:<br>• <strong>Ingrid Silva de Lima</strong> (RM570149)<br>• <strong>Larissa Cristina Benedito</strong> (RM570970)<br>• <strong>Mayla Mayumi Motobe</strong> (RM571213)"
         },
         demo: {
             titulo: "Como agendar uma demonstração?",
@@ -43,7 +43,7 @@ function inicializarChatbot() {
         },
         projeto: {
             titulo: "Este site é um trabalho acadêmico?",
-            resposta: "Sim! 🎓 A Aurora é um <strong>projeto acadêmico</strong> desenvolvido para o <strong>Enterprise Challenge 'People First Cup'</strong>, realizado pela <strong>FIAP</strong> (Faculdade de Informática e Administração Paulista) em parceria com a Aurora e Google.<br><br>Este site é um <strong>protótipo funcional completo</strong> (Etapa 2 do Challenge), com deploy real no Vercel e backend integrado à API do Google Gemini. Toda a implementação — HTML, CSS, JavaScript, acessibilidade (WCAG 2.2) e este chatbot — é autoral, feita pelo time do grupo."
+            resposta: "Sim! 🎓 A Aurora é um <strong>projeto acadêmico</strong> desenvolvido para o <strong>Enterprise Challenge 'People First Cup'</strong>, realizado pela <strong>FIAP</strong> (Faculdade de Informática e Administração Paulista) em parceria com a Aurora e Google.<br><br>Este site é um <strong>protótipo funcional </strong>, com deploy real no Vercel. Toda a implementação : HTML, CSS, JavaScript, acessibilidade (WCAG 2.2) e este chatbot é autoral, feita pelo time Ctrl+People."
         },
         roi: {
             titulo: "O que é o Simulador de ROI?",
