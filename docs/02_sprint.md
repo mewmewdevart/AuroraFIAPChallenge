@@ -48,7 +48,7 @@ A Landing Page foi estruturada utilizando o framework narrativo **PAS (*Problem 
   *(Printscreen da Hero Section com o Dashboard e Efeito Aurora)*
 
 * **Faixa de Prova Social (*Trusted Strip*):**  
-  Faixa com rolagem horizontal contínua e infinita exibindo marcas de grande relevância no mercado (Nubank, iFood, TOTVS, Itaú, Magalu, Stone, QuintoAndar, RD Station, Ambev e Natura). Funciona como selo imediato de autoridade e credibilidade antes mesmo de o visitante se aprofundar nas funcionalidades.  
+  Faixa com rolagem horizontal contínua e infinita exibindo marcas de grande relevância no mercado (Nubank, iFood, TOTVS, Itaú, Magalu, Stone, QuintoAndar, FIAP, Ambev e Natura). Funciona como selo imediato de autoridade e credibilidade antes mesmo de o visitante se aprofundar nas funcionalidades.  
   *(Printscreen da Faixa de Parceiros / Trusted Strip)*
 
 * **A Solução ("Sua empresa vive algum desses cenários?"):**  
@@ -150,6 +150,7 @@ A acessibilidade foi projetada como pilar central de desenvolvimento:
 | **Contraste de Cores (WCAG AA/AAA)** | Taxas de contraste cromático superiores a 4.5:1 em todos os textos e componentes de controle. |
 | **Respeito a `prefers-reduced-motion`** | O JavaScript e o CSS desativam automaticamente rotações e transições intensas para usuários que configuraram redução de movimento no sistema operacional. |
 | **Textos Alternativos & Ocultação Decorativa** | Imagens com `alt` descritivo e ícones puramente decorativos marcados com `aria-hidden="true"`. |
+| **Integração com VLibras Widget** | Inclusão da suíte VLibras em todas as páginas para tradução automática em Língua Brasileira de Sinais, promovendo a inclusão de pessoas surdas. |
 
 ---
 
@@ -184,11 +185,10 @@ AuroraFIAPChallenge/
 
 ## 5. 🚀 Evoluções Futuras e Roadmap
 
-1. **Integração com VLibras:** Tradução automática em Língua Brasileira de Sinais para inclusão de pessoas surdas.
-2. **Progressive Web App (PWA):** Instalação facilitada em dispositivos móveis e suporte a cache offline via Service Workers.
-3. **Integração com WhatsApp Business:** Início de atendimento direto com mensagens pré-configuradas.
-4. **Degustação Interativa de Dashboard na Hero:** Versão interativa com filtros dinâmicos na seção principal do site.
-5. **Modelos Preditivos de IA:** Cruzamento avançado de dados com predição de turnover e análise de clima organizacional em tempo real.
+1. **Progressive Web App (PWA):** Instalação facilitada em dispositivos móveis e suporte a cache offline via Service Workers.
+2. **Integração com WhatsApp Business:** Início de atendimento direto com mensagens pré-configuradas.
+3. **Degustação Interativa de Dashboard na Hero:** Versão interativa com filtros dinâmicos na seção principal do site.
+4. **Modelos Preditivos de IA:** Cruzamento avançado de dados com predição de turnover e análise de clima organizacional em tempo real.
 
 ---
 

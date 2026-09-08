@@ -3207,13 +3207,14 @@ details[open] .perguntas-frequentes__seta {
 /* ======================================== CHATBOT AURORA ======================================== */
 /* Restaurar botão de subir ao topo na posição original */
 .botao-topo {
-    bottom: 24px;
+    bottom: 14%;
+    right: 10px;
 }
 
 .chatbot-container {
     position: fixed;
-    top: 50%;
-    right: 24px;
+    top: 93%;
+    right: 10px;
     transform: translateY(-50%);
     z-index: 1000;
     font-family: var(--font-primary, 'Outfit', sans-serif);
@@ -3224,8 +3225,8 @@ details[open] .perguntas-frequentes__seta {
 
 /* Botão Flutuante */
 .chatbot-toggle {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--gradient-aurora);
     color: var(--color-neutral-white);
@@ -3286,8 +3287,8 @@ details[open] .perguntas-frequentes__seta {
 .chatbot-window {
     position: absolute;
     right: 70px;
-    top: 50%;
-    transform: translateY(-50%) scale(1);
+    bottom: 0;
+    transform: scale(1);
     width: 360px;
     height: 500px;
     background: var(--color-surface-primary);
@@ -3298,7 +3299,7 @@ details[open] .perguntas-frequentes__seta {
     flex-direction: column;
     overflow: hidden;
     transition: opacity var(--transition-smooth, 0.3s ease), transform var(--transition-smooth, 0.3s ease), visibility var(--transition-smooth, 0.3s ease);
-    transform-origin: right center;
+    transform-origin: bottom right;
     backdrop-filter: blur(8px);
     background-color: var(--color-white-translucent-70);
 }
@@ -3306,7 +3307,7 @@ details[open] .perguntas-frequentes__seta {
 .chatbot-window--hidden {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-50%) scale(0.8);
+    transform: scale(0.8);
     pointer-events: none;
 }
 
@@ -3645,4 +3646,4 @@ details[open] .perguntas-frequentes__seta {
         transition: opacity 0.2s ease;
         transform: none;
     }
-}
+}
