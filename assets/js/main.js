@@ -47,7 +47,7 @@ function inicializarReprodutoresVideo() {
             });
 
             recipiente.classList.add('is-reproduzindo');
-            video.setAttribute('controls', 'controls');
+            videoDepoimento.setAttribute('controls', 'controls');
         });
 
         // Função auxiliar para restaurar o estado visual do player
@@ -124,8 +124,12 @@ function inicializarVoltarAoTopo() {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             botaoSubirTopo.classList.add('is-visivel');
+            // A16 — remove aria-hidden quando visível para leitores de tela alcançarem o botão
+            botaoSubirTopo.removeAttribute('aria-hidden');
         } else {
             botaoSubirTopo.classList.remove('is-visivel');
+            // A16 — oculta de leitores de tela quando não está visível
+            botaoSubirTopo.setAttribute('aria-hidden', 'true');
         }
     }, { passive: true });
 
@@ -313,25 +317,62 @@ function inicializarChecklistInterativo() {
 }
 
 /**
- * Validação de formulário acessível e verificação de e-mail corporativo
+ * Validação e fluxo de etapas do formulário de captação (Multi-step)
  */
+/**
+ * 🔴2 — Gera os próximos N dias úteis a partir de hoje (exclui sábado e domingo)
+ * e preenche o fieldset de seleção de data com opções dinâmicas
+ */
+function gerarDatasAgendamento() {
+    const containerDatas = document.querySelector('.captacao__opcoes-data');
+    if (!containerDatas) return;
+
+    const DIAS_SEMANA_ABREV = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SAB'];
+    const diasUteis = [];
+    const hoje = new Date();
+    let cursor = new Date(hoje);
+    cursor.setDate(cursor.getDate() + 1); // começa no próximo dia
+
+    while (diasUteis.length < 6) {
+        const diaSemana = cursor.getDay();
+        if (diaSemana !== 0 && diaSemana !== 6) { // 0 = domingo, 6 = sábado
+            diasUteis.push(new Date(cursor));
+        }
+        cursor.setDate(cursor.getDate() + 1);
+    }
+
+    containerDatas.innerHTML = diasUteis.map((data, idx) => {
+        const dia = String(data.getDate()).padStart(2, '0');
+        const mes = String(data.getMonth() + 1).padStart(2, '0');
+        const valorData = `${dia}/${mes}`;
+        const abrevDia = DIAS_SEMANA_ABREV[data.getDay()];
+        const required = idx === 0 ? 'required' : '';
+        return `<label class="captacao__opcao"><input class="captacao__opcao-input" type="radio" name="data" value="${valorData}" ${required}><span class="captacao__opcao-conteudo"><small>${abrevDia}</small><strong>${dia}</strong></span></label>`;
+    }).join('');
+}
+
 function inicializarValidacaoFormulario() {
     const formulario = document.getElementById('form-captacao');
     const botaoEnviar = document.getElementById('btn-agendar');
+    const btnProximaEtapa = document.getElementById('btn-proxima-etapa');
+    const btnEtapaAnterior = document.getElementById('btn-etapa-anterior');
+    const etapa1 = document.getElementById('etapa-1');
+    const etapa2 = document.getElementById('etapa-2');
+    const stepIndicador1 = document.getElementById('step-indicador-1');
+    const stepIndicador2 = document.getElementById('step-indicador-2');
+    const linhaProgresso = document.getElementById('stepper-progresso-linha');
+    const subtitulo = document.getElementById('captacao-subtitulo');
+    const resumoLeadNomeEmpresa = document.getElementById('resumo-lead-nome-empresa');
 
-    if (!formulario || !botaoEnviar) return;
+    if (!formulario || !botaoEnviar || !etapa1 || !etapa2) return;
 
-    const campos = Array.from(formulario.querySelectorAll('.captacao__input'));
+    // 🔴2 — Gera as datas dinamicamente ao inicializar
+    gerarDatasAgendamento();
+
+    const camposEtapa1 = Array.from(etapa1.querySelectorAll('.captacao__input'));
     const gruposOpcoes = [
         { nome: 'data', erro: document.getElementById('erro-data') },
         { nome: 'horario', erro: document.getElementById('erro-horario') }
-    ];
-
-    // Lista de domínios públicos de e-mail comuns a serem rejeitados
-    const dominiosPublicos = [
-        'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'yahoo.com.br',
-        'bol.com.br', 'uol.com.br', 'terra.com.br', 'ig.com.br', 'globomail.com',
-        'live.com', 'aol.com', 'icloud.com', 'protonmail.com', 'zoho.com'
     ];
 
     const validarCampo = (input) => {
@@ -355,18 +396,12 @@ function inicializarValidacaoFormulario() {
             mensagemErro = 'Este campo é obrigatório.';
         }
 
-        // Valida sintaxe e tipo corporativo de e-mail
+        // Valida sintaxe e formato de e-mail (aceita e-mails corporativos e provedores comuns como Gmail, Hotmail, etc.)
         if (eValido && input.type === 'email') {
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
-            } else {
-                const dominio = valor.split('@')[1].toLowerCase();
-                if (dominiosPublicos.includes(dominio)) {
-                    eValido = false;
-                    mensagemErro = 'Por favor, insira um e-mail corporativo (evite Gmail, Hotmail, etc.).';
-                }
             }
         }
 
@@ -397,7 +432,132 @@ function inicializarValidacaoFormulario() {
         return eValido;
     };
 
-    campos.forEach(input => {
+    const validarEtapa1 = () => {
+        let etapaValida = true;
+        let primeiroInvalido = null;
+
+        camposEtapa1.forEach(input => {
+            const valido = validarCampo(input);
+            if (!valido) {
+                etapaValida = false;
+                if (!primeiroInvalido) primeiroInvalido = input;
+            }
+        });
+
+        if (!etapaValida && primeiroInvalido) {
+            primeiroInvalido.focus();
+        }
+
+        return etapaValida;
+    };
+
+    const validarEtapa2 = () => {
+        let etapaValida = true;
+        let primeiroInvalido = null;
+
+        gruposOpcoes.forEach(grupo => {
+            if (!validarGrupoOpcoes(grupo)) {
+                etapaValida = false;
+                if (!primeiroInvalido) {
+                    primeiroInvalido = formulario.querySelector(`input[name="${grupo.nome}"]`);
+                }
+            }
+        });
+
+        if (!etapaValida && primeiroInvalido) {
+            primeiroInvalido.focus();
+        }
+
+        return etapaValida;
+    };
+
+    const irParaEtapa = (numeroEtapa) => {
+        // A15 — Atualiza o progressbar para comunicar progresso a leitores de tela
+        const stepperEl = document.getElementById('captacao-stepper');
+
+        if (numeroEtapa === 2) {
+            etapa1.classList.remove('is-ativa');
+            etapa1.hidden = true;
+
+            etapa2.classList.add('is-ativa');
+            etapa2.hidden = false;
+
+            if (stepIndicador1) {
+                stepIndicador1.classList.remove('is-active');
+                stepIndicador1.classList.add('is-completed');
+                stepIndicador1.setAttribute('aria-selected', 'false');
+            }
+
+            if (stepIndicador2) {
+                stepIndicador2.classList.add('is-active');
+                stepIndicador2.setAttribute('aria-selected', 'true');
+            }
+
+            if (stepperEl) {
+                stepperEl.setAttribute('aria-valuenow', '2');
+                stepperEl.setAttribute('aria-label', 'Etapa 2 de 2: Data e Horário');
+            }
+
+            if (linhaProgresso) {
+                linhaProgresso.style.width = '100%';
+            }
+
+            if (subtitulo) {
+                subtitulo.textContent = 'Escolha o melhor dia e horário para a sua sessão guiada de 30 minutos.';
+            }
+
+            // Atualiza resumo do Lead na Etapa 2
+            const nomeLead = formulario.querySelector('#captacao-nome')?.value.trim() || 'Você';
+            const empresaLead = formulario.querySelector('#captacao-empresa')?.value.trim() || 'Sua Empresa';
+            if (resumoLeadNomeEmpresa) {
+                resumoLeadNomeEmpresa.textContent = `${nomeLead} • ${empresaLead}`;
+            }
+
+            // Foca suavemente no primeiro radio da Etapa 2
+            const primeiroRadioData = etapa2.querySelector('input[name="data"]');
+            if (primeiroRadioData) {
+                primeiroRadioData.focus();
+            }
+        } else {
+            etapa2.classList.remove('is-ativa');
+            etapa2.hidden = true;
+
+            etapa1.classList.add('is-ativa');
+            etapa1.hidden = false;
+
+            if (stepIndicador2) {
+                stepIndicador2.classList.remove('is-active');
+                stepIndicador2.setAttribute('aria-selected', 'false');
+            }
+
+            if (stepIndicador1) {
+                stepIndicador1.classList.remove('is-completed');
+                stepIndicador1.classList.add('is-active');
+                stepIndicador1.setAttribute('aria-selected', 'true');
+            }
+
+            if (stepperEl) {
+                stepperEl.setAttribute('aria-valuenow', '1');
+                stepperEl.setAttribute('aria-label', 'Etapa 1 de 2: Seus Dados');
+            }
+
+            if (linhaProgresso) {
+                linhaProgresso.style.width = '0%';
+            }
+
+            if (subtitulo) {
+                subtitulo.textContent = 'Preencha seus dados corporativos e agende sua sessão exclusiva em 30 minutos.';
+            }
+
+            const primeiroCampo = etapa1.querySelector('#captacao-nome');
+            if (primeiroCampo) {
+                primeiroCampo.focus();
+            }
+        }
+    };
+
+    // Listeners de validação em tempo real para campos da Etapa 1
+    camposEtapa1.forEach(input => {
         input.addEventListener('blur', () => {
             validarCampo(input);
         });
@@ -409,55 +569,85 @@ function inicializarValidacaoFormulario() {
         });
     });
 
+    // Listeners para limpar erro de seleção de rádio em tempo real na Etapa 2
+    gruposOpcoes.forEach(grupo => {
+        const opcoes = formulario.querySelectorAll(`input[name="${grupo.nome}"]`);
+        opcoes.forEach(opcao => {
+            opcao.addEventListener('change', () => {
+                validarGrupoOpcoes(grupo);
+            });
+        });
+    });
+
+    // Avançar para Etapa 2
+    if (btnProximaEtapa) {
+        btnProximaEtapa.addEventListener('click', () => {
+            if (validarEtapa1()) {
+                irParaEtapa(2);
+            }
+        });
+    }
+
+    // Voltar para Etapa 1
+    if (btnEtapaAnterior) {
+        btnEtapaAnterior.addEventListener('click', () => {
+            irParaEtapa(1);
+        });
+    }
+
+    // Envio final do formulário
     formulario.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        let formularioEValido = true;
-        let primeiroCampoInvalido = null;
-
-        // Valida todos os campos ao enviar
-        campos.forEach(input => {
-            const eCampoValido = validarCampo(input);
-            if (!eCampoValido) {
-                formularioEValido = false;
-                if (!primeiroCampoInvalido) {
-                    primeiroCampoInvalido = input;
-                }
-            }
-        });
-
-        gruposOpcoes.forEach(grupo => {
-            if (!validarGrupoOpcoes(grupo)) {
-                formularioEValido = false;
-                if (!primeiroCampoInvalido) {
-                    primeiroCampoInvalido = formulario.querySelector(`input[name="${grupo.nome}"]`);
-                }
-            }
-        });
-
-        if (!formularioEValido) {
-            // Foca no primeiro campo com erro para facilitar a correção via teclado
-            if (primeiroCampoInvalido) {
-                primeiroCampoInvalido.focus();
-            }
+        // Garante que a etapa 1 está preenchida
+        if (!validarEtapa1()) {
+            irParaEtapa(1);
             return;
         }
 
-        // Simulação assíncrona de agendamento
+        // Valida etapa 2
+        if (!validarEtapa2()) {
+            return;
+        }
+
+        // Simulação assíncrona de agendamento com feedback visual
         botaoEnviar.setAttribute('aria-busy', 'true');
         botaoEnviar.disabled = true;
         const elementoTextoOriginal = botaoEnviar.querySelector('.botao-cta__texto');
-        const textoOriginal = elementoTextoOriginal.textContent;
-        elementoTextoOriginal.textContent = 'Enviando...';
+        const textoOriginal = elementoTextoOriginal ? elementoTextoOriginal.textContent : 'Confirmar Agendamento';
+        if (elementoTextoOriginal) elementoTextoOriginal.textContent = 'Confirmando agendamento...';
+
+        const nomeLead = formulario.querySelector('#captacao-nome')?.value || 'Parceiro';
 
         setTimeout(() => {
             botaoEnviar.setAttribute('aria-busy', 'false');
             botaoEnviar.disabled = false;
-            elementoTextoOriginal.textContent = textoOriginal;
+            if (elementoTextoOriginal) elementoTextoOriginal.textContent = textoOriginal;
 
             // Mostra toast de sucesso com o primeiro nome do lead
-            mostrarToastSucesso(formulario.querySelector('[name="nome"]').value);
+            mostrarToastSucesso(nomeLead);
+            
+            // Reseta o formulário e retorna à Etapa 1
             formulario.reset();
+            
+            // Limpa mensagens de erro e atributos inválidos
+            camposEtapa1.forEach(input => {
+                input.classList.remove('is-invalido');
+                input.setAttribute('aria-invalid', 'false');
+                const erroEl = document.getElementById(`erro-${input.id.split('-')[1]}`);
+                if (erroEl) {
+                    erroEl.textContent = '';
+                    erroEl.classList.add('sr-only');
+                }
+            });
+            gruposOpcoes.forEach(grupo => {
+                if (grupo.erro) {
+                    grupo.erro.textContent = '';
+                    grupo.erro.classList.add('sr-only');
+                }
+            });
+
+            irParaEtapa(1);
         }, 1500);
     });
 }
@@ -466,14 +656,45 @@ function inicializarNewsletter() {
     const formularioNewsletter = document.getElementById('form-newsletter');
     const campoEmailNewsletter = document.getElementById('newsletter-email');
     const mensagemNewsletter = document.getElementById('newsletter-mensagem');
+    // 🔴3 — Elemento de erro acessível com aria-live, vinculado ao campo via aria-describedby
+    const erroNewsletter = document.getElementById('newsletter-erro');
 
     if (!formularioNewsletter || !campoEmailNewsletter || !mensagemNewsletter) return;
 
+    const limparErro = () => {
+        if (erroNewsletter) {
+            erroNewsletter.textContent = '';
+            erroNewsletter.hidden = true;
+        }
+        campoEmailNewsletter.setAttribute('aria-invalid', 'false');
+    };
+
+    const mostrarErro = (mensagem) => {
+        if (erroNewsletter) {
+            erroNewsletter.textContent = mensagem;
+            erroNewsletter.hidden = false;
+        }
+        campoEmailNewsletter.setAttribute('aria-invalid', 'true');
+        campoEmailNewsletter.focus();
+    };
+
+    // Limpa erro ao digitar
+    campoEmailNewsletter.addEventListener('input', limparErro);
+
     formularioNewsletter.addEventListener('submit', (evento) => {
         evento.preventDefault();
+        limparErro();
 
-        if (!campoEmailNewsletter.checkValidity()) {
-            campoEmailNewsletter.reportValidity();
+        const valor = campoEmailNewsletter.value.trim();
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!valor) {
+            mostrarErro('Por favor, informe seu e-mail.');
+            return;
+        }
+
+        if (!regexEmail.test(valor)) {
+            mostrarErro('Insira um endereço de e-mail válido (ex: voce@empresa.com).');
             return;
         }
 
@@ -483,51 +704,25 @@ function inicializarNewsletter() {
 }
 
 /**
- * Cria e anima uma notificação (toast) de sucesso premium após envio do form
+ * A18 — Toast de sucesso: usa elemento estático no DOM (pré-existente no HTML)
+ * para garantir que o aria-live seja reconhecido por leitores de tela ao carregar a página.
+ * Apenas o conteúdo é atualizado dinamicamente, nunca o elemento em si.
  */
 function mostrarToastSucesso(nome) {
-    const notificacao = document.createElement('div');
-    notificacao.setAttribute('role', 'alert');
-    notificacao.setAttribute('aria-live', 'assertive');
-    
-    // Estilos inline do Toast Premium da Aurora
-    notificacao.style.position = 'fixed';
-    notificacao.style.bottom = '32px';
-    notificacao.style.right = '32px';
-    notificacao.style.background = 'var(--gradient-aurora)';
-    notificacao.style.color = 'var(--color-neutral-white)';
-    notificacao.style.padding = '18px 28px';
-    notificacao.style.borderRadius = 'var(--border-radius-small)';
-    notificacao.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.25)';
-    notificacao.style.zIndex = '1000000';
-    notificacao.style.fontFamily = 'var(--font-primary)';
-    notificacao.style.fontWeight = 'var(--font-weight-bold)';
-    notificacao.style.fontSize = 'var(--font-size-base)';
-    notificacao.style.display = 'flex';
-    notificacao.style.alignItems = 'center';
-    notificacao.style.gap = '12px';
-    notificacao.style.transform = 'translateY(100px)';
-    notificacao.style.opacity = '0';
-    notificacao.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    const notificacao = document.getElementById('toast-sucesso');
+    if (!notificacao) return;
 
-    notificacao.innerHTML = `
-        <i class="fa-solid fa-circle-check" style="font-size: 20px; color: var(--color-highlight-teal);"></i>
-        <span>Obrigado, ${nome.split(' ')[0]}! Demonstração agendada com sucesso. Entraremos em contato.</span>
-    `;
+    notificacao.querySelector('.toast-sucesso__mensagem').textContent =
+        `Obrigado, ${nome.split(' ')[0]}! Demonstração agendada com sucesso. Entraremos em contato.`;
 
-    document.body.appendChild(notificacao);
+    notificacao.classList.add('is-visivel');
 
+    // Auto-ocultar após 5s
     setTimeout(() => {
-        notificacao.style.transform = 'translateY(0)';
-        notificacao.style.opacity = '1';
-    }, 100);
-
-    // Auto-destruição após 5s
-    setTimeout(() => {
-        notificacao.style.transform = 'translateY(100px)';
-        notificacao.style.opacity = '0';
+        notificacao.classList.remove('is-visivel');
+        // Limpa após a animação de saída
         setTimeout(() => {
-            notificacao.remove();
+            notificacao.querySelector('.toast-sucesso__mensagem').textContent = '';
         }, 400);
     }, 5000);
 }

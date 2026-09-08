@@ -139,7 +139,7 @@
 </head>
 
 <body>
-    <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a>
+    <a href="#contato" class="link-salto">Ir para Agendar Demonstração</a>
 
     <header class="cabecalho">
         <div class="cabecalho__recipiente">
@@ -166,7 +166,7 @@
                         <a href="#depoimentos">Depoimentos</a>
                     </li>
                     <li>
-                        <a href="#resultados">Resultados</a>
+                        <a href="#simulador-roi">Simular Impacto</a>
                     </li>
                     <li>
                         <a href="#faq">Dúvidas</a>
@@ -267,25 +267,25 @@
                 <div class="parceiros__carrossel-esteira">
                     <!-- Conjunto 1 -->
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--nubank">nubank</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--nubank" aria-label="Nubank — empresa parceira">nubank</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--ifood">iFood</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--ifood" aria-label="iFood — empresa parceira">iFood</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--totvs">TOTVS</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--totvs" aria-label="TOTVS — empresa parceira">TOTVS</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--itau">Itaú</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--itau" aria-label="Itaú — empresa parceira">Itaú</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--magalu">Magalu</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--magalu" aria-label="Magalu — empresa parceira">Magalu</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--stone">stone</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--stone" aria-label="Stone — empresa parceira">stone</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--quintoandar">QuintoAndar</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--quintoandar" aria-label="QuintoAndar — empresa parceira">QuintoAndar</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--rdstation">RD Station</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--fiap" aria-label="FIAP — empresa parceira">FIAP</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--ambev">ambev</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--ambev" aria-label="Ambev — empresa parceira">ambev</span></div>
                     <div class="parceiros__logo-item"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--natura">natura</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--natura" aria-label="Natura — empresa parceira">natura</span></div>
                     <!-- Conjunto 2 – duplicado para rotação contínua -->
                     <div class="parceiros__logo-item" aria-hidden="true"><span
                             class="parceiros__logo-texto parceiros__logo-texto--nubank">nubank</span></div>
@@ -302,7 +302,7 @@
                     <div class="parceiros__logo-item" aria-hidden="true"><span
                             class="parceiros__logo-texto parceiros__logo-texto--quintoandar">QuintoAndar</span></div>
                     <div class="parceiros__logo-item" aria-hidden="true"><span
-                            class="parceiros__logo-texto parceiros__logo-texto--rdstation">RD Station</span></div>
+                            class="parceiros__logo-texto parceiros__logo-texto--fiap">FIAP</span></div>
                     <div class="parceiros__logo-item" aria-hidden="true"><span
                             class="parceiros__logo-texto parceiros__logo-texto--ambev">ambev</span></div>
                     <div class="parceiros__logo-item" aria-hidden="true"><span
@@ -315,11 +315,12 @@
         <!-- ============================ Seção Dores do cliente e Solução - 2 ============================ -->
         <section class="servicos" id="solucao">
             <div class="recipiente servicos__recipiente">
-                <header class="servicos__cabecalho">
-                    <h2 class="servicos__titulo">Sua empresa vive algum desses cenários?</h2>
-                    <p class="servicos__descricao">Quando os dados de pessoas estão espalhados, as decisões ficam lentas
-                        e o impacto vai direto pro resultado financeiro.</p>
-                </header>
+            <!-- A7 — Substituído <header> interno por <div> para evitar conflito semântico com o <header> global (WCAG 1.3.1) -->
+            <div class="servicos__cabecalho">
+                <h2 class="servicos__titulo">Sua empresa vive algum desses cenários?</h2>
+                <p class="servicos__descricao">Quando os dados de pessoas estão espalhados, as decisões ficam lentas
+                    e o impacto vai direto pro resultado financeiro.</p>
+            </div>
                 <div class="servicos__conteudo">
                     <div class="servicos__grade">
                         <!-- Cartão 1 -->
@@ -448,10 +449,10 @@
                                             alt="Marina M. M. Polverari" class="cartao-depoimento__foto" loading="lazy"
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
-                                            <h4 class="cartao-depoimento__nome">Marina M. M. Polverari</h4>
+                                            <h3 class="cartao-depoimento__nome">Marina M. M. Polverari</h3>
                                             <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -473,10 +474,10 @@
                                             alt="Rodrigo Santos" class="cartao-depoimento__foto" loading="lazy"
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
-                                            <h4 class="cartao-depoimento__nome">Rodrigo Santos</h4>
+                                            <h3 class="cartao-depoimento__nome">Rodrigo Santos</h3>
                                             <p class="cartao-depoimento__cargo">Head de Gente e Gestão na TechFlow</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -498,11 +499,11 @@
                                             alt="Camila Oliveira" class="cartao-depoimento__foto" loading="lazy"
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
-                                            <h4 class="cartao-depoimento__nome">Camila Oliveira</h4>
+                                            <h3 class="cartao-depoimento__nome">Camila Oliveira</h3>
                                             <p class="cartao-depoimento__cargo">Gerente de Operações na Vesta Logística
                                             </p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -522,10 +523,10 @@
                                             alt="Felipe Almeida" class="cartao-depoimento__foto" loading="lazy"
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
-                                            <h4 class="cartao-depoimento__nome">Felipe Almeida</h4>
+                                            <h3 class="cartao-depoimento__nome">Felipe Almeida</h3>
                                             <p class="cartao-depoimento__cargo">CEO na Nexa Software</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -545,10 +546,10 @@
                                             alt="Juliana Mendes" class="cartao-depoimento__foto" loading="lazy"
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
-                                            <h4 class="cartao-depoimento__nome">Juliana Mendes</h4>
+                                            <h3 class="cartao-depoimento__nome">Juliana Mendes</h3>
                                             <p class="cartao-depoimento__cargo">Coordenadora de T&D na Global Retail</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao">♥</span>
+                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -701,26 +702,31 @@
                 <div class="avaliacoes__grade-videos">
                     <div>
                         <!-- Adcionar o  poster="assets/img/aurora-dashboard.png no futuro -->
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
+                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                        </video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">Como o time da Aurora Tech ganhou 40h por mês</h3>
+                            <h3 class="avaliacoes__titulo-video">Como o time da FIAP ganhou 40h por mês</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
-                                aria-label="Reproduzir vídeo: Como o time da Aurora Tech ganhou 40h por mês">
+                                aria-label="Reproduzir vídeo: Como o time da FIAP ganhou 40h por mês">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
 
-                            <a class="avaliacoes__link-linkedin" href="https://www.linkedin.com/company/aurorapro/"
-                                target="_blank" rel="noopener noreferrer" aria-label="Visitar a Aurora no LinkedIn">
+                            <a class="avaliacoes__link-linkedin"
+                                href="https://www.linkedin.com/school/fiap/"
+                                target="_blank" rel="noopener noreferrer" aria-label="Visitar a FIAP no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                                Conectar com a Aurora
+                                Conectar no LinkedIn
                             </a>
                         </div>
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
+                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                        </video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses</h3>
@@ -740,7 +746,9 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
+                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                        </video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria queria ver</h3>
@@ -761,7 +769,9 @@
                     </div>
 
                     <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none"></video>
+                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
+                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                        </video>
                         <div class="avaliacoes__sobreposicao">
 
                             <h3 class="avaliacoes__titulo-video">Por que escolhemos a Aurora e não voltamos atrás</h3>
@@ -786,7 +796,7 @@
         </section>
 
         <!-- ============================  CALCULADORA DE ROI (SIMULADOR INTERATIVO) ============================ -->
-      <section class="simulador-roi" aria-labelledby="simulador-roi-titulo">
+      <section class="simulador-roi" id="simulador-roi" aria-labelledby="simulador-roi-titulo">
 
           <div class="simulador-roi__container">
 
@@ -912,9 +922,27 @@
 
                 <div class="simulador-roi__grafico-wrap" id="chart-wrap">
                   <svg id="chart-comparativo" viewBox="0 0 760 300"></svg>
+                  <!-- 🔴6 — tooltip visual mantido com aria-hidden; a tabela alternativa abaixo provê os dados para AT -->
                   <div class="simulador-roi__grafico-tooltip" id="tooltip-comparativo" aria-hidden="true"></div>
                 </div>
-                <p class="simulador-roi__grafico-dica">Passe o mouse sobre as barras para ver o detalhamento.</p>
+                <table class="sr-only" id="tabela-grafico-comparativo" aria-label="Dados comparativos do gráfico de turnover">
+                  <caption>Comparativo de custo de turnover: situação atual vs. com a Aurora</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Categoria</th>
+                      <th scope="col">Custo do Turnover Hoje</th>
+                      <th scope="col">Custo com a Aurora</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabela-grafico-corpo">
+                    <tr>
+                      <td>Turnover anual</td>
+                      <td id="tabela-custo-atual">—</td>
+                      <td id="tabela-custo-aurora">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="simulador-roi__grafico-dica">Clique ou passe o mouse sobre as barras para ver o detalhamento.</p>
 
                 <div class="simulador-roi__insight">
                   <span class="simulador-roi__icone-spark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 2l1.6 5.2L19 9l-5.4 1.8L12 16l-1.6-5.2L5 9l5.4-1.8L12 2z"/></svg></span>
@@ -1033,7 +1061,7 @@
         </section>
 
         <!-- ════════════════════════ CAPTAÇÃO DE LEADS — CONTATO ════════════════════════ -->
-        <section class="captacao" id="contato">
+        <section class="captacao" id="contato" tabindex="-1">
             <div class="captacao__aurora-bg" aria-hidden="true">
                 <div class="captacao__aurora-layer captacao__aurora-layer--1"></div>
                 <div class="captacao__aurora-layer captacao__aurora-layer--2"></div>
@@ -1056,168 +1084,196 @@
 
                     <ul class="captacao__beneficios">
                         <li>
-                            <span class="captacao__beneficio-icone" aria-hidden="true">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            Demonstração personalizada para seu cenário
+                            <span class="captacao__beneficio-icone" aria-hidden="true"></span>
+                            <p>Demonstração personalizada para seu cenário</p>
                         </li>
                         <li>
-                            <span class="captacao__beneficio-icone" aria-hidden="true">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            Simulação de ROI com os dados da sua empresa
+                            <span class="captacao__beneficio-icone" aria-hidden="true"></span>
+                            <p>Simulação de ROI com os dados da sua empresa</p>
                         </li>
                         <li>
-                            <span class="captacao__beneficio-icone" aria-hidden="true">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            Sem compromisso — é só uma conversa
+                            <span class="captacao__beneficio-icone" aria-hidden="true"></span>
+                            <p>Sem compromisso — é só uma conversa</p>
                         </li>
                     </ul>
 
                     <!-- Prova Social -->
                     <div class="captacao__prova-social">
-                        <div class="captacao__avatares" aria-hidden="true">
-                            <span class="captacao__avatar-miniatura">KS</span>
-                            <span class="captacao__avatar-miniatura">RL</span>
-                            <span class="captacao__avatar-miniatura">MA</span>
-                            <span class="captacao__avatar-miniatura">DP</span>
-                        </div>
                         <p class="captacao__prova-texto">
                             <strong>+120 empresas</strong> já agendaram demonstração este mês
                         </p>
                     </div>
                 </div>
 
-                <!-- Coluna Direita: Formulário -->
+                <!-- Coluna Direita: Formulário Multi-etapas -->
                 <div class="captacao__formulario-wrap">
                     <form class="captacao__formulario" id="form-captacao" novalidate>
-                        <h3 class="captacao__formulario-titulo">Agendar demonstração gratuita</h3>
-                        <p class="captacao__formulario-subtitulo">Preencha os campos abaixo e nossa equipe entrará em
-                            contato em até 24h.</p>
+                        <!-- Cabeçalho & Stepper -->
+                        <div class="captacao__formulario-header">
+                            <h3 class="captacao__formulario-titulo">Agendar demonstração gratuita</h3>
+                            <p class="captacao__formulario-subtitulo" id="captacao-subtitulo">
+                                Preencha seus dados corporativos e agende sua sessão exclusiva em 30 minutos.
+                            </p>
 
-                        <div class="captacao__campo-duplo">
-                            <div class="captacao__campo">
-                                <label for="captacao-nome" class="captacao__label">Nome completo * <span
-                                        class="sr-only">(obrigatório)</span></label>
-                                <input type="text" id="captacao-nome" name="nome" class="captacao__input"
-                                    placeholder="Seu nome" required aria-required="true" aria-invalid="false"
-                                    aria-describedby="erro-nome" autocomplete="name">
-                                <div id="erro-nome" class="captacao__erro sr-only" aria-live="polite"></div>
-                            </div>
-
-                            <div class="captacao__campo">
-                                <label for="captacao-email" class="captacao__label">E-mail corporativo * <span
-                                        class="sr-only">(obrigatório)</span></label>
-                                <input type="email" id="captacao-email" name="email" class="captacao__input"
-                                    placeholder="voce@empresa.com.br" required aria-required="true" aria-invalid="false"
-                                    aria-describedby="erro-email" autocomplete="email">
-                                <div id="erro-email" class="captacao__erro sr-only" aria-live="polite"></div>
-                            </div>
-                        </div>
-
-                        <div class="captacao__campo-duplo">
-                            <div class="captacao__campo">
-                                <label for="captacao-empresa" class="captacao__label">Empresa * <span
-                                        class="sr-only">(obrigatório)</span></label>
-                                <input type="text" id="captacao-empresa" name="empresa" class="captacao__input"
-                                    placeholder="Nome da empresa" required aria-required="true" aria-invalid="false"
-                                    aria-describedby="erro-empresa" autocomplete="organization">
-                                <div id="erro-empresa" class="captacao__erro sr-only" aria-live="polite"></div>
-                            </div>
-                            <div class="captacao__campo">
-                                <label for="captacao-cargo" class="captacao__label">Cargo</label>
-                                <input type="text" id="captacao-cargo" name="cargo" class="captacao__input"
-                                    placeholder="Seu cargo" aria-describedby="erro-cargo"
-                                    autocomplete="organization-title">
-                                <div id="erro-cargo" class="captacao__erro sr-only" aria-live="polite"></div>
+                            <div class="captacao__stepper" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="2" aria-label="Etapa 1 de 2: Seus Dados" id="captacao-stepper">
+                                <div class="captacao__step is-active" id="step-indicador-1" role="tab" aria-selected="true" aria-controls="etapa-1">
+                                    <div class="captacao__step-badge">
+                                        <span class="captacao__step-num">1</span>
+                                        <i class="fa-solid fa-check captacao__step-check" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="captacao__step-rotulo">Seus Dados</span>
+                                </div>
+                                <div class="captacao__step-linha" aria-hidden="true">
+                                    <div class="captacao__step-progresso" id="stepper-progresso-linha"></div>
+                                </div>
+                                <div class="captacao__step" id="step-indicador-2" role="tab" aria-selected="false" aria-controls="etapa-2">
+                                    <div class="captacao__step-badge">
+                                        <span class="captacao__step-num">2</span>
+                                        <i class="fa-solid fa-calendar-check captacao__step-check" aria-hidden="true"></i>
+                                    </div>
+                                    <span class="captacao__step-rotulo">Data &amp; Horário</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="captacao__campo">
-                            <label for="captacao-colaboradores" class="captacao__label">Número de colaboradores * <span
-                                    class="sr-only">(obrigatório)</span></label>
-                            <select id="captacao-colaboradores" name="colaboradores"
-                                class="captacao__input captacao__select" required aria-required="true"
-                                aria-invalid="false" aria-describedby="erro-colaboradores">
-                                <option value="" disabled selected>Selecione uma faixa</option>
-                                <option value="1-50">1 a 50</option>
-                                <option value="51-200">51 a 200</option>
-                                <option value="201-500">201 a 500</option>
-                                <option value="501-1000">501 a 1.000</option>
-                                <option value="1001+">Mais de 1.000</option>
-                            </select>
-                            <div id="erro-colaboradores" class="captacao__erro sr-only" aria-live="polite"></div>
+                        <!-- ETAPA 1: Dados do Lead & Empresa -->
+                        <div class="captacao__etapa is-ativa" id="etapa-1" role="tabpanel" aria-labelledby="step-indicador-1">
+                            <div class="captacao__campo-duplo">
+                                <div class="captacao__campo">
+                                    <label for="captacao-nome" class="captacao__label">Nome completo * <span
+                                            class="sr-only">(obrigatório)</span></label>
+                                    <input type="text" id="captacao-nome" name="nome" class="captacao__input"
+                                        placeholder="Seu nome" required aria-required="true" aria-invalid="false"
+                                        aria-describedby="erro-nome" autocomplete="name">
+                                    <div id="erro-nome" class="captacao__erro sr-only" aria-live="polite"></div>
+                                </div>
+
+                                <div class="captacao__campo">
+                                    <label for="captacao-email" class="captacao__label">E-mail * <span
+                                            class="sr-only">(obrigatório)</span></label>
+                                    <input type="email" id="captacao-email" name="email" class="captacao__input"
+                                        placeholder="voce@email.com" required aria-required="true" aria-invalid="false"
+                                        aria-describedby="erro-email" autocomplete="email">
+                                    <div id="erro-email" class="captacao__erro sr-only" aria-live="polite"></div>
+                                </div>
+                            </div>
+
+                            <div class="captacao__campo-duplo">
+                                <div class="captacao__campo">
+                                    <label for="captacao-empresa" class="captacao__label">Empresa * <span
+                                            class="sr-only">(obrigatório)</span></label>
+                                    <input type="text" id="captacao-empresa" name="empresa" class="captacao__input"
+                                        placeholder="Nome da empresa" required aria-required="true" aria-invalid="false"
+                                        aria-describedby="erro-empresa" autocomplete="organization">
+                                    <div id="erro-empresa" class="captacao__erro sr-only" aria-live="polite"></div>
+                                </div>
+                                <div class="captacao__campo">
+                                    <label for="captacao-cargo" class="captacao__label">Cargo</label>
+                                    <input type="text" id="captacao-cargo" name="cargo" class="captacao__input"
+                                        placeholder="Seu cargo" aria-describedby="erro-cargo"
+                                        autocomplete="organization-title">
+                                    <div id="erro-cargo" class="captacao__erro sr-only" aria-live="polite"></div>
+                                </div>
+                            </div>
+
+                            <div class="captacao__campo">
+                                <label for="captacao-colaboradores" class="captacao__label">Número de colaboradores * <span
+                                        class="sr-only">(obrigatório)</span></label>
+                                <select id="captacao-colaboradores" name="colaboradores"
+                                    class="captacao__input captacao__select" required aria-required="true"
+                                    aria-invalid="false" aria-describedby="erro-colaboradores">
+                                    <option value="" disabled selected>Selecione uma faixa</option>
+                                    <option value="1-50">1 a 50 colaboradores</option>
+                                    <option value="51-200">51 a 200 colaboradores</option>
+                                    <option value="201-500">201 a 500 colaboradores</option>
+                                    <option value="501-1000">501 a 1.000 colaboradores</option>
+                                    <option value="1001+">Mais de 1.000 colaboradores</option>
+                                </select>
+                                <div id="erro-colaboradores" class="captacao__erro sr-only" aria-live="polite"></div>
+                            </div>
+
+                            <button type="button" class="botao-cta captacao__botao-proximo" id="btn-proxima-etapa">
+                                <span class="botao-cta__texto">Continuar para Data e Horário</span>
+                                <span class="botao-cta__icone" aria-hidden="true">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </button>
+
+                            <p class="captacao__termos">
+                                Ao continuar, você concorda com nossa
+                                <a href="politicas.html#privacidade" class="captacao__termos-link">Política de Privacidade</a>.
+                            </p>
                         </div>
 
-                        <fieldset class="captacao__seletor">
-                            <legend class="captacao__seletor-titulo">Selecione uma data *</legend>
-                            <div class="captacao__opcoes-data">
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="12/11" required><span
-                                        class="captacao__opcao-conteudo"><small>TER</small><strong>12</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="13/11"><span
-                                        class="captacao__opcao-conteudo"><small>QUA</small><strong>13</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="14/11"><span
-                                        class="captacao__opcao-conteudo"><small>QUI</small><strong>14</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="15/11"><span
-                                        class="captacao__opcao-conteudo"><small>SEX</small><strong>15</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="18/11"><span
-                                        class="captacao__opcao-conteudo"><small>SEG</small><strong>18</strong></span></label>
-                                <label class="captacao__opcao"><input class="captacao__opcao-input" type="radio"
-                                        name="data" value="19/11"><span
-                                        class="captacao__opcao-conteudo"><small>TER</small><strong>19</strong></span></label>
+                        <!-- ETAPA 2: Escolha de Data e Horário -->
+                        <div class="captacao__etapa" id="etapa-2" role="tabpanel" aria-labelledby="step-indicador-2" hidden>
+                            <!-- Resumo Dinâmico do Lead -->
+                            <div class="captacao__resumo-lead" id="resumo-lead-box" aria-live="polite">
+                                <div class="captacao__resumo-icone" aria-hidden="true">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                <div class="captacao__resumo-texto">
+                                    <span class="captacao__resumo-label">Demonstração personalizada para:</span>
+                                    <strong class="captacao__resumo-destaque" id="resumo-lead-nome-empresa">Seu Nome • Sua Empresa</strong>
+                                </div>
                             </div>
-                            <div id="erro-data" class="captacao__erro sr-only" aria-live="polite"></div>
-                        </fieldset>
 
-                        <fieldset class="captacao__seletor">
-                            <legend class="captacao__seletor-titulo">Selecione um horário *</legend>
-                            <div class="captacao__horarios">
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
-                                            class="fa-regular fa-sun" aria-hidden="true"></i> Manhã</span><label
-                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
-                                            name="horario" value="09:00" required><span>09:00</span></label><label
-                                        class="captacao__horario captacao__horario--indisponivel"><input
-                                            class="captacao__opcao-input" type="radio" name="horario" value="10:30"
-                                            disabled><span>10:30</span></label><label class="captacao__horario"><input
-                                            class="captacao__opcao-input" type="radio" name="horario"
-                                            value="11:00"><span>11:00</span></label></div>
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
-                                            class="fa-regular fa-sun" aria-hidden="true"></i> Tarde</span><label
-                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
-                                            name="horario" value="14:00"><span>14:00</span></label><label
-                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
-                                            name="horario" value="15:30"><span>15:30</span></label><label
-                                        class="captacao__horario"><input class="captacao__opcao-input" type="radio"
-                                            name="horario" value="17:00"><span>17:00</span></label></div>
-                                <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
-                                            class="fa-regular fa-moon" aria-hidden="true"></i> Noite</span><label
-                                        class="captacao__horario captacao__horario--indisponivel"><input
-                                            class="captacao__opcao-input" type="radio" name="horario" value="18:30"
-                                            disabled><span>18:30</span></label><label class="captacao__horario"><input
-                                            class="captacao__opcao-input" type="radio" name="horario"
-                                            value="19:00"><span>19:00</span></label></div>
+                            <fieldset class="captacao__seletor" id="fieldset-data">
+                                <legend class="captacao__seletor-titulo">Selecione uma data *</legend>
+                                <div class="captacao__opcoes-data"></div>
+                                <div id="erro-data" class="captacao__erro sr-only" aria-live="polite"></div>
+                            </fieldset>
+
+                            <fieldset class="captacao__seletor">
+                                <legend class="captacao__seletor-titulo">Selecione um horário *</legend>
+                                <div class="captacao__horarios">
+                                    <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                                class="fa-regular fa-sun" aria-hidden="true" aria-label="Período da manhã"></i> Manhã</span><label
+                                            class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                                name="horario" value="09:00" required><span>09:00</span></label><label
+                                            class="captacao__horario captacao__horario--indisponivel"><input
+                                                class="captacao__opcao-input" type="radio" name="horario" value="10:30"
+                                                disabled><span>10:30</span></label><label class="captacao__horario"><input
+                                                class="captacao__opcao-input" type="radio" name="horario"
+                                                value="11:00"><span>11:00</span></label></div>
+                                    <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                                class="fa-regular fa-sun" aria-hidden="true"></i> Tarde</span><label
+                                            class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                                name="horario" value="14:00"><span>14:00</span></label><label
+                                            class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                                name="horario" value="15:30"><span>15:30</span></label><label
+                                            class="captacao__horario"><input class="captacao__opcao-input" type="radio"
+                                                name="horario" value="17:00"><span>17:00</span></label></div>
+                                    <div class="captacao__grupo-horarios"><span class="captacao__periodo"><i
+                                                class="fa-regular fa-moon" aria-hidden="true"></i> Noite</span><label
+                                            class="captacao__horario captacao__horario--indisponivel"><input
+                                                class="captacao__opcao-input" type="radio" name="horario" value="18:30"
+                                                disabled><span>18:30</span></label><label class="captacao__horario"><input
+                                                class="captacao__opcao-input" type="radio" name="horario"
+                                                value="19:00"><span>19:00</span></label></div>
+                                </div>
+                                <div id="erro-horario" class="captacao__erro sr-only" aria-live="polite"></div>
+                            </fieldset>
+
+                            <!-- Ações da Etapa 2 -->
+                            <div class="captacao__acoes-etapa">
+                                <button type="button" class="captacao__botao-voltar" id="btn-etapa-anterior">
+                                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                    <span>Voltar</span>
+                                </button>
+                                <button type="submit" class="botao-cta captacao__botao-enviar" id="btn-agendar"
+                                    aria-busy="false">
+                                    <span class="botao-cta__texto">Confirmar Agendamento</span>
+                                    <span class="botao-cta__icone" aria-hidden="true">
+                                        <i class="fa-solid fa-check"></i>
+                                    </span>
+                                </button>
                             </div>
-                            <div id="erro-horario" class="captacao__erro sr-only" aria-live="polite"></div>
-                        </fieldset>
 
-                        <button type="submit" class="botao-cta captacao__botao-enviar" id="btn-agendar"
-                            aria-busy="false">
-                            <span class="botao-cta__texto">Agendar Demonstração</span>
-                            <span class="botao-cta__icone" aria-hidden="true">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </span>
-                        </button>
-
-                        <p class="captacao__termos">
-                            Ao enviar, você concorda com nossa
-                            <a href="politicas.html#privacidade" class="captacao__termos-link">Política de Privacidade</a>.
-                        </p>
+                            <p class="captacao__termos">
+                                Enviaremos o convite da videochamada diretamente para o seu e-mail corporativo.
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1235,8 +1291,9 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">A Aurora é segura? Como tratam os dados dos
-                                colaboradores?</h3>
+                            <!-- A14 — h3 dentro de <summary> é semanticamente incorreto; summary já age como botão/heading -->
+                            <span class="perguntas-frequentes__pergunta">A Aurora é segura? Como tratam os dados dos
+                                colaboradores?</span>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
@@ -1254,7 +1311,7 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-regular fa-clock"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">Quanto tempo leva para implementar?</h3>
+                            <span class="perguntas-frequentes__pergunta">Quanto tempo leva para implementar?</span>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
@@ -1272,8 +1329,8 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-plug"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">A Aurora integra com nosso sistema de RH atual?
-                            </h3>
+                            <span class="perguntas-frequentes__pergunta">A Aurora integra com nosso sistema de RH atual?
+                            </span>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
@@ -1291,7 +1348,7 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-chart-line"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">Qual o investimento?</h3>
+                            <span class="perguntas-frequentes__pergunta">Qual o investimento?</span>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
@@ -1309,8 +1366,8 @@
                             <div class="perguntas-frequentes__icone" aria-hidden="true">
                                 <i class="fa-solid fa-users"></i>
                             </div>
-                            <h3 class="perguntas-frequentes__pergunta">Preciso de uma equipe técnica de tecnologia para
-                                usar?</h3>
+                            <span class="perguntas-frequentes__pergunta">Preciso de uma equipe técnica de tecnologia para
+                                usar?</span>
                             <span class="perguntas-frequentes__seta" aria-hidden="true">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
@@ -1335,7 +1392,10 @@
             <form class="newsletter__formulario" id="form-newsletter">
                 <label class="sr-only" for="newsletter-email">Seu melhor e-mail</label>
                 <input class="newsletter__campo" type="email" id="newsletter-email" name="email"
-                    placeholder="Seu melhor e-mail" autocomplete="email" required>
+                    placeholder="Seu melhor e-mail" autocomplete="email" required
+                    aria-describedby="newsletter-erro" aria-invalid="false">
+                <!-- 🔴3 — Elemento de erro acessível com aria-live; deve existir no DOM desde o início -->
+                <p id="newsletter-erro" class="captacao__erro sr-only" aria-live="polite" hidden></p>
                 <button class="newsletter__botao" type="submit">Inscrever-se</button>
             </form>
             <p class="newsletter__privacidade">
@@ -1430,9 +1490,17 @@
     </div>
 
     <!-- ============================  Botão Scroll to Top ============================   -->
-    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao topo">
+    <!-- A16 — começa com aria-hidden=true pois está invisível; JS o remove quando .is-visivel -->
+    <button id="botao-topo" class="botao-topo" aria-label="Voltar ao topo" aria-hidden="true">
         <i class="fa-solid fa-chevron-up"></i>
     </button>
+
+    <!-- ============================  A18 — Toast de Sucesso (Elemento Estático) ============================   -->
+    <!-- Elemento pré-existente no DOM para que aria-live="assertive" seja registrado pelos leitores de tela -->
+    <div id="toast-sucesso" class="toast-sucesso" role="alert" aria-live="assertive" aria-atomic="true">
+        <i class="fa-solid fa-circle-check toast-sucesso__icone" aria-hidden="true"></i>
+        <span class="toast-sucesso__mensagem"></span>
+    </div>
 
     <!-- ============================  Chatbot Aurora ============================   -->
     <div id="chatbot-container" class="chatbot-container">

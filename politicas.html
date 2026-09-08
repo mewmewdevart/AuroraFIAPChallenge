@@ -97,28 +97,37 @@
 <body class="pagina-legal">
     <a href="#conteudo-legal-principal" class="link-salto">Ir para o conteúdo jurídico principal</a>
 
-    <!-- ============================ CABEÇALHO DEDICADO ============================ -->
-    <header class="cabecalho cabecalho-legal">
+    <!-- ============================ CABEÇALHO PRINCIPAL (PADRÃO AURORA) ============================ -->
+    <header class="cabecalho">
         <div class="cabecalho__recipiente">
             <div class="cabecalho__logo">
                 <a href="index.html" class="cabecalho__logo-link" title="Voltar para a página inicial da Aurora">
-                    <img src="assets/img/aurora-color-logo-people-analytics-platform.png"
-                        alt="Logo Aurora - Plataforma de People Analytics e Gestão de Performance"
-                        class="cabecalho__logo-imagem" width="160">
+                    <img class="cabecalho__logo-imagem"
+                        src="assets/img/aurora-color-logo-people-analytics-platform.png"
+                        alt="Logo Aurora - Plataforma de People Analytics e Gestão de Performance" width="180">
                 </a>
             </div>
-
-            <div class="cabecalho-legal__acoes">
-                <button type="button" class="cabecalho-legal__btn-imprimir" id="btn-imprimir-legal"
-                    aria-label="Imprimir ou Salvar página em PDF">
-                    <i class="fa-solid fa-print" aria-hidden="true"></i>
-                    <span>Imprimir / PDF</span>
+            <nav class="cabecalho__navegacao" aria-label="Menu do portal de políticas">
+                <button class="cabecalho__botao-menu" aria-label="Abrir menu" aria-expanded="false"
+                    aria-controls="menu-navegacao-legal">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
-                <a href="index.html" class="cabecalho-legal__btn-voltar">
-                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                    <span>Voltar ao Site</span>
-                </a>
-            </div>
+                <ul class="cabecalho__lista-navegacao" id="menu-navegacao-legal">
+                    <li><a href="#privacidade">Privacidade</a></li>
+                    <li><a href="#termos">Termos de Uso</a></li>
+                    <li><a href="#lgpd">Portal LGPD</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                    <li><a href="#seguranca-ia">IA &amp; Segurança</a></li>
+                    <li>
+                        <a href="index.html" class="botao-cta">
+                            <span class="botao-cta__texto">Voltar ao Site</span>
+                            <span class="botao-cta__icone" aria-hidden="true">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
 

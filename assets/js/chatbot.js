@@ -40,6 +40,14 @@ function inicializarChatbot() {
         analytics: {
             titulo: "Como funciona o People Analytics?",
             resposta: "Coletamos dados de múltiplas fontes (pesquisas de clima, avaliações de desempenho, feedbacks) e estruturamos tudo em um painel integrado. A liderança tem visibilidade completa de indicadores em tempo real para tomada de decisões justas."
+        },
+        projeto: {
+            titulo: "Este site é um trabalho acadêmico?",
+            resposta: "Sim! 🎓 A Aurora é um <strong>projeto acadêmico</strong> desenvolvido para o <strong>Enterprise Challenge 'People First Cup'</strong>, realizado pela <strong>FIAP</strong> (Faculdade de Informática e Administração Paulista) em parceria com a Aurora e Google.<br><br>Este site é um <strong>protótipo funcional completo</strong> (Etapa 2 do Challenge), com deploy real no Vercel e backend integrado à API do Google Gemini. Toda a implementação — HTML, CSS, JavaScript, acessibilidade (WCAG 2.2) e este chatbot — é autoral, feita pelo time do grupo."
+        },
+        roi: {
+            titulo: "O que é o Simulador de ROI?",
+            resposta: "O <strong>Simulador de ROI</strong> é um diferencial exclusivo da Aurora que permite calcular em tempo real o retorno financeiro esperado ao investir na plataforma. Basta informar o número de colaboradores, o investimento mensal e a taxa atual de turnover — a Aurora calcula em dois modos: ROI Direto e ROI Composto ao longo do tempo, com gráficos interativos."
         }
     };
 
@@ -109,6 +117,12 @@ function inicializarChatbot() {
         const textoOriginal = chatbotInput.value.trim();
         if (!textoOriginal) return;
 
+        // Segurança: limita o tamanho da mensagem no cliente antes de enviar
+        if (textoOriginal.length > 500) {
+            adicionarMensagem('Sua mensagem é muito longa. Por favor, limite a 500 caracteres.', 'bot');
+            return;
+        }
+
         chatbotInput.value = '';
         processarInteracaoUsuario(textoOriginal);
     });
@@ -165,6 +179,14 @@ function inicializarChatbot() {
         if (msgNormalizada.includes('people analytics') || msgNormalizada.includes('funcionamento') || msgNormalizada.includes('dados') || msgNormalizada.includes('analytics')) {
             return 'analytics';
         }
+        // Contexto acadêmico — FIAP / Enterprise Challenge
+        if (msgNormalizada.includes('faculdade') || msgNormalizada.includes('fiap') || msgNormalizada.includes('trabalho') || msgNormalizada.includes('challenge') || msgNormalizada.includes('academico') || msgNormalizada.includes('projeto') || msgNormalizada.includes('aluno') || msgNormalizada.includes('etapa') || msgNormalizada.includes('enterprise')) {
+            return 'projeto';
+        }
+        // Simulador de ROI
+        if (msgNormalizada.includes('roi') || msgNormalizada.includes('retorno') || msgNormalizada.includes('simulador') || msgNormalizada.includes('calculadora') || msgNormalizada.includes('investimento')) {
+            return 'roi';
+        }
         return null;
     }
 
@@ -178,8 +200,9 @@ function inicializarChatbot() {
 
         const itens = [
             { texto: 'O que é a Aurora?', chave: 'aurora' },
+            { texto: 'Projeto FIAP 🎓', chave: 'projeto' },
             { texto: 'Redução de Turnover', chave: 'turnover' },
-            { texto: 'Time do Projeto', chave: 'integrantes' },
+            { texto: 'Simulador de ROI', chave: 'roi' },
             { texto: 'Agendar Demo', chave: 'demo' }
         ];
 
@@ -209,6 +232,15 @@ function inicializarChatbot() {
             .replace(/'/g, "&#x27;");
     }
 
+    // A11 — Região assistiva dedicada para anunciar mensagens do bot com aria-live="assertive"
+    // Separada do log (polite) para que mensagens do bot não sejam perdidas durante digitação
+    const anunciadorBot = document.createElement('div');
+    anunciadorBot.setAttribute('aria-live', 'assertive');
+    anunciadorBot.setAttribute('aria-atomic', 'true');
+    anunciadorBot.className = 'sr-only';
+    anunciadorBot.id = 'chatbot-anunciador-bot';
+    chatbotWindow.appendChild(anunciadorBot);
+
     // Adicionar balão de mensagem no chat
     function adicionarMensagem(texto, remetente) {
         const elementoMensagem = document.createElement('div');
@@ -223,8 +255,19 @@ function inicializarChatbot() {
         
         elementoMensagem.innerHTML = textoFormatado;
         chatbotMessages.appendChild(elementoMensagem);
+
+        // A11 — Anuncia mensagens do bot via região assertive para leitores de tela
+        if (remetente === 'bot') {
+            // Remove HTML tags para o anúncio de texto puro
+            anunciadorBot.textContent = '';
+            setTimeout(() => {
+                anunciadorBot.textContent = elementoMensagem.textContent;
+            }, 50);
+        }
+
         rolarParaFinal();
     }
+
 
     // Mostrar balão com animação de carregamento
     function mostrarIndicadorDigitando() {
@@ -261,21 +304,41 @@ function inicializarChatbot() {
     }
 
     async function enviarMensagemParaBackend(mensagem) {
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ mensagem })
-        });
+        const controller = new AbortController();
+        // Timeout de 15 segundos para evitar que o chat fique travado indefinidamente
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
 
-        if (!response.ok) {
-            const dataErro = await response.json();
-            throw new Error(dataErro.erro || 'Falha do servidor');
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mensagem }),
+                signal: controller.signal
+            });
+
+            clearTimeout(timeoutId);
+
+            if (response.status === 429) {
+                // Rate limit atingido — informa o usuário sem expor detalhes técnicos
+                const dataErro = await response.json().catch(() => ({}));
+                throw new Error(dataErro.erro || 'Muitas mensagens enviadas. Aguarde um momento.');
+            }
+
+            if (!response.ok) {
+                const dataErro = await response.json().catch(() => ({}));
+                throw new Error(dataErro.erro || 'Falha do servidor.');
+            }
+
+            const dados = await response.json();
+            return dados.resposta;
+
+        } catch (err) {
+            clearTimeout(timeoutId);
+            if (err.name === 'AbortError') {
+                throw new Error('A resposta demorou demais. Tente novamente.');
+            }
+            throw err;
         }
-
-        const dados = await response.json();
-        return dados.resposta;
     }
 
     // Mostrar sugestões iniciais logo após a primeira mensagem

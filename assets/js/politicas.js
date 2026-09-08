@@ -6,22 +6,68 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    inicializarMenuMobileLegal();
     inicializarNavegacaoSidebar();
     inicializarDeepLinkingHash();
     inicializarBuscaTermos();
     inicializarFormularioLGPD();
     inicializarPainelCookies();
-    inicializarBotaoImprimir();
     inicializarBotaoTopoLegal();
 });
 
 /**
  * Controla o destaque do item ativo na barra lateral conforme o scroll (ScrollSpy)
  */
+/**
+ * Menu mobile hamburguer para a navbar padrão do portal de políticas
+ * (replica o comportamento de inicializarMenuMobile em main.js)
+ */
+function inicializarMenuMobileLegal() {
+    const botaoMenu = document.querySelector('.cabecalho__botao-menu');
+    const linksNavegacao = document.querySelector('.cabecalho__lista-navegacao');
+
+    if (!botaoMenu || !linksNavegacao) return;
+
+    const icone = botaoMenu.querySelector('i');
+
+    const fecharMenu = () => {
+        botaoMenu.setAttribute('aria-expanded', 'false');
+        botaoMenu.setAttribute('aria-label', 'Abrir menu');
+        linksNavegacao.classList.remove('is-ativo');
+        if (icone) { icone.className = 'fa-solid fa-bars'; }
+    };
+
+    const alternarMenu = () => {
+        const estaExpandido = botaoMenu.getAttribute('aria-expanded') === 'true';
+        botaoMenu.setAttribute('aria-expanded', String(!estaExpandido));
+        botaoMenu.setAttribute('aria-label', estaExpandido ? 'Abrir menu' : 'Fechar menu');
+        linksNavegacao.classList.toggle('is-ativo', !estaExpandido);
+        if (icone) { icone.className = estaExpandido ? 'fa-solid fa-bars' : 'fa-solid fa-xmark'; }
+    };
+
+    botaoMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+        alternarMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!botaoMenu.contains(e.target) && !linksNavegacao.contains(e.target) && linksNavegacao.classList.contains('is-ativo')) {
+            fecharMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && linksNavegacao.classList.contains('is-ativo')) {
+            fecharMenu();
+            botaoMenu.focus();
+        }
+    });
+}
+
 function inicializarNavegacaoSidebar() {
     const secoes = document.querySelectorAll('.legal-secao');
     const linksSidebar = document.querySelectorAll('.legal-sidebar__link');
-    const cabecalho = document.querySelector('.cabecalho-legal');
+    const cabecalho = document.querySelector('.cabecalho');
 
     if (secoes.length === 0 || linksSidebar.length === 0) return;
 
@@ -229,18 +275,6 @@ function inicializarPainelCookies() {
             mostrarToastFeedback('Preferências de cookies salvas com sucesso.');
         }
         atualizarStatusVisual();
-    });
-}
-
-/**
- * Botão para Impressão / Salvar PDF
- */
-function inicializarBotaoImprimir() {
-    const btnImprimir = document.getElementById('btn-imprimir-legal');
-    if (!btnImprimir) return;
-
-    btnImprimir.addEventListener('click', () => {
-        window.print();
     });
 }
 
