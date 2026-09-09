@@ -10,6 +10,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "politicas.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "assets/**",
       "use": "@vercel/static"
     }
@@ -22,6 +26,10 @@
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "/politicas.html",
+      "dest": "/politicas.html"
     },
     {
       "src": "/(.*)",

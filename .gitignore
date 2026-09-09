@@ -12,3 +12,7 @@ yarn-error.log*
 
 # Arquivos temporários
 prompt
+
+./docs/02_justificativa_decisoes.md
+./docs/prompts_videos_depoimentos.md
+./docs/roteiro_video_pitch.md
