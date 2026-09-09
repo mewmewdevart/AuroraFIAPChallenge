@@ -12,12 +12,12 @@
   </p>
 
   <p align="center">
-    <a href="https://mewmewdevart.github.io/AuroraFIAPChallenge/">🔗 Acessar o Projeto (Deploy)</a>
+    <a href="https://aurora-ctrl-people-2026.vercel.app/">🔗 Acessar o Projeto (Deploy)</a>
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Etapa-01-11BCAA?style=for-the-badge&logo=headspace&logoColor=white" alt="Etapa 1" />
-    <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-11BCAA?style=for-the-badge&logo=github&logoColor=white" alt="Status" />
+    <img src="https://img.shields.io/badge/Etapa-02-11BCAA?style=for-the-badge&logo=headspace&logoColor=white" alt="Etapa 2" />
+    <img src="https://img.shields.io/badge/Em-Desenvolvimento-11BCAA?style=for-the-badge&logo=github&logoColor=white" alt="Status" />
     <img src="https://img.shields.io/badge/Projeto-Acadêmico-11BCAA?style=for-the-badge&logo=bookstack&logoColor=white" alt="Acadêmico" />
   </p>
 </div>
@@ -26,20 +26,27 @@
 
 ## 📌 Resumo do Projeto
 
-Este projeto é a entrega da **Etapa 1 do Enterprise Challenge**, cujo foco é a construção de uma **Landing Page B2B** para a plataforma **Aurora**. 
+Este projeto é a entrega da **Etapa 2 do Enterprise Challenge**, cujo foco evoluiu da prototipação estática para uma **aplicação web completa, 100% interativa, responsiva e acessível** para a plataforma **Aurora**. 
 
-O objetivo principal desta fase foi estruturar a narrativa, definir a identidade visual e criar uma experiência de navegação fluida e atrativa (utilizando o framework narrativo PAS - *Problem, Agitate, Solve*). A página busca comunicar de forma clara a proposta de valor, captando a atenção de líderes de RH e conduzindo-os ao agendamento de uma demonstração.
+O objetivo principal desta fase foi comunicar de forma clara a proposta de valor B2B, gerar credibilidade e converter visitantes em leads qualificados por meio de um formulário funcional, além de integrar funcionalidades inovadoras como assistente virtual com IA e simulador de ROI interativo.
 
 <img width="1900" height="870" alt="image" src="https://github.com/user-attachments/assets/1890ddec-c0de-4cd3-b25b-4199b33db51f" />
 
 
-## 💡 Principais Soluções da Aurora
+## 💡 Principais Soluções e Diferenciais da Aurora
+A Aurora combina **People Analytics, inteligência de dados e gestão de performance** para transformar dados de pessoas em decisões mais conscientes, estratégicas e mensuráveis.
 
-A landing page destaca as principais soluções que a plataforma oferece:
-- **📊 Dados Centralizados:** Reúne informações sobre performance, clima e engajamento em um único painel.
-- **🎯 Planos de Ação Direcionados:** Auxilia na criação de planos de desenvolvimento personalizados com recomendações baseadas em dados.
-- **⚖️ Avaliações baseadas em dados:** Traz clareza para decisões de promoção, aumento ou sucessão.
-- **📉 Redução do Turnover:** Identifica riscos de saída com análises comportamentais e inteligência artificial.
+* **📊 People Analytics Centralizado:** Cruza dados de clima, engajamento e desempenho em um dashboard integrado, facilitando uma visão ampla sobre o cenário da organização.
+* **🎯 Planos de Ação Personalizados:** Transforma dados e insights em recomendações práticas e planos de desenvolvimento direcionados às necessidades de cada equipe.
+* **📈 Avaliações Baseadas em Dados:** Apoia decisões de desempenho, promoção e sucessão por meio de análises objetivas e históricos, reduzindo decisões baseadas em achismos.
+* **🔮 Análise Preditiva de Turnover:** Identifica sinais e riscos de saída de talentos, permitindo que a liderança atue preventivamente na retenção.
+* **👥 Gestão Estratégica de Liderança e Times:** Oferece relatórios e insights para apoiar líderes na compreensão de suas equipes e na definição de ações mais assertivas.
+* **💰 Mensuração de Impacto e ROI:** Simula o custo do turnover e permite visualizar a economia potencial gerada pela redução de desligamentos, tornando o impacto da gestão de pessoas mensurável.
+* **🤖 Assistente Virtual IRIS:** Chatbot integrado ao Google Gemini para apoiar a descoberta de informações sobre People Analytics, com fallback local, controle de requisições e medidas de segurança.
+* **🛡️ Governança, Privacidade e LGPD:** Portal dedicado à transparência, privacidade e proteção de dados, incluindo exercício de direitos dos titulares e gestão de consentimento de cookies.
+* **♿ Acessibilidade como Pilar:** Recursos como navegação por teclado, foco visível, `aria-live`, `aria-describedby`, `prefers-reduced-motion`, Skip Link e integração com VLibras.
+* **🚀 SEO/AEO e Segurança:** Implementação de dados estruturados JSON-LD, Open Graph, Twitter Cards e canonical, além de headers de segurança, sanitização contra XSS e rate limiting no backend.
+
 
 ## 📖 Navegação da Documentação
 
@@ -57,12 +64,13 @@ Para manter a organização e escalabilidade do repositório, o detalhamento das
 ├── assets/
 │   ├── css/          # Estilos e formatação visual (variáveis CSS e Design System)
 │   ├── img/          # Imagens, logos e mockups
-│   ├── js/           # Scripts de interatividade (main.js + chatbot.js)
+│   ├── js/           # Scripts de interatividade (main.js, chatbot.js, etc.)
 │   └── video/        # Arquivos de vídeo utilizados na página
 ├── docs/             # Documentação do projeto (sprints, pdfs)
 ├── .env.example      # Modelo de configuração de variáveis de ambiente
 ├── .gitignore        # Arquivos ignorados pelo Git (inclui .env com a chave de API)
 ├── index.html        # Estrutura principal da Landing Page
+├── politicas.html    # Portal de Políticas, Privacidade e Governança (LGPD)
 ├── package.json      # Dependências do backend Node.js (chatbot IRIS)
 ├── server.js         # Servidor Express — integração com a API do Google Gemini
 ├── LICENSE           # Licença do projeto
@@ -105,7 +113,6 @@ cd AuroraFIAPChallenge/
 
 > O chatbot **IRIS** funcionará no modo offline (respostas pré-cadastradas), sem necessidade do backend.
 
----
 
 ### 🤖 Opção 2 — Com o Chatbot IRIS completo (IA via Gemini)
 
