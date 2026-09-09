@@ -404,18 +404,12 @@ function inicializarValidacaoFormulario() {
             mensagemErro = 'Este campo é obrigatório.';
         }
 
-        // Valida sintaxe e formato de e-mail corporativo
+        // Valida sintaxe e formato de e-mail
         if (eValido && input.type === 'email') {
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
-            } else {
-                const dominio = valor.split('@')[1]?.toLowerCase();
-                if (dominio && dominiosPessoais.includes(dominio)) {
-                    eValido = false;
-                    mensagemErro = 'Use um e-mail corporativo. Provedores pessoais não são aceitos.';
-                }
             }
         }
 
@@ -561,7 +555,7 @@ function inicializarValidacaoFormulario() {
             }
 
             if (subtitulo) {
-                subtitulo.textContent = 'Preencha seus dados corporativos e agende sua sessão exclusiva em 30 minutos.';
+                subtitulo.textContent = 'Preencha seus dados e agende sua sessão exclusiva em 30 minutos.';
             }
 
             const primeiroCampo = etapa1.querySelector('#captacao-nome');

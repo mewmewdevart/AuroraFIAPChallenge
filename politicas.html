@@ -307,10 +307,10 @@
                             Identificação da Plataforma e Finalidade
                         </h3>
                         <p class="legal-artigo__texto">
-                            A <strong>Aurora</strong> é uma solução tecnológica avançada de <em>People Analytics e Gestão de Performance</em> desenvolvida para transformar indicadores de clima, engajamento, absenteísmo e desempenho em insights acionáveis para líderes, gestores e departamentos de Recursos Humanos de empresas B2B.
+                            A <strong>Aurora</strong> é um projeto acadêmico fictício desenvolvido para fins de avaliação na FIAP (Faculdade de Informática e Administração Paulista). O escopo do projeto simula uma solução de <em>People Analytics e Gestão de Performance</em>.
                         </p>
                         <p class="legal-artigo__texto">
-                            Este portal consolida as diretrizes jurídicas aplicáveis ao website institucional, à aplicação web, ao <strong>Simulador Interativo de ROI</strong>, ao assistente virtual <strong>IRIS</strong> (integrado via API oficial do Google Gemini) e aos formulários de relacionamento corporativo.
+                            Este portal consolida as diretrizes jurídicas aplicáveis ao website institucional, à aplicação web, ao <strong>Simulador Interativo de ROI</strong>, ao assistente virtual <strong>IRIS</strong> (cuja integração real via API do Google Gemini ocorre apenas em execução local) e aos formulários de relacionamento corporativo. Vale ressaltar que, por se tratar de um projeto de faculdade, os dados preenchidos <strong>não são armazenados em nenhum banco de dados real</strong>.
                         </p>
                     </article>
 
@@ -377,21 +377,21 @@
                                 <tbody>
                                     <tr>
                                         <td><strong>Agendamento de Demonstração (Lead)</strong></td>
-                                        <td>Nome completo, e-mail corporativo (validação anti-pessoal), empresa, cargo, faixa de colaboradores, data/horário e necessidades de RH.</td>
-                                        <td>Qualificação técnica B2B, agendamento de reuniões e envio de propostas comerciais.</td>
-                                        <td><span class="badge-base badge-base--contrato">Art. 7º, V (Contrato)</span> <span class="badge-base badge-base--consentimento">Art. 7º, I (Consentimento)</span></td>
+                                        <td>Nome completo, e-mail, empresa, cargo, faixa de colaboradores, data/horário e necessidades de RH.</td>
+                                        <td><strong>Fictício (Projeto FIAP)</strong>: Formulário apenas visual, nenhum dado é salvo ou enviado para servidores.</td>
+                                        <td><span class="badge-base badge-base--consentimento">Não armazena dados</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Assinatura da Newsletter</strong></td>
-                                        <td>Endereço de e-mail corporativo.</td>
-                                        <td>Envio periódico de estudos de People Analytics, tendências de mercado e novidades de produto.</td>
-                                        <td><span class="badge-base badge-base--consentimento">Art. 7º, I (Consentimento)</span></td>
+                                        <td>Endereço de e-mail.</td>
+                                        <td><strong>Fictício (Projeto FIAP)</strong>: Apenas demonstração de interface.</td>
+                                        <td><span class="badge-base badge-base--consentimento">Não armazena dados</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Chatbot IRIS (Assistente IA)</strong></td>
                                         <td>Texto da mensagem/dúvida digitada pelo usuário, histórico da sessão no chat.</td>
-                                        <td>Atendimento imediato e esclarecimento automatizado de dúvidas sobre RH e sobre a Aurora.</td>
-                                        <td><span class="badge-base badge-base--interesse">Art. 7º, IX (Legítimo Interesse)</span></td>
+                                        <td>Atendimento e esclarecimento de dúvidas. <strong>Funciona apenas em execução local com backend Node.js ativo.</strong></td>
+                                        <td><span class="badge-base badge-base--consentimento">Processamento em memória</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>Simulador de ROI e Turnover</strong></td>
@@ -423,7 +423,7 @@
                                 <i class="fa-brands fa-google legal-card-item__icone"></i>
                                 <h4 class="legal-card-item__titulo">Google Generative AI (Gemini)</h4>
                                 <p class="legal-card-item__texto">
-                                    Utilizado exclusivamente para processar as mensagens da assistente virtual IRIS via API oficial corporativa do Gemini 1.5 Flash. As mensagens são enviadas de forma stateless e sanitizada, <strong>sem que o Google utilize seus dados corporativos para treinar modelos de linguagem públicos</strong>.
+                                    Utilizado exclusivamente para processar as mensagens da assistente virtual IRIS. <strong>Esta integração opera de forma real apenas quando o projeto é executado localmente</strong> (via backend Node.js) com uma chave de API própria. Na versão hospedada deste projeto acadêmico, não há conexão com o modelo de linguagem público.
                                 </p>
                             </div>
 

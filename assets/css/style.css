@@ -2793,10 +2793,19 @@ details[open] .perguntas-frequentes__seta {
     color: var(--color-text-secondary);
     user-select: none;
     transition: var(--transition-smooth);
+    background: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cartao-depoimento__seta-navegacao:hover {
     color: var(--color-brand-primary);
+    background-color: var(--color-gray-100);
 }
 
 .cartao-depoimento__pontos {
