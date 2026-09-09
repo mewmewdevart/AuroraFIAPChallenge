@@ -407,9 +407,20 @@ function inicializarValidacaoFormulario() {
         // Valida sintaxe e formato de e-mail
         if (eValido && input.type === 'email') {
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
+            } else {
+                // Filtro de e-mail corporativo
+                // Pega a parte do e-mail depois do "@" e converte para minúsculo
+                const dominioDigitado = valor.split('@')[1].toLowerCase();
+                
+                // Verifica se o domínio digitado está na lista de domínios pessoais
+                if (dominiosPessoais.includes(dominioDigitado)) {
+                    eValido = false;
+                    mensagemErro = 'Por favor, utilize um e-mail corporativo.';
+                }
             }
         }
 
