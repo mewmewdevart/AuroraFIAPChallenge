@@ -30,7 +30,7 @@ Este projeto é a entrega da **Etapa 2 do Enterprise Challenge**, cujo foco evol
 
 O objetivo principal desta fase foi comunicar de forma clara a proposta de valor B2B, gerar credibilidade e converter visitantes em leads qualificados por meio de um formulário funcional, além de integrar funcionalidades inovadoras como assistente virtual com IA e simulador de ROI interativo.
 
-<img width="1900" height="870" alt="image" src="https://github.com/user-attachments/assets/1890ddec-c0de-4cd3-b25b-4199b33db51f" />
+<img width="1896" height="862" alt="Printscreen do site" src="https://github.com/user-attachments/assets/7b3d289f-5c39-4e6f-a86e-3729c32fe905" />
 
 
 ## 💡 Principais Soluções e Diferenciais da Aurora
