@@ -375,6 +375,13 @@ function inicializarValidacaoFormulario() {
         { nome: 'horario', erro: document.getElementById('erro-horario') }
     ];
 
+    const dominiosPessoais = [
+        'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.com.br', 'hotmail.com',
+        'outlook.com', 'live.com', 'msn.com', 'icloud.com', 'me.com', 'protonmail.com',
+        'proton.me', 'aol.com', 'gmx.com', 'gmx.net', 'mail.com', 'yandex.com',
+        'zoho.com', 'fastmail.com', 'inbox.com', 'seznam.cz', 'qq.com', 'foxmail.com'
+    ];
+
     const validarCampo = (input) => {
         const id = input.id;
         const valor = input.value.trim();
@@ -385,6 +392,7 @@ function inicializarValidacaoFormulario() {
         // Limpa estado anterior
         input.classList.remove('is-invalido');
         input.setAttribute('aria-invalid', 'false');
+        input.setCustomValidity('');
         if (elementoErro) {
             elementoErro.textContent = '';
             elementoErro.classList.add('sr-only');
@@ -396,12 +404,18 @@ function inicializarValidacaoFormulario() {
             mensagemErro = 'Este campo é obrigatório.';
         }
 
-        // Valida sintaxe e formato de e-mail (aceita e-mails corporativos e provedores comuns como Gmail, Hotmail, etc.)
+        // Valida sintaxe e formato de e-mail corporativo
         if (eValido && input.type === 'email') {
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
+            } else {
+                const dominio = valor.split('@')[1]?.toLowerCase();
+                if (dominio && dominiosPessoais.includes(dominio)) {
+                    eValido = false;
+                    mensagemErro = 'Use um e-mail corporativo. Provedores pessoais não são aceitos.';
+                }
             }
         }
 
@@ -409,6 +423,7 @@ function inicializarValidacaoFormulario() {
         if (!eValido) {
             input.classList.add('is-invalido');
             input.setAttribute('aria-invalid', 'true');
+            input.setCustomValidity(mensagemErro);
             if (elementoErro) {
                 elementoErro.textContent = mensagemErro;
                 elementoErro.classList.remove('sr-only');

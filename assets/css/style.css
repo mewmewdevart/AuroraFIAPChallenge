@@ -1294,45 +1294,54 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
+    gap: 48px;
+    min-height: 420px;
 }
 
 .estatisticas__cabecalho {
     flex: 1;
-    max-width: 400px;
+    max-width: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 0;
 }
 
 .estatisticas__logo {
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: 18px;
+    max-width: 128px;
+    height: auto;
 }
 
 .estatisticas__descricao {
-    color: color-mix(in srgb, var(--color-neutral-black) 60%, transparent);
-    font-size: var(--font-size-base);
+    color: rgba(17, 24, 39, 0.7);
+    font-size: 1rem;
     line-height: 1.6;
+    max-width: 360px;
+    margin: 0;
 }
 
 .estatisticas__grade {
     flex: 1;
     display: flex;
-    gap: 20px;
-    justify-content: flex-end;
+    gap: 28px;
+    justify-content: center;
 }
 
 .estatisticas__coluna {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 28px;
 }
 
 .estatisticas__coluna--esquerda {
-    margin-top: 40px;
+    margin-top: 58px;
 }
 
 .cartao-estatistica {
     padding: 32px 24px;
     border-radius: var(--border-radius-small);
-    width: 220px;
+    min-height: 182px;
     box-shadow: 0 4px 15px var(--color-black-translucent-5);
 }
 
@@ -1345,10 +1354,11 @@ section {
 }
 
 .cartao-estatistica__descricao {
-    font-size: var(--font-size-small);
-    color: var(--color-neutral-black);
-    line-height: 1.4;
+    font-size: 0.95rem;
+    color: rgba(10, 17, 22, 0.78);
+    line-height: 1.5;
     font-weight: var(--font-weight-medium);
+    letter-spacing: -0.01em;
 }
 
 .cartao-estatistica--primario {
@@ -3078,7 +3088,7 @@ details[open] .perguntas-frequentes__seta {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background-color: var(--color-brand-teal);
+    background: linear-gradient(135deg, var(--color-brand-teal) 0%, var(--color-brand-primary) 50%, var(--color-brand-secondary) 100%);
     color: var(--color-surface-dark);
     display: flex;
     align-items: center;
@@ -3087,14 +3097,14 @@ details[open] .perguntas-frequentes__seta {
     font-weight: var(--font-weight-black);
     margin-bottom: 24px;
     box-shadow: 0 8px 20px color-mix(in srgb, var(--color-brand-teal) 25%, transparent);
-    transition: var(--transition-smooth);
+    transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
     color: var(--color-neutral-white);
 }
 
 .cartao-fluxo:hover .cartao-fluxo__numero {
     transform: scale(1.1) rotate(5deg);
-    background-color: var(--color-brand-primary);
-    box-shadow: 0 8px 20px var(--color-shadow-purple);
+    background: var(--gradient-aurora);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--color-brand-primary) 30%, transparent);
 }
 
 .cartao-fluxo__titulo {
