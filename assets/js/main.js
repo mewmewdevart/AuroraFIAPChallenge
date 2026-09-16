@@ -140,9 +140,10 @@ function inicializarVoltarAoTopo() {
     }, { passive: true });
 
     botaoSubirTopo.addEventListener('click', () => {
+        const prefereReducaoMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: prefereReducaoMovimento ? 'auto' : 'smooth'
         });
     });
 }
@@ -266,10 +267,13 @@ function inicializarCarrosselDepoimentos() {
     });
 
     // Gestão do Autoplay respeitando preferências do SO
+    const mediaQueryMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    
     const iniciarAutoPlay = () => {
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        if (mediaQuery.matches) return; // Não rotacionar se preferir redução de movimentos
-        intervaloAutoPlay = setInterval(proximoSlide, atrasoAutoPlay);
+        if (mediaQueryMotion.matches) return; // Não rotacionar se preferir redução de movimentos
+        if (!intervaloAutoPlay) {
+            intervaloAutoPlay = setInterval(proximoSlide, atrasoAutoPlay);
+        }
     };
 
     const pararAutoPlay = () => {
@@ -278,6 +282,15 @@ function inicializarCarrosselDepoimentos() {
             intervaloAutoPlay = null;
         }
     };
+
+    // P16 — Ouve mudanças dinâmicas na preferência de movimento do SO durante a sessão
+    mediaQueryMotion.addEventListener('change', (e) => {
+        if (e.matches) {
+            pararAutoPlay();
+        } else {
+            iniciarAutoPlay();
+        }
+    });
 
     const reiniciarAutoPlay = () => {
         pararAutoPlay();

@@ -18,7 +18,6 @@
 
     /* ========= VARIAVEIS DERIVADAS + DE SUPORTE ========= */
     --color-surface-primary: var(--color-neutral-white);
-    --color-surface-secondary: rgba(255, 255, 255, 0.97);
     --color-surface-dark: rgb(21, 20, 25);
     --color-surface-dark-elevated: rgb(29, 26, 39);
 
@@ -62,10 +61,6 @@
     --color-brand-ambev: rgb(0, 45, 98);
     --color-brand-natura: rgb(243, 112, 33);
 
-    /* Cores de Suporte de Componentes Especificos */
-    --color-dashboard-label: rgba(17, 17, 17, 0.5);
-    --color-navy-dark: rgb(10, 13, 26);
-
     /* Sobreposicoes Brancas Translucidas */
     --color-white-translucent-5: rgba(255, 255, 255, 0.05);
     --color-white-translucent-6: rgba(255, 255, 255, 0.06);
@@ -91,9 +86,6 @@
     --color-black-translucent-60: rgba(0, 0, 0, 0.6);
     --color-black-translucent-80: rgba(0, 0, 0, 0.8);
 
-    /* Sombras de Componentes Especificos */
-    --color-shadow-purple: rgba(34, 29, 72, 0.25);
-
     /* Elementos de Brilho da Aurora no Hero */
     --color-aurora-teal-glow: rgba(49, 180, 166, 0.18);
     --color-aurora-pink-glow: rgba(207, 71, 147, 0.12);
@@ -118,6 +110,7 @@
     --font-size-destaque: 4rem;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
+    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-black: 900;
     --spacing-small: 8px;
@@ -135,7 +128,6 @@
     --recipiente-max-width: 1200px;
     --z-index-header: 9999;
     --transition-default: 0.3s ease;
-    --transition-smooth: 0.3s ease;
     --transition-bounce: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -153,6 +145,29 @@
 html {
     /* A12 — scroll-behavior suave apenas para quem não prefere redução de movimento (WCAG 2.3.3) */
     scroll-behavior: auto;
+    /* Estilização da barra de rolagem (elimina fundo branco do navegador) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand-primary) var(--color-surface-dark);
+}
+
+/* Customização da Barra de Rolagem (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-brand-primary), var(--color-brand-teal));
+    border-radius: 5px;
+    border: 2px solid var(--color-surface-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--color-brand-pink), var(--color-brand-teal));
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -176,7 +191,7 @@ body {
     padding: 0 var(--spacing-medium);
 }
 
-/* Design do Focus - @TODO: Melhorar o visual do foco na segunda etapa */
+/* Design do Focus */
 *:focus-visible {
     outline: 2px solid var(--color-brand-primary);
     outline-offset: 4px;
@@ -2358,6 +2373,14 @@ details[open] .perguntas-frequentes__seta {
     opacity: 0.95;
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
+}
+
+.newsletter__erro {
+    color: var(--color-feedback-error);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    margin-top: 6px;
+    width: 100%;
 }
 
 .newsletter__campo:focus {
