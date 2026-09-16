@@ -32,8 +32,13 @@ function inicializarReprodutoresVideo() {
             });
         }
 
+        // Impede download do vídeo via controles nativos e botão direito
+        videoDepoimento.setAttribute('controlsList', 'nodownload');
+        videoDepoimento.addEventListener('contextmenu', (evento) => evento.preventDefault());
+
         // Quando o usuário clicar na sobreposição, toca o vídeo
         sobreposicao.addEventListener('click', () => {
+            videoDepoimento.muted = false;
             videoDepoimento.play();
         });
 
@@ -48,6 +53,7 @@ function inicializarReprodutoresVideo() {
 
             recipiente.classList.add('is-reproduzindo');
             videoDepoimento.setAttribute('controls', 'controls');
+            videoDepoimento.setAttribute('controlsList', 'nodownload');
         });
 
         // Função auxiliar para restaurar o estado visual do player

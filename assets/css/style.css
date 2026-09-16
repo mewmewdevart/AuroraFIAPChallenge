@@ -1195,6 +1195,16 @@ section {
     display: block;
 }
 
+.avaliacoes__grade-videos video::cue {
+    background-color: rgba(10, 15, 30, 0.85);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
 .avaliacoes__sobreposicao {
     position: absolute;
     inset: 0;

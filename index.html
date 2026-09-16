@@ -475,7 +475,7 @@
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h3 class="cartao-depoimento__nome">Rodrigo Santos</h3>
-                                            <p class="cartao-depoimento__cargo">Head de Gente e Gestão na TechFlow</p>
+                                            <p class="cartao-depoimento__cargo">Head de Gente e Gestão no Nubank</p>
                                         </div>
                                         <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
@@ -500,7 +500,7 @@
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h3 class="cartao-depoimento__nome">Camila Oliveira</h3>
-                                            <p class="cartao-depoimento__cargo">Gerente de Operações na Vesta Logística
+                                            <p class="cartao-depoimento__cargo">Gerente de Operações no iFood
                                             </p>
                                         </div>
                                         <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
@@ -524,7 +524,7 @@
                                             decoding="async">
                                         <div class="cartao-depoimento__informacoes">
                                             <h3 class="cartao-depoimento__nome">Felipe Almeida</h3>
-                                            <p class="cartao-depoimento__cargo">CEO na Nexa Software</p>
+                                            <p class="cartao-depoimento__cargo">VP de Tecnologia na TOTVS</p>
                                         </div>
                                         <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
                                     </div>
@@ -700,14 +700,21 @@
                 </h2>
 
                 <div class="avaliacoes__grade-videos">
-                    <div>
-                        <!-- Adcionar o  poster="assets/img/aurora-dashboard.png no futuro -->
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
-                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                    <div itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Case FIAP: Como o time de RH economizou 40h por mês com a Aurora">
+                        <meta itemprop="description" content="Depoimento da FIAP sobre como a plataforma Aurora centralizou os dados de pessoas e automatizou processos de RH.">
+                        <meta itemprop="thumbnailUrl" content="./assets/img/depoimento-fiap-thumb.jpg">
+                        <meta itemprop="contentUrl" content="./assets/video/depoimento-aurora-fiap-rh.mp4">
+                        <video src="./assets/video/depoimento-aurora-fiap-rh.mp4" 
+                               title="Depoimento FIAP - Gestão de RH e People Analytics com Aurora"
+                               muted playsinline preload="metadata" controlsList="nodownload" oncontextmenu="return false;">
+                            <track kind="captions" srclang="pt-BR" 
+                                   label="Português (Brasil) — Case FIAP Aurora RH" 
+                                   default src="./assets/video/legendas-depoimento-aurora-fiap-rh.vtt">
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">Como o time da FIAP ganhou 40h por mês</h3>
+                            <h3 class="avaliacoes__titulo-video" itemprop="name">Como o time da FIAP ganhou 40h por mês</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
                                 aria-label="Reproduzir vídeo: Como o time da FIAP ganhou 40h por mês">
@@ -723,68 +730,92 @@
                         </div>
                     </div>
 
-                    <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
-                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                    <div itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Case Nubank: Redução de 18% para 9% de turnover em 6 meses com a Aurora">
+                        <meta itemprop="description" content="Depoimento do Nubank sobre retenção de talentos e previsão de turnover com People Analytics da Aurora.">
+                        <meta itemprop="thumbnailUrl" content="./assets/img/depoimento-nubank-thumb.jpg">
+                        <meta itemprop="contentUrl" content="./assets/video/video-placeholder.mp4">
+                        <video src="./assets/video/video-placeholder.mp4" 
+                               title="Depoimento Nubank - Redução de Turnover com Aurora RH"
+                               muted playsinline preload="none" controlsList="nodownload" oncontextmenu="return false;">
+                            <track kind="captions" srclang="pt-BR" 
+                                   label="Português (Brasil) — Case Nubank Aurora RH" 
+                                   default src="./assets/video/legendas-depoimento-aurora-nubank-rh.vtt">
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses</h3>
+                            <h3 class="avaliacoes__titulo-video">De 18% para 9% de turnover em 6 meses no Nubank</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
-                                aria-label="Reproduzir vídeo: De 18% para 9% de turnover em 6 meses">
+                                aria-label="Reproduzir vídeo: De 18% para 9% de turnover em 6 meses no Nubank">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
 
                             <a class="avaliacoes__link-linkedin"
-                                href="https://www.linkedin.com/search/results/companies/?keywords=TechFlow"
-                                target="_blank" rel="noopener noreferrer" aria-label="Visitar a TechFlow no LinkedIn">
+                                href="https://www.linkedin.com/company/nubank/"
+                                target="_blank" rel="noopener noreferrer" aria-label="Visitar o Nubank no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                                 Conectar no LinkedIn
                             </a>
                         </div>
                     </div>
 
-                    <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
-                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                    <div itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Case iFood: Métricas de engajamento aprovadas pela diretoria">
+                        <meta itemprop="description" content="Depoimento do iFood sobre transformação de dados de engajamento em métricas financeiras.">
+                        <meta itemprop="thumbnailUrl" content="./assets/img/depoimento-ifood-thumb.jpg">
+                        <meta itemprop="contentUrl" content="./assets/video/video-placeholder.mp4">
+                        <video src="./assets/video/video-placeholder.mp4" 
+                               title="Depoimento iFood - Métricas de Engajamento e ROI com Aurora RH"
+                               muted playsinline preload="none" controlsList="nodownload" oncontextmenu="return false;">
+                            <track kind="captions" srclang="pt-BR" 
+                                   label="Português (Brasil) — Case iFood Aurora RH" 
+                                   default src="./assets/video/legendas-depoimento-aurora-ifood-rh.vtt">
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria queria ver</h3>
+                            <h3 class="avaliacoes__titulo-video">O engajamento que a diretoria do iFood queria ver</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
-                                aria-label="Reproduzir vídeo: O engajamento que a diretoria queria ver">
+                                aria-label="Reproduzir vídeo: O engajamento que a diretoria do iFood queria ver">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
 
                             <a class="avaliacoes__link-linkedin"
-                                href="https://www.linkedin.com/search/results/companies/?keywords=Vesta%20Log%C3%ADstica"
+                                href="https://www.linkedin.com/company/ifood/"
                                 target="_blank" rel="noopener noreferrer"
-                                aria-label="Visitar a Vesta Logística no LinkedIn">
+                                aria-label="Visitar o iFood no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                                 Conectar no LinkedIn
                             </a>
                         </div>
                     </div>
 
-                    <div>
-                        <video src="./assets/video/video-placeholder.mp4" muted playsinline preload="none">
-                            <track kind="captions" srclang="pt-BR" label="Legendas em Português" default src="">
+                    <div itemscope itemtype="https://schema.org/VideoObject">
+                        <meta itemprop="name" content="Case TOTVS: Aumento de 35% no engajamento substituindo planilhas">
+                        <meta itemprop="description" content="Depoimento da TOTVS sobre transição de planilhas para inteligência de dados de pessoas na Aurora.">
+                        <meta itemprop="thumbnailUrl" content="./assets/img/depoimento-totvs-thumb.jpg">
+                        <meta itemprop="contentUrl" content="./assets/video/video-placeholder.mp4">
+                        <video src="./assets/video/video-placeholder.mp4" 
+                               title="Depoimento TOTVS - Automação e Engajamento de TI com Aurora RH"
+                               muted playsinline preload="none" controlsList="nodownload" oncontextmenu="return false;">
+                            <track kind="captions" srclang="pt-BR" 
+                                   label="Português (Brasil) — Case TOTVS Aurora RH" 
+                                   default src="./assets/video/legendas-depoimento-aurora-totvs-rh.vtt">
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
-                            <h3 class="avaliacoes__titulo-video">Por que escolhemos a Aurora e não voltamos atrás</h3>
+                            <h3 class="avaliacoes__titulo-video">Por que a TOTVS escolheu a Aurora e não voltou atrás</h3>
 
                             <button class="avaliacoes__botao-reproduzir"
-                                aria-label="Reproduzir vídeo: Por que escolhemos a Aurora e não voltamos atrás">
+                                aria-label="Reproduzir vídeo: Por que a TOTVS escolheu a Aurora e não voltou atrás">
                                 <i class="fa-solid fa-circle-play"></i>
                             </button>
 
                             <a class="avaliacoes__link-linkedin"
-                                href="https://www.linkedin.com/search/results/companies/?keywords=Nexa%20Software"
+                                href="https://www.linkedin.com/company/totvs/"
                                 target="_blank" rel="noopener noreferrer"
-                                aria-label="Visitar a Nexa Software no LinkedIn">
+                                aria-label="Visitar a TOTVS no LinkedIn">
                                 <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                                 Conectar no LinkedIn
                             </a>
