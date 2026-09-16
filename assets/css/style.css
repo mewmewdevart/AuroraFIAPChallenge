@@ -24,7 +24,7 @@
 
     /* Cores de Texto e Tipografia */
     --color-text-primary: var(--color-neutral-black);
-    --color-text-secondary: rgba(17, 17, 17, 0.65);
+    --color-text-secondary: rgba(17, 17, 17, 0.78);
 
     /* Bordas */
     --color-border-default: rgba(8, 8, 8, 0.1);
@@ -855,7 +855,7 @@ section {
     text-align: center;
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
-    color: color-mix(in srgb, var(--color-neutral-black) 55%, transparent);
+    color: color-mix(in srgb, var(--color-neutral-black) 78%, transparent);
     letter-spacing: .1em;
     text-transform: uppercase;
     margin-bottom: var(--spacing-medium);
@@ -1054,7 +1054,7 @@ section {
 }
 
 .servicos__descricao {
-    color: color-mix(in srgb, var(--color-neutral-black) 60%, transparent);
+    color: color-mix(in srgb, var(--color-neutral-black) 78%, transparent);
     font-size: var(--font-size-base);
 }
 
@@ -1509,7 +1509,7 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .perguntas-frequentes__texto {
-    color: color-mix(in srgb, var(--color-neutral-black) 60%, transparent);
+    color: color-mix(in srgb, var(--color-neutral-black) 78%, transparent);
     font-size: var(--font-size-base);
     line-height: 1.6;
 }
@@ -1794,7 +1794,7 @@ details[open] .perguntas-frequentes__seta {
 }
 
 .captacao__input::placeholder {
-    color: color-mix(in srgb, var(--color-neutral-white) 50%, transparent);
+    color: color-mix(in srgb, var(--color-neutral-white) 72%, transparent);
 }
 
 .captacao__input:hover {
@@ -2330,7 +2330,7 @@ details[open] .perguntas-frequentes__seta {
 
 .newsletter__campo::placeholder {
     color: var(--color-text-secondary);
-    opacity: 0.8;
+    opacity: 0.95;
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
 }

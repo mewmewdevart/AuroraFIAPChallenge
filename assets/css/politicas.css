@@ -139,7 +139,7 @@ body.pagina-legal {
 }
 
 .hero-legal__busca-input::placeholder {
-    color: color-mix(in srgb, var(--color-neutral-white) 70%, transparent);
+    color: color-mix(in srgb, var(--color-neutral-white) 75%, transparent);
     font-family: var(--font-primary);
 }
 
