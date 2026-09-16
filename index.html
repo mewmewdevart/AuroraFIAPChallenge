@@ -34,7 +34,7 @@
     <meta property="og:url" content="https://aurora-ctrl-people-2026.vercel.app/">
     <meta property="og:site_name" content="Aurora">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.png">
+    <meta property="og:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Aurora - Plataforma de People Analytics">
@@ -44,7 +44,7 @@
     <meta name="twitter:title" content="Aurora - Decisões sobre pessoas guiadas por dados">
     <meta name="twitter:description"
         content="A Aurora transforma dados de performance, cultura e engajamento em insights acionáveis para líderes.">
-    <meta name="twitter:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.png">
+    <meta name="twitter:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.jpg">
 
     <!-- Favicon (Ícone do Navegador) -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -139,7 +139,14 @@
 </head>
 
 <body>
-    <a href="#contato" class="link-salto">Ir para Agendar Demonstração</a>
+    <nav class="links-salto" aria-label="Atalhos de acessibilidade">
+        <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a>
+        <a href="#solucao" class="link-salto">Ir para a proposta de solução</a>
+        <a href="#simulador-roi" class="link-salto">Ir para a calculadora de ROI</a>
+        <a href="#faq" class="link-salto">Ir para dúvidas frequentes (FAQ)</a>
+        <a href="#contato" class="link-salto">Ir para agendar demonstração</a>
+        <a href="#rodape" class="link-salto">Ir para o rodapé</a>
+    </nav>
 
     <header class="cabecalho">
         <div class="cabecalho__recipiente">
@@ -216,8 +223,8 @@
             <!-- Mockup do Dashboard -->
             <div class="destaque__dashboard">
                 <div class="destaque__dashboard-mockup">
-                    <img class="destaque__dashboard-imagem" src="assets/img/aurora-dashboard.png"
-                        alt="Dashboard da Aurora" width="1140">
+                    <img class="destaque__dashboard-imagem" src="assets/img/aurora-dashboard.jpg"
+                        alt="Dashboard da Aurora" width="1140" fetchpriority="high" decoding="async">
                 </div>
             </div>
 
@@ -1006,12 +1013,12 @@
         <!-- ============================  SEÇÃO NUMEROS QUE FALAM ============================ -->
         <section class="estatisticas" id="resultados">
             <div class="recipiente estatisticas__recipiente">
-                <header class="estatisticas__cabecalho">
+                <div class="estatisticas__cabecalho">
                     <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="120"
                         class="estatisticas__logo">
                     <p class="estatisticas__descricao">Os números falam por quem já usa. Veja o impacto que a Aurora
                         entrega nos indicadores que mais importam para a gestão de pessoas.</p>
-                </header>
+                </div>
 
                 <div class="estatisticas__grade">
                     <div class="estatisticas__coluna estatisticas__coluna estatisticas__coluna--esquerda">
@@ -1247,8 +1254,8 @@
                                 Preencha seus dados e agende sua sessão exclusiva em 30 minutos.
                             </p>
 
-                            <div class="captacao__stepper" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="2" aria-label="Etapa 1 de 2: Seus Dados" id="captacao-stepper">
-                                <div class="captacao__step is-active" id="step-indicador-1" role="tab" aria-selected="true" aria-controls="etapa-1">
+                            <div class="captacao__stepper" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="2" aria-label="Progresso do formulário: Etapa 1 de 2: Seus Dados" id="captacao-stepper">
+                                <div class="captacao__step is-active" id="step-indicador-1">
                                     <div class="captacao__step-badge">
                                         <span class="captacao__step-num">1</span>
                                         <i class="fa-solid fa-check captacao__step-check" aria-hidden="true"></i>
@@ -1258,7 +1265,7 @@
                                 <div class="captacao__step-linha" aria-hidden="true">
                                     <div class="captacao__step-progresso" id="stepper-progresso-linha"></div>
                                 </div>
-                                <div class="captacao__step" id="step-indicador-2" role="tab" aria-selected="false" aria-controls="etapa-2">
+                                <div class="captacao__step" id="step-indicador-2">
                                     <div class="captacao__step-badge">
                                         <span class="captacao__step-num">2</span>
                                         <i class="fa-solid fa-calendar-check captacao__step-check" aria-hidden="true"></i>
@@ -1269,7 +1276,7 @@
                         </div>
 
                         <!-- ETAPA 1: Dados do Lead & Empresa -->
-                        <div class="captacao__etapa is-ativa" id="etapa-1" role="tabpanel" aria-labelledby="step-indicador-1">
+                        <div class="captacao__etapa is-ativa" id="etapa-1">
                             <div class="captacao__campo-duplo">
                                 <div class="captacao__campo">
                                     <label for="captacao-nome" class="captacao__label">Nome completo * <span
@@ -1338,7 +1345,7 @@
                         </div>
 
                         <!-- ETAPA 2: Escolha de Data e Horário -->
-                        <div class="captacao__etapa" id="etapa-2" role="tabpanel" aria-labelledby="step-indicador-2" hidden>
+                        <div class="captacao__etapa" id="etapa-2" hidden>
                             <!-- Resumo Dinâmico do Lead -->
                             <div class="captacao__resumo-lead" id="resumo-lead-box" aria-live="polite">
                                 <div class="captacao__resumo-icone" aria-hidden="true">
@@ -1411,38 +1418,42 @@
             </div>
         </section>
         <!-- ════════════════════════ /CAPTAÇÃO DE LEADS ════════════════════════ -->
+
+        <!-- Newsletter -->
+        <section class="newsletter" aria-labelledby="newsletter-titulo">
+            <div class="recipiente newsletter__recipiente">
+                <h2 id="newsletter-titulo" class="newsletter__titulo">Fique por dentro das novidades</h2>
+                <p class="newsletter__descricao">Assine nossa newsletter para receber atualizações sobre People Analytics,
+                    tendências de RH e novidades da Aurora diretamente na sua caixa de entrada.</p>
+                <form class="newsletter__formulario" id="form-newsletter">
+                    <label class="sr-only" for="newsletter-email">Seu melhor e-mail</label>
+                    <input class="newsletter__campo" type="email" id="newsletter-email" name="email"
+                        placeholder="Seu melhor e-mail" autocomplete="email" required
+                        aria-describedby="newsletter-erro" aria-invalid="false">
+                    <!-- 🔴3 — Elemento de erro acessível com aria-live; deve existir no DOM desde o início -->
+                    <p id="newsletter-erro" class="captacao__erro sr-only" aria-live="polite" hidden></p>
+                    <button class="newsletter__botao" type="submit">Inscrever-se</button>
+                </form>
+                <p class="newsletter__privacidade">
+                    Ao se cadastrar, você concorda com nossa <a href="politicas.html#privacidade" class="newsletter__link-privacidade">Política de Privacidade</a>.
+                </p>
+                <p class="newsletter__mensagem" id="newsletter-mensagem" role="status" aria-live="polite"></p>
+            </div>
+        </section>
     </main>
 
-    <!-- Newsletter -->
-    <section class="newsletter" aria-labelledby="newsletter-titulo">
-        <div class="recipiente newsletter__recipiente">
-            <h2 id="newsletter-titulo" class="newsletter__titulo">Fique por dentro das novidades</h2>
-            <p class="newsletter__descricao">Assine nossa newsletter para receber atualizações sobre People Analytics,
-                tendências de RH e novidades da Aurora diretamente na sua caixa de entrada.</p>
-            <form class="newsletter__formulario" id="form-newsletter">
-                <label class="sr-only" for="newsletter-email">Seu melhor e-mail</label>
-                <input class="newsletter__campo" type="email" id="newsletter-email" name="email"
-                    placeholder="Seu melhor e-mail" autocomplete="email" required
-                    aria-describedby="newsletter-erro" aria-invalid="false">
-                <!-- 🔴3 — Elemento de erro acessível com aria-live; deve existir no DOM desde o início -->
-                <p id="newsletter-erro" class="captacao__erro sr-only" aria-live="polite" hidden></p>
-                <button class="newsletter__botao" type="submit">Inscrever-se</button>
-            </form>
-            <p class="newsletter__privacidade">
-                Ao se cadastrar, você concorda com nossa <a href="politicas.html#privacidade" class="newsletter__link-privacidade">Política de Privacidade</a>.
-            </p>
-            <p class="newsletter__mensagem" id="newsletter-mensagem" role="status" aria-live="polite"></p>
-        </div>
-    </section>
-
     <!-- ============================  FOOTER - 8 ============================ -->
-    <footer class="rodape">
+    <footer class="rodape" id="rodape" tabindex="-1">
         <div class="recipiente rodape__recipiente">
             <div class="rodape__topo">
                 <div class="rodape__marca">
                     <img src="assets/img/aurora-color-logo-people-analytics-platform.png" alt="Aurora Logo" width="150"
                         class="rodape__logo">
-                    <p class="rodape__legal">Aurora People Analytics<br>CNPJ: 00.000.000/0001-00</p>
+                    <p class="rodape__legal">
+                        <strong>Aurora People Analytics — Projeto Acadêmico</strong><br>
+                        Desenvolvido exclusivamente para fins educacionais (FIAP Enterprise Challenge).<br>
+                        <em>Os dados, empresas parceiras e informações de contato são ilustrativos.</em>
+                    </p>
                 </div>
 
                 <nav class="rodape__navegacao" aria-label="Navegação do rodapé">
@@ -1513,9 +1524,9 @@
 
     <!-- LGPD Banner de Cookies -->
     <div id="cookie-banner" class="banner-cookies">
-        <p class="banner-cookies__texto">Este site usa cookies para oferecer uma navegação melhor. Ao continuar
-            navegando, você
-            concorda com a nossa <a href="politicas.html#cookies" class="banner-cookies__link">Política de Privacidade</a>.</p>
+        <p class="banner-cookies__texto">
+            <strong>Projeto Acadêmico FIAP:</strong> Este site foi criado exclusivamente para fins educacionais de estudo. Os dados e marcas exibidos são ilustrativos. Ao continuar navegando, você concorda com nossa <a href="politicas.html#cookies" class="banner-cookies__link">Política de Privacidade</a>.
+        </p>
         <button id="aceitar-cookies" class="botao banner-cookies__botao">Aceitar Cookies</button>
     </div>
 
@@ -1547,7 +1558,7 @@
             <div class="chatbot-window__header">
                 <div class="chatbot-window__header-info">
                     <div class="chatbot-window__avatar" aria-hidden="true">
-                        <img src="assets/img/iris-ai-photo.jpg" alt="IRIS AI Profile">
+                        <img src="assets/img/iris-ai-photo.jpg" alt="IRIS AI Profile" loading="lazy" decoding="async">
                     </div>
                     <div>
                         <h4 class="chatbot-window__title" id="chatbot-title">IRIS</h4>

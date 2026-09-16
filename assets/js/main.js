@@ -511,17 +511,15 @@ function inicializarValidacaoFormulario() {
             if (stepIndicador1) {
                 stepIndicador1.classList.remove('is-active');
                 stepIndicador1.classList.add('is-completed');
-                stepIndicador1.setAttribute('aria-selected', 'false');
             }
 
             if (stepIndicador2) {
                 stepIndicador2.classList.add('is-active');
-                stepIndicador2.setAttribute('aria-selected', 'true');
             }
 
             if (stepperEl) {
                 stepperEl.setAttribute('aria-valuenow', '2');
-                stepperEl.setAttribute('aria-label', 'Etapa 2 de 2: Data e Horário');
+                stepperEl.setAttribute('aria-label', 'Progresso do formulário: Etapa 2 de 2: Data e Horário');
             }
 
             if (linhaProgresso) {
@@ -553,18 +551,16 @@ function inicializarValidacaoFormulario() {
 
             if (stepIndicador2) {
                 stepIndicador2.classList.remove('is-active');
-                stepIndicador2.setAttribute('aria-selected', 'false');
             }
 
             if (stepIndicador1) {
                 stepIndicador1.classList.remove('is-completed');
                 stepIndicador1.classList.add('is-active');
-                stepIndicador1.setAttribute('aria-selected', 'true');
             }
 
             if (stepperEl) {
                 stepperEl.setAttribute('aria-valuenow', '1');
-                stepperEl.setAttribute('aria-label', 'Etapa 1 de 2: Seus Dados');
+                stepperEl.setAttribute('aria-label', 'Progresso do formulário: Etapa 1 de 2: Seus Dados');
             }
 
             if (linhaProgresso) {
