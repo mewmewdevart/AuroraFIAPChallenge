@@ -748,6 +748,27 @@ function mostrarToastSucesso(nome) {
         // Limpa após a animação de saída
         setTimeout(() => {
             notificacao.querySelector('.toast-sucesso__mensagem').textContent = '';
-        }, 400);
+        }, 300);
     }, 5000);
 }
+
+// ==========================================
+// MÓDULO 7: HERO SLIDESHOW
+// ==========================================
+function initHeroSlideshow() {
+    const images = document.querySelectorAll('#hero-slideshow .destaque__dashboard-imagem');
+    if (!images || images.length <= 1) return;
+    
+    let currentIndex = 0;
+    
+    setInterval(() => {
+        images[currentIndex].classList.remove('ativo');
+        currentIndex = (currentIndex + 1) % images.length;
+        images[currentIndex].classList.add('ativo');
+    }, 8000);
+}
+
+// Inicializar slideshow quando o DOM estiver pronto
+document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlideshow();
+});

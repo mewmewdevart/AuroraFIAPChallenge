@@ -34,7 +34,7 @@
     <meta property="og:url" content="https://aurora-ctrl-people-2026.vercel.app/">
     <meta property="og:site_name" content="Aurora">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.jpg">
+    <meta property="og:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard1.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Aurora - Plataforma de People Analytics">
@@ -44,7 +44,7 @@
     <meta name="twitter:title" content="Aurora - Decisões sobre pessoas guiadas por dados">
     <meta name="twitter:description"
         content="A Aurora transforma dados de performance, cultura e engajamento em insights acionáveis para líderes.">
-    <meta name="twitter:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard.jpg">
+    <meta name="twitter:image" content="https://aurora-ctrl-people-2026.vercel.app/assets/img/aurora-dashboard1.png">
 
     <!-- Favicon (Ícone do Navegador) -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -132,7 +132,7 @@
     </script>
 </head>
 
-<body>
+<body id="inicio">
     <nav class="links-salto" aria-label="Atalhos de acessibilidade">
         <a href="#conteudo-principal" class="link-salto">Ir para o conteúdo principal</a>
         <a href="#solucao" class="link-salto">Ir para a proposta de solução</a>
@@ -214,11 +214,48 @@
             </div>
 
             <!-- Mockup do Dashboard -->
-            <!-- Mockup do Dashboard -->
             <div class="destaque__dashboard">
-                <div class="destaque__dashboard-mockup">
-                    <img class="destaque__dashboard-imagem" src="assets/img/aurora-dashboard.jpg"
-                        alt="Dashboard da Aurora" width="1140" fetchpriority="high" decoding="async">
+                <div class="destaque__dashboard-mockup" id="hero-slideshow">
+                    <picture class="destaque__dashboard-imagem ativo">
+                        <source srcset="assets/img/aurora-dashboard1.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard1.png"
+                            alt="Visão geral do Dashboard da Aurora" width="1140" fetchpriority="high" decoding="async">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard2.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard2.png"
+                            alt="Análise de talentos e desempenho" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard3.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard3.png"
+                            alt="Métricas de engajamento da equipe" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard4.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard4.png"
+                            alt="Previsão de turnover e retenção" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard5.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard5.png"
+                            alt="Gestão de performance B2B" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard6.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard6.png"
+                            alt="Impacto financeiro do RH" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard7.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard7.png"
+                            alt="Mapa de calor organizacional" width="1140" decoding="async" loading="lazy">
+                    </picture>
+                    <picture class="destaque__dashboard-imagem">
+                        <source srcset="assets/img/aurora-dashboard8.webp" type="image/webp">
+                        <img src="assets/img/aurora-dashboard8.png"
+                            alt="Relatório executivo gerado pela Aurora" width="1140" decoding="async" loading="lazy">
+                    </picture>
                 </div>
             </div>
 
@@ -263,7 +300,7 @@
 
         <!-- ════════════════════════ TRUSTED STRIP ═══════════════════════ -->
         <section class="parceiros" aria-label="Empresas de exemplo (projeto acadêmico)">
-            <p class="parceiros__rotulo">Exemplos de marcas em cenários de estudo (Projeto Acadêmico FIAP)</p>
+            <p class="parceiros__rotulo">Empresas que já confiam na Aurora</p>
             <div class="parceiros__carrossel-moldura">
                 <div class="parceiros__carrossel-esteira">
                     <!-- Conjunto 1 -->
@@ -454,7 +491,7 @@
                                             <h3 class="cartao-depoimento__nome">Marina M. M. Polverari</h3>
                                             <p class="cartao-depoimento__cargo">Diretora de RH & Sócia</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
+
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -479,7 +516,7 @@
                                             <h3 class="cartao-depoimento__nome">Rodrigo Santos</h3>
                                             <p class="cartao-depoimento__cargo">Head de Gente e Gestão no Nubank</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
+
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -505,7 +542,7 @@
                                             <p class="cartao-depoimento__cargo">Gerente de Operações no iFood
                                             </p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
+
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -528,7 +565,7 @@
                                             <h3 class="cartao-depoimento__nome">Felipe Almeida</h3>
                                             <p class="cartao-depoimento__cargo">VP de Tecnologia na TOTVS</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
+
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -551,7 +588,7 @@
                                             <h3 class="cartao-depoimento__nome">Juliana Mendes</h3>
                                             <p class="cartao-depoimento__cargo">Coordenadora de T&D na Global Retail</p>
                                         </div>
-                                        <span class="cartao-depoimento__icone-coracao" aria-hidden="true">♥</span>
+
                                     </div>
 
                                     <div class="cartao-depoimento__corpo">
@@ -714,6 +751,7 @@
                             preload="metadata" controlsList="nodownload" oncontextmenu="return false;">
                             <track kind="captions" srclang="pt-BR" label="Português (Brasil) — Case FIAP Aurora RH"
                                 default src="./assets/video/legendas-depoimento-aurora-fiap-rh.vtt">
+                            <p>Seu navegador não suporta vídeos HTML5.</p>
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
@@ -745,6 +783,7 @@
                             preload="metadata" controlsList="nodownload" oncontextmenu="return false;">
                             <track kind="captions" srclang="pt-BR" label="Português (Brasil) — Case Nubank Aurora RH"
                                 default src="./assets/video/legendas-depoimento-aurora-nubank-rh.vtt">
+                            <p>Seu navegador não suporta vídeos HTML5.</p>
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
@@ -774,6 +813,7 @@
                             preload="metadata" controlsList="nodownload" oncontextmenu="return false;">
                             <track kind="captions" srclang="pt-BR" label="Português (Brasil) — Case iFood Aurora RH"
                                 default src="./assets/video/legendas-depoimento-aurora-ifood-rh.vtt">
+                            <p>Seu navegador não suporta vídeos HTML5.</p>
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
@@ -804,6 +844,7 @@
                             preload="metadata" controlsList="nodownload" oncontextmenu="return false;">
                             <track kind="captions" srclang="pt-BR" label="Português (Brasil) — Case TOTVS Aurora RH"
                                 default src="./assets/video/legendas-depoimento-aurora-totvs-rh.vtt">
+                            <p>Seu navegador não suporta vídeos HTML5.</p>
                         </video>
                         <div class="avaliacoes__sobreposicao">
 
@@ -1008,7 +1049,8 @@
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" aria-hidden="true" focusable="false">
                                             <path d="M12 5v14M5 12l7 7 7-7" />
-                                        </svg></div>
+                                        </svg>
+                                    </div>
                                     <div>
                                         <div class="simulador-roi__stat-mini-valor" id="r-novo-custo">R$ 850.500</div>
                                         <div class="simulador-roi__stat-mini-label">novo custo do turnover por ano</div>
@@ -1071,7 +1113,7 @@
                                 <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
                             </svg></div>
                         <div>
-                            <h4>Contas abertas</h4>
+                            <h3>Contas abertas</h3>
                             <p>O custo de reposição aparece dividido em recrutamento, onboarding e produtividade
                                 perdida, não como um número único.</p>
                         </div>
@@ -1083,7 +1125,7 @@
                                 <circle cx="12" cy="12" r="3" />
                             </svg></div>
                         <div>
-                            <h4>Baseado em clientes reais</h4>
+                            <h3>Baseado em clientes reais</h3>
                             <p>A redução de 25% no turnover vem de dados de clientes Aurora, não de uma média genérica
                                 de mercado.</p>
                         </div>
@@ -1095,7 +1137,7 @@
                                 <path d="M12 7v5l3.5 2" />
                             </svg></div>
                         <div>
-                            <h4>Prevenção, não remédio</h4>
+                            <h3>Prevenção, não remédio</h3>
                             <p>Colaborador retido a tempo nunca chega a virar estatística de desligamento.</p>
                         </div>
                     </div>
@@ -1563,7 +1605,6 @@
                     <p class="rodape__legal">
                         <strong>Aurora People Analytics — Projeto Acadêmico</strong><br>
                         Desenvolvido exclusivamente para fins educacionais (FIAP Enterprise Challenge).<br>
-                        <em>Os dados, empresas parceiras e informações de contato são ilustrativos.</em>
                     </p>
                 </div>
 
@@ -1623,7 +1664,7 @@
                 </div>
 
                 <div class="rodape__redes-sociais" aria-label="Redes Sociais">
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.instagram.com/auroraprotagonize/" target="_blank" rel="noopener noreferrer"
                         class="rodape__link-social" aria-label="Instagram da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-instagram rodape__icone-social"></i>
                     </a>
@@ -1635,7 +1676,7 @@
                         aria-label="YouTube da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-youtube rodape__icone-social"></i>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="rodape__link-social"
+                    <a href="https://www.linkedin.com/company/aurorapro/" target="_blank" rel="noopener noreferrer" class="rodape__link-social"
                         aria-label="LinkedIn da Aurora (abre em nova aba)">
                         <i class="fa-brands fa-linkedin-in rodape__icone-social"></i>
                     </a>

@@ -14,8 +14,6 @@
     --color-neutral-white: rgb(255, 255, 255);
     --color-neutral-black: rgb(17, 17, 17);
 
-
-
     /* ========= VARIAVEIS DERIVADAS + DE SUPORTE ========= */
     --color-surface-primary: var(--color-neutral-white);
     --color-surface-dark: rgb(21, 20, 25);
@@ -202,7 +200,7 @@ body {
     position: absolute;
     top: var(--spacing-medium);
     left: var(--spacing-medium);
-    background: var(--gradient-aurora);
+    background: var(--color-brand-primary);
     color: var(--color-neutral-white);
     padding: 10px 20px;
     z-index: 100000;
@@ -504,7 +502,7 @@ section {
     justify-content: flex-start;
     overflow: hidden;
     font-family: var(--font-primary);
-    padding-bottom: 0;
+    padding-bottom: 140px;
     background-color: var(--color-aurora-bg-start);
 }
 
@@ -764,13 +762,16 @@ section {
 .destaque__dashboard-mockup {
     max-width: 1140px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    margin: 0 auto;
 }
 
 .destaque__dashboard-imagem {
+    grid-area: 1 / 1;
     max-width: 100%;
-    height: auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
     display: block;
     border-radius: var(--border-radius-medium);
     box-shadow:
@@ -778,6 +779,22 @@ section {
         0 40px 100px var(--color-black-translucent-60),
         var(--shadow-soft);
     animation: destaque-card-float 6s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.destaque__dashboard-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: inherit;
+    display: block;
+}
+
+.destaque__dashboard-imagem.ativo {
+    opacity: 1;
+    z-index: 2;
 }
 
 /* ─── ANIMAÇÃO DO CARD DE DESTAQUE ────────────────────── */
@@ -796,11 +813,12 @@ section {
 /* ─── TRANSIÇÃO DE NUVENS ─────────────────────────────────────── */
 
 .destaque__transicao-nuvens {
-    position: relative;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
     z-index: 6;
     width: 100%;
     height: 140px;
-    margin-top: -2px;
     pointer-events: none;
     overflow: hidden;
 }
@@ -937,8 +955,15 @@ section {
     transform: translate3d(0, 0, 0);
 }
 
-.parceiros__carrossel-esteira:hover {
+.parceiros__carrossel-moldura:hover .parceiros__carrossel-esteira,
+.parceiros__carrossel-esteira:focus-within {
     animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parceiros__carrossel-esteira {
+        animation: none;
+    }
 }
 
 @keyframes parceiros-scroll-left {
@@ -2827,11 +2852,6 @@ details[open] .perguntas-frequentes__seta {
     color: var(--color-text-secondary);
 }
 
-.cartao-depoimento__icone-coracao {
-    color: var(--color-brand-pink);
-    font-size: var(--font-size-medium);
-}
-
 .cartao-depoimento__corpo {
     font-size: var(--font-size-small);
     line-height: 1.6;
@@ -3279,6 +3299,8 @@ details[open] .perguntas-frequentes__seta {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+    color: var(--color-neutral-white);
+    background-color: var(--color-neutral-black);
 }
 
 /* ======================================== CHATBOT AURORA ======================================== */
