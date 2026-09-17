@@ -512,6 +512,7 @@ section {
     z-index: 0;
 
     background:
+        linear-gradient(180deg, rgba(15, 10, 26, 0.45) 0%, rgba(15, 10, 26, 0.15) 35%, transparent 65%),
         radial-gradient(ellipse 80% 45% at 20% 0%,
             var(--color-aurora-teal-glow) 0%,
             transparent 60%),
