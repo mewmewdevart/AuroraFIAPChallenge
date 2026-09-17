@@ -1,7 +1,3 @@
-<img width="1280" height="720" alt="Thumb - 1280_720" src="https://github.com/user-attachments/assets/eaf0cf82-b316-4941-984b-75e0a509a874" />
-
-
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/b1d64065-5c87-48d7-a9a4-e271366ac246" width="300" alt="Aurora Logo" />
 
