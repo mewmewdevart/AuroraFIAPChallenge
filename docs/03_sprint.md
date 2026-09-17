@@ -12,8 +12,6 @@ Este markdown é o detalhamento técnico e funcional completo do projeto entregu
 - **Larissa Cristina Benedito** - RM 570970
 - **Mayla Mayumi Motobe** - RM 571213
 
----
-
 ## 1. 📌 Introdução e Escopo da Entrega Final
 
 A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma plataforma B2B SaaS de People Analytics e Gestão de Performance. Desenvolvida como solução para o Enterprise Challenge "People First Cup" (FIAP × Aurora × Google), a entrega apresenta uma aplicação web 100% autoral (~10.000 linhas de código sem o uso de builders, templates ou frameworks CSS externos), responsiva, acessível, segura e com deploy online operacional com CI/CD via Vercel.
@@ -24,8 +22,6 @@ A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma 
 - **Acessibilidade WCAG 2.1 AAA:** Validações manuais e automatizadas, menus acessíveis por teclado, atalhos de salto rápido (Skip Links - WCAG 2.4.1), botão *scroll-to-top* dinâmico, suporte a `prefers-reduced-motion` e suíte oficial VLibras.
 - **Segurança em Camadas:** Sanitização ativa de entradas contra XSS, resiliência contra prompt-injection no chatbot, rate-limiting, controle de payload (10KB) e headers HTTP de proteção.
 - **Arquitetura Híbrida de IA:** Backend Node.js/Express (`server.js`) para execução local e Serverless Function (`api/chat.js`) orquestrada via `vercel.json` em nuvem, ambas integradas ao SDK oficial do Google Gemini.
-
----
 
 ## 2. 🎯 Tabela Comparativa de Evolução e Impacto Técnico
 
@@ -38,8 +34,6 @@ A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma 
 | **Formulário Multi-Etapas** | Validação inline com filtro de 22 domínios pessoais de e-mail e gerador de datas úteis dinâmico. | Captação qualificada de leads B2B e redução de fricção. |
 | **Portal LGPD (`politicas.html`)** | Portal com 950 linhas de CSS dedicado, busca em tempo real, formulário de DPO (Art. 18 LGPD) gerando protocolo `AUR-XXXXXX`. | Conformidade jurídica completa e transparência sobre o escopo acadêmico. |
 | **Inclusão & Suporte** | Widget oficial VLibras com avatar 3D + Chatbot IRIS flutuante com Google Gemini SDK. | Inclusão de pessoas surdas (LIBRAS) e atendimento consultivo por IA. |
-
----
 
 ## 3. 🧠 Detalhamento Técnico das Seções e Componentes
 
@@ -99,8 +93,6 @@ A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma 
 - **Painel de Gestão de Cookies:** Controle interativo de consentimento via `localStorage`.
 - **Busca em Tempo Real:** Filtro imediato de cláusulas por palavra-chave (ex: "Gemini", "turnover", "cookies") com highlight visual.
 
----
-
 ## 4. ♿ Recursos de Acessibilidade e Inclusão (WCAG 2.1 AAA)
 
 - **Menu de Links de Salto (Skip Links):** `<nav class="links-salto">` no início do `<body>`.
@@ -109,8 +101,6 @@ A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma 
 - **Suíte VLibras:** Avatar 3D do Governo Federal integrado para tradução em LIBRAS.
 - **Contraste Extremo:** Cores e textos auditados com contraste mínimo de 7:1 (WCAG AAA).
 - **Animações Reduzidas:** Respeito integral às preferências do usuário via `@media (prefers-reduced-motion: reduce)`.
-
----
 
 ## 5. 🤖 Uso Ético de Inteligência Artificial no Desenvolvimento
 
@@ -121,15 +111,11 @@ Durante todo o ciclo de vida do projeto, ferramentas de Inteligência Artificial
 3. **Engenharia de Prompt (Chatbot IRIS):** Testes de *red teaming* contra injeções de prompt e estruturação da persona da IRIS via SDK do Google Gemini.
 4. **Massa de Dados e Roteiros:** Apoio na criação de textos verossímeis B2B, roteiros de vídeos (`00_prompts_videos_depoimentos.md`), FAQs e legendas WebVTT.
 
----
-
 ## 6. 🛡️ Segurança, Governança e Backend Educacional
 
 - **Arquitetura de Backend Híbrida:** Servidor local Node.js/Express (`server.js`) para desenvolvimento local e Vercel Serverless Function (`api/chat.js`) para ambiente em nuvem.
 - **Esclarecimento do Backend em Produção:** O repositório contém toda a **lógica de backend construída e pronta** no código. No entanto, no deploy online na Vercel, a aplicação executa em modo de demonstração simulada para evitar custos de infraestrutura e proteger chaves de API.
 - **Sanitização & Defesa em Profundidade:** Escape rigoroso de caracteres contra XSS, limitação de payload a 10KB, restrição de prompts a 500 caracteres e envio de Headers HTTP de proteção (`X-Frame-Options`, `Content-Security-Policy`, `Referrer-Policy`).
-
----
 
 ## 7. 📚 Referências Bibliográficas e Técnicas
 
