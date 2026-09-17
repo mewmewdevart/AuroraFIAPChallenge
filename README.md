@@ -30,8 +30,7 @@ Este projeto consolida a **Entrega Final (Etapa 3) do Enterprise Challenge (Peop
 
 O projeto entrega uma experiência B2B completa (~10.000 linhas de código sem uso de builders, templates ou frameworks CSS externos), articulando a proposta de valor B2B por meio de um fluxo narrativo PAS (Problem → Agitate → Solve), simulador de ROI interativo com gráfico SVG dinâmico, formulário de conversão multi-etapas com filtro corporativo e gerador de datas úteis, assistente virtual IRIS com IA (Google Gemini SDK), portal de governança LGPD (`politicas.html`) e otimização extrema de performance (>85% no peso dos ativos visuais).
 
-<img width="1896" height="862" alt="Printscreen do site Aurora" src="https://github.com/user-attachments/assets/7b3d289f-5c39-4e6f-a86e-3729c32fe905" />
-
+<img width="1896" height="862" alt="Printscreen do site Aurora" src="https://github.com/user-attachments/assets/65f37344-4ab1-41d9-9b95-2c17be107fba" />
 
 ## 💡 Principais Soluções e Diferenciais da Aurora
 
