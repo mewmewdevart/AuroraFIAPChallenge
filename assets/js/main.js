@@ -430,9 +430,15 @@ function inicializarValidacaoFormulario() {
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
+            } else {
+                const dominio = valor.split('@')[1]?.toLowerCase();
+                if (dominiosPessoais.includes(dominio)) {
+                    eValido = false;
+                    mensagemErro = 'Por favor, utilize seu e-mail corporativo (não pessoal).';
+                }
             }
         }
-
+    
         // Aplica estilizações e ativa avisos de erro em leitores de tela
         if (!eValido) {
             input.classList.add('is-invalido');
