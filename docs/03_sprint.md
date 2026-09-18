@@ -5,6 +5,7 @@ Este markdown é o detalhamento técnico e funcional completo do projeto entregu
 ## 🔗 Acessos
 - 🌐 **Deploy Principal (Vercel):** [Aurora B2B Platform](https://aurora-ctrl-people-2026.vercel.app/)
 - 💻 **Repositório GitHub:** [mewmewdevart/AuroraFIAPChallenge](https://github.com/mewmewdevart/AuroraFIAPChallenge)
+- 💻 **Vídeo-Pitch Aurora:** [Vídeo-Pitch Youtube](https://www.youtube.com/watch?v=x8TDlXK2P6I)
 
 ## 👥 Integrantes - Grupo Ctrl + People
 - **Ingrid Silva de Lima** - RM 570149
