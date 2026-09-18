@@ -4,7 +4,6 @@ Este markdown é o detalhamento técnico e funcional completo do projeto entregu
 
 ## 🔗 Acessos
 - 🌐 **Deploy Principal (Vercel):** [Aurora B2B Platform](https://aurora-ctrl-people-2026.vercel.app/)
-- 🌐 **Deploy Alternativo (GitHub Pages):** [Aurora FIAP Challenge](https://mewmewdevart.github.io/AuroraFIAPChallenge/)
 - 💻 **Repositório GitHub:** [mewmewdevart/AuroraFIAPChallenge](https://github.com/mewmewdevart/AuroraFIAPChallenge)
 
 ## 👥 Integrantes - Grupo Ctrl + People
@@ -78,15 +77,41 @@ A **Etapa 3** marca a consolidação e entrega final do projeto **Aurora**, uma 
 - 4 indicadores de alto impacto (-25% turnover, +40h/mês devolvidas, +15% engajamento, 3× retenção).
 - Timeline vertical em 4 passos com gradientes e ícones representativos.
 
-### 3.9 FAQ (Perguntas Frequentes)
-- Posicionado estrategicamente antes do formulário para superar objeções B2B antes da conversão.
-- 6 acordeões interativos com Schema.org `FAQPage` em JSON-LD com 3 perguntas indexáveis.
+### 3.9 Fluxo de Implementação (Metodologia em 4 Passos) 
+- Timeline vertical com 4 etapas visuais: Passo 1: Conheça seu time, Passo 2: Coloque os insights em prática, Passo 3: Acompanhamento especializado, Passo 4: Resultados nos números; 
+- Ícones diferenciados por etapa com cores da paleta Aurora; 
+- Linha inferior decorativa com gradiente da marca. 
 
 ### 3.10 Formulário de Captação Multi-Etapas
 - **Etapa 1:** Filtro de e-mail corporativo bloqueando 22 domínios de e-mails pessoais (Gmail, Outlook, Yahoo, Hotmail, etc.) com revalidação contínua e suporte a `aria-invalid`.
 - **Etapa 2:** Gerador dinâmico de datas úteis (`gerarDatasAgendamento`) excluindo finais de semana, 8 horários disponíveis, stepper com `role="progressbar"` (0% → 100%) e Toast notification com `aria-live="assertive"`.
 
-### 3.11 Portal de Políticas e Governança LGPD (`politicas.html`)
+### 3.11 FAQ (Perguntas Frequentes)
+- 5 acordeões interativos com Schema.org `FAQPage` em JSON-LD com 3 perguntas indexáveis.
+
+### 3.12 Newsletter 
+- Input de e-mail com validação por regex e feedback inline; 
+- Mensagem de erro acessível via aria-invalid e aria-describedby com aria-live="polite"; 
+- Posicionada dentro do <main> (corrigido para semântica HTML5 correta). 
+
+### 3.13 Rodapé Institucional 
+- 3 blocos de navegação: Navegação, Recursos, Legal e Privacidade; 
+- Dados de contato com placeholder acadêmico (+55 (11) 00000-0000); 
+- Redes sociais com target="_blank", rel="noopener noreferrer" e aria-label descritivo em cada link; 
+- Disclaimer acadêmico: Informação clara de que é um projeto FIAP/Enterprise Challenge; 
+- Logo clicável no rodapé com link para a página inicial. 
+
+### 3.14 Banner de Cookies (LGPD) 
+- Texto contextualizado: "Projeto Acadêmico FIAP: Este site foi criado exclusivamente para fins educacionais de estudo. Os dados e marcas exibidos são ilustrativos."; 
+- Consentimento gerenciado via localStorage.setItem('cookiesAccepted', 'true'); 
+- Aparição com delay de 500ms para não interromper o carregamento visual da página.
+
+### 3.15 Ferramentas Globais de Inclusão e Suporte (VLibras e Chatbot)
+- **VLibras:** Integração ponta-a-ponta com a suíte oficial VLibras do Governo Federal. A ferramenta disponibiliza um avatar 3D interativo na lateral da tela capaz de traduzir todo o conteúdo textual e semântico do site para a Língua Brasileira de Sinais (LIBRAS), garantindo total aderência à Lei Brasileira de Inclusão.
+-  **Chatbot IRIS (Assistente IA):** Implementação de um assistente conversacional inteligente posicionado no canto inferior. O widget de chat atua como um canal de suporte e conversão imediato, permitindo tirar dúvidas sobre a plataforma em tempo real sem abandonar a landing page. 
+    - Arquitetura Híbrida de Backend: O Chatbot IRIS foi desenvolvido com suporte duplo de execução: servidor local Node.js/Express (server.js) para ambiente de desenvolvimento local, e Serverless Function (api/chat.js) orquestrada via vercel.json para o ambiente de produção em nuvem da Vercel (Configurado mas não funcional devido ao contexto educacional do projeto e custos adicionais de hospedagem). Ambas realizam a integração segura com a API do Google Gemini via SDK oficial. 
+
+### 3.16 Portal de Políticas e Governança LGPD (`politicas.html`)
 - Página autônoma com 950 linhas de CSS dedicado.
 - Termos de Uso e Política de Privacidade estruturados com bases legais da LGPD.
 - **Formulário de Direitos do Titular (Art. 18 LGPD):** Gera código de protocolo único `AUR-XXXXXX` para o solicitante.
