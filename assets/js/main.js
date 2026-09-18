@@ -394,6 +394,13 @@ function inicializarValidacaoFormulario() {
         { nome: 'horario', erro: document.getElementById('erro-horario') }
     ];
 
+    const dominiosPessoais = [
+        'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.com.br', 'hotmail.com',
+        'outlook.com', 'live.com', 'msn.com', 'icloud.com', 'me.com', 'protonmail.com',
+        'proton.me', 'aol.com', 'gmx.com', 'gmx.net', 'mail.com', 'yandex.com',
+        'zoho.com', 'fastmail.com', 'inbox.com', 'seznam.cz', 'qq.com', 'foxmail.com'
+    ];
+    
     const validarCampo = (input) => {
         const id = input.id;
         const valor = input.value.trim();
@@ -423,7 +430,13 @@ function inicializarValidacaoFormulario() {
             if (!regexEmail.test(valor)) {
                 eValido = false;
                 mensagemErro = 'Insira um endereço de e-mail válido.';
-            }
+            } else {
+                const dominio = valor.split('@')[1]?.toLowerCase();
+                if (dominiosPessoais.includes(dominio)) {
+                    eValido = false;
+                    mensagemErro = 'Por favor, utilize seu e-mail corporativo (não pessoal).';
+                }
+            }        
         }
     
         // Aplica estilizações e ativa avisos de erro em leitores de tela
