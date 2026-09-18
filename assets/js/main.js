@@ -434,7 +434,7 @@ function inicializarValidacaoFormulario() {
                 const dominio = valor.split('@')[1]?.toLowerCase();
                 if (dominiosPessoais.includes(dominio)) {
                     eValido = false;
-                    mensagemErro = 'Por favor, utilize seu e-mail corporativo (não pessoal).';
+                    mensagemErro = 'Por favor, utilize seu e-mail corporativo.';
                 }
             }        
         }
